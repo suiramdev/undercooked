@@ -59,7 +59,7 @@ public class Stove : Component, IDepositable
 		// Set ingredient state based on cook progress
 		if ( ingredient.CookProgress >= burnThreshold )
 		{
-			ingredient.SetState( IngredientState.Burnt );
+			ingredient.SetState( IngredientState.Burned );
 		}
 		else if ( ingredient.CookProgress >= 1f )
 		{

@@ -29,7 +29,7 @@ public class CookingUtensil : BaseUtensil
 
 	public override bool CanWithdraw( Player player )
 	{
-		return Ingredient != null;
+		return false;
 	}
 
 	public override void OnDeposit( IPickable pickable, Player player )
@@ -59,7 +59,6 @@ public class CookingUtensil : BaseUtensil
 
 	public override void OnWithdraw( IPickable pickable, Player player )
 	{
-		Ingredient = null;
 	}
 
 	public override IPickable? GetStoredPickable()

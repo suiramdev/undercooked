@@ -8,6 +8,5 @@ public enum IngredientState
 	Raw,
 	Chopped,
 	Cooked,
-	Overcooked,
-	Burnt
+	Burned
 }

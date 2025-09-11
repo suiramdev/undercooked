@@ -94,8 +94,10 @@ public class PlayerUse : Component
 			return false;
 		}
 
+
 		if ( usable.CanUse( Player ) )
 		{
+			Log.Info( $"Using {usable.GetType().Name} with type {useType}" );
 			usable.OnUse( Player );
 			return true;
 		}

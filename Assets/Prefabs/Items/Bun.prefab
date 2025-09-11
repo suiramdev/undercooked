@@ -21,12 +21,13 @@
         "AttachmentBone": "hand_r",
         "AttachmentOffset": "0,0,0",
         "AttachmentRotation": "0,0,0,0",
-        "BurntModel": null,
-        "Choppable": false,
+        "BurnedModel": null,
+        "ChopFeatureEnabled": false,
         "ChoppedModel": null,
         "ChopProgress": 0,
-        "Cookable": false,
+        "CookableState": "Chopped",
         "CookedModel": null,
+        "CookFeatureEnabled": false,
         "CookProgress": 0,
         "HoldType": "HoldItem",
         "Model": "models/bun.vmdl",
@@ -49,13 +50,13 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "RequiredState": "Chopped",
         "Rigidbody": {
           "_type": "component",
           "component_id": "4ff1f51c-c59f-4454-b7db-f4506ad0e6ab",
           "go": "296e226f-4f3f-4637-a7db-b678213358e5",
           "component_type": "Rigidbody"
         },
+        "ServableState": "Raw",
         "State": "Raw"
       },
       {

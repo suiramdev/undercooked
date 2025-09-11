@@ -1,0 +1,11 @@
+{
+  "Name": "Burger",
+  "RequiredIngredients": [
+    "Bun",
+    "Patty",
+    "Lettuce"
+  ],
+  "Result": null,
+  "__references": [],
+  "__version": 0
+}
