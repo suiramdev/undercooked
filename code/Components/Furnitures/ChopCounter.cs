@@ -74,15 +74,14 @@ public class ChopCounter : Component, IDepositable, IUsable
 	{
 		// Can use if there is an ingredient, it is choppable, it is raw, and the cooldown has passed
 		return StoredPickable != null &&
-			StoredPickable is Ingredient ingredient &&
+			StoredPickable is IngredientItem ingredient &&
 			ingredient.Choppable &&
-			ingredient.State == IngredientState.Raw &&
 			_lastChopTime >= CHOP_COOLDOWN;
 	}
 
 	public void OnUse( Player player )
 	{
-		if ( StoredPickable == null || StoredPickable is not Ingredient ingredient )
+		if ( StoredPickable == null || StoredPickable is not IngredientItem ingredient )
 		{
 			return;
 		}
@@ -92,7 +91,7 @@ public class ChopCounter : Component, IDepositable, IUsable
 
 		if ( ingredient.ChopProgress >= 1f )
 		{
-			ingredient.SetState( IngredientState.Chopped );
+			ingredient.OnChopped();
 		}
 	}
 }

@@ -1,9 +1,8 @@
 {
-  "Name": "Burger",
+  "Name": "Hamburger",
   "RequiredIngredients": [
-    "Bun",
-    "Patty",
-    "Lettuce"
+    "resources/bun.ingr",
+    "resources/patty_cooked.ingr"
   ],
   "Result": null,
   "__references": [],

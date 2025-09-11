@@ -18,7 +18,7 @@ public class StorageCounter : Component, IDepositable
 
 	public bool CanAccept( IPickable pickable, Player player )
 	{
-		return StoredPickable == null;
+		return StoredPickable == null || (StoredPickable is IDepositable depositable && depositable.CanAccept( pickable, player ));
 	}
 
 	public bool CanWithdraw( Player player )
@@ -28,6 +28,12 @@ public class StorageCounter : Component, IDepositable
 
 	public void OnDeposit( IPickable pickable, Player player )
 	{
+		if ( StoredPickable != null && StoredPickable is IDepositable depositable )
+		{
+			depositable.OnDeposit( pickable, player );
+			return;
+		}
+
 		StoredPickable = pickable;
 
 		StoredPickable.GameObject.SetParent( ItemAnchorPoint ?? GameObject );

@@ -1,0 +1,11 @@
+{
+  "Name": "Cheese",
+  "Model": "models/cheese.vmdl",
+  "ChopFeatureEnabled": true,
+  "ChoppedResource": null,
+  "CookFeatureEnabled": false,
+  "CookedResource": null,
+  "BurnedResource": null,
+  "__references": [],
+  "__version": 0
+}

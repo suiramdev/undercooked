@@ -38,7 +38,7 @@ public class Stove : Component, IDepositable
 			return;
 		}
 
-		Ingredient? ingredient = utensil.Ingredient;
+		IngredientItem? ingredient = utensil.Ingredient;
 
 		// Check if the utensil has an ingredient and if it is in the correct state
 		// Also check if the utensil is not already burnt
@@ -59,11 +59,11 @@ public class Stove : Component, IDepositable
 		// Set ingredient state based on cook progress
 		if ( ingredient.CookProgress >= burnThreshold )
 		{
-			ingredient.SetState( IngredientState.Burned );
+			ingredient.OnBurned();
 		}
 		else if ( ingredient.CookProgress >= 1f )
 		{
-			ingredient.SetState( IngredientState.Cooked );
+			ingredient.OnCooked();
 		}
 	}
 
@@ -106,7 +106,6 @@ public class Stove : Component, IDepositable
 
 	public void OnWithdraw( IPickable pickable, Player player )
 	{
-		StoredPickable = null;
 	}
 
 	public IPickable? GetStoredPickable()

@@ -1,0 +1,11 @@
+{
+  "Name": "Bun",
+  "Model": "models/bun.vmdl",
+  "ChopFeatureEnabled": false,
+  "ChoppedResource": null,
+  "CookFeatureEnabled": false,
+  "CookedResource": null,
+  "BurnedResource": null,
+  "__references": [],
+  "__version": 0
+}

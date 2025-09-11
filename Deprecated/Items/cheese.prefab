@@ -56,9 +56,9 @@
           "go": "296e226f-4f3f-4637-a7db-b678213358e5",
           "component_type": "Rigidbody"
         },
-        "ServableState": "Raw",
+        "ServableState": "Chopped",
         "State": "Raw",
-        "Type": "Bun"
+        "Type": "Cheese"
       },
       {
         "__type": "Sandbox.ModelRenderer",

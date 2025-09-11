@@ -1,0 +1,11 @@
+{
+  "Name": "Patty raw",
+  "Model": "models/patty_raw.vmdl",
+  "ChopFeatureEnabled": false,
+  "ChoppedResource": null,
+  "CookFeatureEnabled": true,
+  "CookedResource": "resources/patty_cooked.ingr",
+  "BurnedResource": "resources/patty_burned.ingr",
+  "__references": [],
+  "__version": 0
+}

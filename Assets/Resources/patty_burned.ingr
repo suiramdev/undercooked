@@ -1,0 +1,11 @@
+{
+  "Name": "Patty burned",
+  "Model": "models/patty_burned.vmdl",
+  "ChopFeatureEnabled": false,
+  "ChoppedResource": null,
+  "CookFeatureEnabled": false,
+  "CookedResource": null,
+  "BurnedResource": null,
+  "__references": [],
+  "__version": 0
+}

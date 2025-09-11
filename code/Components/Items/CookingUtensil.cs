@@ -6,7 +6,7 @@ using Undercooked.Components.Interfaces;
 
 namespace Undercooked.Components;
 
-public class CookingUtensil : BaseUtensil
+public class CookingUtensil : Utensil
 {
 	[Property]
 	[Description( "The attachment object of the utensil" )]
@@ -15,7 +15,7 @@ public class CookingUtensil : BaseUtensil
 	[Property]
 	[Description( "The ingredients that the utensil contains" )]
 	[ReadOnly]
-	public Ingredient? Ingredient { get; set; }
+	public IngredientItem? Ingredient { get; set; }
 
 	[Property]
 	[Description( "The progress of the utensil's cooking" )]
@@ -24,7 +24,7 @@ public class CookingUtensil : BaseUtensil
 
 	public override bool CanAccept( IPickable pickable, Player player )
 	{
-		return pickable is Ingredient ingredient && ingredient.Cookable;
+		return pickable is IngredientItem ingredient && ingredient.Cookable;
 	}
 
 	public override bool CanWithdraw( Player player )
@@ -34,7 +34,7 @@ public class CookingUtensil : BaseUtensil
 
 	public override void OnDeposit( IPickable pickable, Player player )
 	{
-		if ( pickable is not Ingredient ingredient )
+		if ( pickable is not IngredientItem ingredient )
 		{
 			return;
 		}
@@ -65,4 +65,15 @@ public class CookingUtensil : BaseUtensil
 	{
 		return Ingredient;
 	}
+
+	public override bool CanPickup( Player player )
+	{
+		return true;
+	}
+
+	public override bool CanDrop( Player player )
+	{
+		return true;
+	}
+
 }

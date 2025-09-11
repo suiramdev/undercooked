@@ -1,21 +1,55 @@
 #nullable enable
 
-using Undercooked.Components.Enums;
 using Undercooked.Resources;
 
 namespace Undercooked.Components;
 
 public class RecipeManager : Component
 {
+	public static RecipeManager Instance { get; private set; } = null!;
+
 	[Property]
 	[Description( "The recipes that the player can make" )]
-	public List<Recipe> AvailableRecipes { get; set; } = [];
+	public List<RecipeResource> AvailableRecipes { get; set; } = [];
 
-	public Recipe? CheckRecipe( List<IngredientType> ingredients )
+	public RecipeManager()
+	{
+		Instance = this;
+	}
+
+	/// <summary>
+	/// Gets a list of recipes that include the given ingredients
+	/// </summary>
+	/// <param name="ingredients"></param>
+	/// <returns>A list of recipes that include the given ingredients</returns>
+	public List<RecipeResource> GetRecipesIncludingIngredients( List<IngredientResource> ingredients )
+	{
+		return AvailableRecipes.Where( recipe => ingredients.All( i => recipe.RequiredIngredients.Contains( i ) ) ).ToList();
+	}
+
+	/// <summary>
+	/// Checks if a new ingredient can be added to the existing ingredients to make a recipe
+	/// </summary>
+	/// <param name="newIngredient"></param>
+	/// <param name="existingIngredients"></param>
+	/// <returns>True if the new ingredient can be added to the existing ingredients to make a recipe, false otherwise</returns>
+	public bool CanAddIngredient( IngredientResource newIngredient, List<IngredientResource> existingIngredients )
+	{
+		var newIngredients = new List<IngredientResource>( existingIngredients ) { newIngredient };
+		return GetRecipesIncludingIngredients( newIngredients ).Count > 0;
+	}
+
+	/// <summary>
+	/// Gets a recipe that matches the given ingredients
+	/// </summary>
+	/// <param name="ingredients"></param>
+	/// <returns>The recipe that matches the given ingredients, or null if no match is found</returns>
+	public RecipeResource? GetRecipeFromIngredients( List<IngredientResource> ingredients )
 	{
 		foreach ( var recipe in AvailableRecipes )
 		{
-			if ( IsRecipeMatch( ingredients, recipe ) )
+			// Check if ingredients exactly match the recipe requirements (same count and all ingredients present)
+			if ( recipe.RequiredIngredients.Count == ingredients.Count && recipe.RequiredIngredients.All( i => ingredients.Contains( i ) ) )
 			{
 				return recipe;
 			}
@@ -23,17 +57,4 @@ public class RecipeManager : Component
 
 		return null;
 	}
-
-	public static bool IsRecipeMatch( List<IngredientType> ingredients, Recipe recipe )
-	{
-		// First check if the number of ingredients is the same
-		if ( recipe.RequiredIngredients.Count != ingredients.Count )
-		{
-			return false;
-		}
-
-		// Then check if all the ingredients are present
-		return recipe.RequiredIngredients.All( ingredients.Contains );
-	}
 }
-

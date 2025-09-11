@@ -6,12 +6,8 @@ using Undercooked.Components.Interfaces;
 
 namespace Undercooked.Components;
 
-public class Item : Component, IPickable
+public abstract class Item : Component, IPickable
 {
-	[Property]
-	[Description( "The name of the item" )]
-	public required string Name { get; set; }
-
 	[Property]
 	[Description( "The bone to attach the item to" )]
 	public string AttachmentBone { get; set; } = "hand_r";
@@ -43,13 +39,7 @@ public class Item : Component, IPickable
 	[RequireComponent]
 	public required Rigidbody Rigidbody { get; set; }
 
-	public bool CanPickup( Player player )
-	{
-		return true;
-	}
+	public abstract bool CanPickup( Player player );
 
-	public bool CanDrop( Player player )
-	{
-		return true;
-	}
+	public abstract bool CanDrop( Player player );
 }
