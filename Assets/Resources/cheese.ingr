@@ -2,7 +2,7 @@
   "Name": "Cheese",
   "Model": "models/cheese.vmdl",
   "ChopFeatureEnabled": true,
-  "ChoppedResource": null,
+  "ChoppedResource": "resources/cheese_slices.ingr",
   "CookFeatureEnabled": false,
   "CookedResource": null,
   "BurnedResource": null,

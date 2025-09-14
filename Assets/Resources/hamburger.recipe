@@ -4,7 +4,7 @@
     "resources/bun.ingr",
     "resources/patty_cooked.ingr"
   ],
-  "Result": null,
+  "Result": "prefabs/recipes/hamburger.prefab",
   "__references": [],
   "__version": 0
 }

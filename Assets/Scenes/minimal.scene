@@ -73,6 +73,7 @@
               "__guid": "b1784e65-e300-4382-88f0-4efd3496512c",
               "__enabled": true,
               "AvailableRecipes": [
+                "resources/cheese_slices.recipe",
                 "resources/hamburger.recipe"
               ],
               "OnComponentDestroy": null,
@@ -365,14 +366,25 @@
           "__enabled": true,
           "AttachmentBone": "hand_r",
           "AttachmentOffset": "0,0,0",
-          "AttachmentRotation": "0,0,0,1",
+          "AttachmentRotation": "0,0,0,0",
           "ChopFeatureEnabled": true,
           "ChopProgress": 0,
           "CookFeatureEnabled": false,
           "CookProgress": 0,
+          "Depositable": null,
           "HoldType": "HoldItem",
-          "ModelCollider": null,
-          "ModelRenderer": null,
+          "ModelCollider": {
+            "_type": "component",
+            "component_id": "161a4567-ef7b-42e3-93ec-4c89b2fed202",
+            "go": "849b8ed1-caee-41e0-bda5-dcc4c68975c6",
+            "component_type": "ModelCollider"
+          },
+          "ModelRenderer": {
+            "_type": "component",
+            "component_id": "51887b59-c6be-409a-9cd7-6b0b3ee8d879",
+            "go": "849b8ed1-caee-41e0-bda5-dcc4c68975c6",
+            "component_type": "ModelRenderer"
+          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -380,7 +392,12 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "Resource": "resources/cheese.ingr",
-          "Rigidbody": null
+          "Rigidbody": {
+            "_type": "component",
+            "component_id": "390df43c-30c7-41e1-b50f-c12c3ac726e3",
+            "go": "849b8ed1-caee-41e0-bda5-dcc4c68975c6",
+            "component_type": "Rigidbody"
+          }
         },
         {
           "__type": "Sandbox.ModelRenderer",
@@ -483,11 +500,12 @@
           "__enabled": true,
           "AttachmentBone": "hand_r",
           "AttachmentOffset": "0,0,0",
-          "AttachmentRotation": "0,0,0,1",
+          "AttachmentRotation": "0,0,0,0",
           "ChopFeatureEnabled": false,
           "ChopProgress": 0,
           "CookFeatureEnabled": true,
           "CookProgress": 0,
+          "Depositable": null,
           "HoldType": "HoldItem",
           "ModelCollider": {
             "_type": "component",
@@ -616,11 +634,12 @@
           "__enabled": true,
           "AttachmentBone": "hand_r",
           "AttachmentOffset": "0,0,0",
-          "AttachmentRotation": "0,0,0,1",
+          "AttachmentRotation": "0,0,0,0",
           "ChopFeatureEnabled": false,
           "ChopProgress": 0,
           "CookFeatureEnabled": false,
           "CookProgress": 0,
+          "Depositable": null,
           "HoldType": "HoldItem",
           "ModelCollider": {
             "_type": "component",
@@ -729,211 +748,6 @@
       "Children": []
     },
     {
-      "__guid": "16c3efae-6d24-4b0f-be85-473e86e95731",
-      "__version": 1,
-      "__Prefab": "prefabs/furnitures/storage counter.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Position",
-            "Value": "-23.18633,-52.59969,0"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "16c3efae-6d24-4b0f-be85-473e86e95731",
-        "f5e63b53-f719-4eac-af41-719dda1d022a": "ecde7d3b-a278-44d2-ae7b-942241154d37",
-        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "076450ea-a0cc-486e-b0c9-457c45168969",
-        "b20ae72c-cea1-40cb-94b8-b3792968c344": "33785c44-1a6b-4c88-a2b9-2daca6e11b6a",
-        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "0f4d91fe-753b-4728-a7d7-aa5a8bd0c499"
-      }
-    },
-    {
-      "__guid": "b84abb78-b9d6-43dc-b1a8-c9e8ff6d81c7",
-      "__version": 1,
-      "__Prefab": "prefabs/furnitures/storage counter.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [
-          {
-            "Id": {
-              "Type": "Component",
-              "IdValue": "5f792805-d25e-448a-9db6-5fe1533e9890"
-            },
-            "Parent": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "PreviousElement": null,
-            "ContainerProperty": "Components",
-            "IsContainerArray": true,
-            "Data": {
-              "__type": "Undercooked.Components.StorageCounter",
-              "__guid": "5f792805-d25e-448a-9db6-5fe1533e9890",
-              "__enabled": true,
-              "ItemAnchorPoint": {
-                "_type": "gameobject",
-                "go": "8cac4bd3-a1c5-40d7-87be-9a065ea63065"
-              },
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "StoredPickable": null
-            }
-          }
-        ],
-        "RemovedObjects": [
-          {
-            "Id": {
-              "Type": "Component",
-              "IdValue": "b20ae72c-cea1-40cb-94b8-b3792968c344"
-            }
-          }
-        ],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Name",
-            "Value": "storage counter (1)"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Position",
-            "Value": "-23.18633,-92.99731,0"
-          }
-        ],
-        "MovedObjects": [
-          {
-            "Id": {
-              "Type": "Component",
-              "IdValue": "f5e63b53-f719-4eac-af41-719dda1d022a"
-            },
-            "NewParent": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "NewContainerProperty": "Components",
-            "IsNewContainerArray": true,
-            "NewPreviousElement": {
-              "Type": "Component",
-              "IdValue": "5f792805-d25e-448a-9db6-5fe1533e9890"
-            }
-          }
-        ]
-      },
-      "__PrefabIdToInstanceId": {
-        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "b84abb78-b9d6-43dc-b1a8-c9e8ff6d81c7",
-        "f5e63b53-f719-4eac-af41-719dda1d022a": "9ba8d562-bba5-4071-a291-c720b7bbe74b",
-        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "a24f36c4-b142-48d7-af0e-0cf3ab287a68",
-        "b20ae72c-cea1-40cb-94b8-b3792968c344": "903c9031-3f45-4b2c-846d-5388a1808c30",
-        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "c0dd4805-06c7-49db-b76d-137cc766809d"
-      }
-    },
-    {
-      "__guid": "dd4edc72-62a7-4c27-b701-f970c8fe3d5a",
-      "__version": 1,
-      "__Prefab": "prefabs/furnitures/storage counter.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [
-          {
-            "Id": {
-              "Type": "Component",
-              "IdValue": "a1eb5839-a60c-43c6-b586-06d491d80585"
-            },
-            "Parent": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "PreviousElement": null,
-            "ContainerProperty": "Components",
-            "IsContainerArray": true,
-            "Data": {
-              "__type": "Undercooked.Components.StorageCounter",
-              "__guid": "a1eb5839-a60c-43c6-b586-06d491d80585",
-              "__enabled": true,
-              "ItemAnchorPoint": {
-                "_type": "gameobject",
-                "go": "8cac4bd3-a1c5-40d7-87be-9a065ea63065"
-              },
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "StoredPickable": null
-            }
-          }
-        ],
-        "RemovedObjects": [
-          {
-            "Id": {
-              "Type": "Component",
-              "IdValue": "b20ae72c-cea1-40cb-94b8-b3792968c344"
-            }
-          }
-        ],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Name",
-            "Value": "storage counter (2)"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Position",
-            "Value": "-23.18633,-134.2766,0"
-          }
-        ],
-        "MovedObjects": [
-          {
-            "Id": {
-              "Type": "Component",
-              "IdValue": "f5e63b53-f719-4eac-af41-719dda1d022a"
-            },
-            "NewParent": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "NewContainerProperty": "Components",
-            "IsNewContainerArray": true,
-            "NewPreviousElement": {
-              "Type": "Component",
-              "IdValue": "a1eb5839-a60c-43c6-b586-06d491d80585"
-            }
-          }
-        ]
-      },
-      "__PrefabIdToInstanceId": {
-        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "dd4edc72-62a7-4c27-b701-f970c8fe3d5a",
-        "f5e63b53-f719-4eac-af41-719dda1d022a": "139b0176-a4cb-47ea-85b6-160a03335d84",
-        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "e2473905-d412-4c71-b5b9-e87e33eb5d97",
-        "b20ae72c-cea1-40cb-94b8-b3792968c344": "1dee4bf4-d8e7-4cb8-ab86-4627ba4920a2",
-        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "2a56b794-22f0-463a-8643-345dba5a3b38"
-      }
-    },
-    {
       "__guid": "1739b568-05e3-45c4-bb4a-84f8117148bf",
       "__version": 1,
       "__Prefab": "prefabs/player.prefab",
@@ -956,8 +770,7 @@
         "22fc2a11-d36b-44e8-b056-6ebfb1f5d301": "1739b568-05e3-45c4-bb4a-84f8117148bf",
         "97f96dc7-d65c-41b1-970e-767e0e89a3e9": "ca9c5700-f44f-4351-bb3f-ab5e20fdd09f",
         "a79dc321-2bc6-4e9d-9d63-26865382fa87": "53d34924-19fa-46d9-be73-628389d874b8",
-        "2c5fb099-dda4-4557-85ad-29646b73632e": "7e3f00ba-7fbe-4ed8-9ba2-07c3029ca461",
-        "b486418d-4f22-47f8-8b87-b9714c7d42f6": "cef1df81-d53a-4712-87e9-55ce01c7c191",
+        "c2303ce2-8195-448d-83d4-be0111ad773f": "876702b7-79a2-4c63-82c5-0edff3f8d97f",
         "6358c100-be8d-4d08-bdc7-0a563864d7db": "ac0b6572-bb7c-4ce3-bfdb-c844d93ce5ef",
         "e602d163-82ac-452d-b27a-ec7baeb0549b": "351e441e-1298-4790-97b6-4040571dcb81",
         "f2dc5d31-972e-47b8-8bc5-e65ac605fa05": "8215ae8f-17bb-41f7-8326-0df6a9ee222d",
@@ -997,11 +810,163 @@
         "a706daaa-4117-4d43-b1c5-0f56950e50d7": "aa59a16d-1882-44b9-9d67-b3fa9114e362",
         "9ad6fc3c-c9f6-46c5-8c5b-340fc37b2131": "7ef9eac7-e1f2-425c-b1c0-cb631674a808",
         "87217889-94c1-4753-8a3e-e9a552e89cce": "35c39e26-545f-46b6-9d10-031d134bd77b",
-        "e10c6846-37ea-4a0d-a0ca-2537ec0a51f5": "17bb9c1c-2ed4-4fb7-b7e3-7f1c2fa77f72"
+        "e10c6846-37ea-4a0d-a0ca-2537ec0a51f5": "17bb9c1c-2ed4-4fb7-b7e3-7f1c2fa77f72",
+        "b32104f7-2401-4ea4-b89e-aa23fe8b0730": "30910f70-3281-49ae-9fe4-cd4ff412c534"
       }
     },
     {
-      "__guid": "64a9171a-ee3c-4108-861f-6ea915c7184c",
+      "__guid": "2b9f2020-d55f-431c-8785-dc8ac893366b",
+      "__version": 1,
+      "__Prefab": "prefabs/furnitures/cutting board station.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Position",
+            "Value": "0,39.3967,0"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "2b9f2020-d55f-431c-8785-dc8ac893366b",
+        "f5e63b53-f719-4eac-af41-719dda1d022a": "f26dd0f7-313b-4c89-8079-c15ea15ac52a",
+        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "6de3ed21-7494-4f62-83b3-eec4092b63e3",
+        "9ddc72be-7879-4c12-9ece-f850b482f8a2": "d59d14ae-5436-476c-8273-19aaf10e6719",
+        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "82a4dd5e-6e79-48c2-a6e8-21f9b139f011"
+      }
+    },
+    {
+      "__guid": "e2c42302-f634-4c04-8d3e-e6dd91f7a034",
+      "__version": 1,
+      "__Prefab": "prefabs/furnitures/counter station.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Position",
+            "Value": "0,0,0"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "e2c42302-f634-4c04-8d3e-e6dd91f7a034",
+        "f5e63b53-f719-4eac-af41-719dda1d022a": "2565c386-aeca-4236-8abf-3368622d99cb",
+        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "70e5d0f1-537b-4198-b946-2af42d02ebcd",
+        "8a312fcb-984d-43a5-a7db-7eed24bc1f10": "7350b97e-4faf-4fa9-ae37-61f3e68e77e8",
+        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "6a99258d-e21d-4986-ab3b-059341d06b83"
+      }
+    },
+    {
+      "__guid": "af9e485d-416a-4346-9da1-5add0770ea04",
+      "__version": 1,
+      "__Prefab": "prefabs/furnitures/counter station.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Name",
+            "Value": "counter station (1)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Position",
+            "Value": "0,-39.93866,0"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "af9e485d-416a-4346-9da1-5add0770ea04",
+        "f5e63b53-f719-4eac-af41-719dda1d022a": "e9a88663-a378-4775-9096-4d5e9ca5f290",
+        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "fe7e75b4-0545-4a9e-a143-a1ad82babde6",
+        "8a312fcb-984d-43a5-a7db-7eed24bc1f10": "8b286b55-2fa5-4cd7-8f57-8247eb1a1b6d",
+        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "57a02447-1072-4670-981b-43ffc60a34d7"
+      }
+    },
+    {
+      "__guid": "fcc83ce7-1afd-4ddb-872c-24115305d4aa",
+      "__version": 1,
+      "__Prefab": "prefabs/furnitures/counter station.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Name",
+            "Value": "counter station (2)"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Position",
+            "Value": "0,-79.75552,0"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "fcc83ce7-1afd-4ddb-872c-24115305d4aa",
+        "f5e63b53-f719-4eac-af41-719dda1d022a": "2845cd6f-738d-44fb-aaa7-120ecc4472d2",
+        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "c2e7bbce-e4da-48b7-b812-6e6cfc52922a",
+        "8a312fcb-984d-43a5-a7db-7eed24bc1f10": "e5b5838d-d9a9-46db-974f-d236ce2159c3",
+        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "e0e7e2e8-1877-4922-81fa-4d0954e47118"
+      }
+    },
+    {
+      "__guid": "e37f8508-1dcc-4216-923f-91fa88831df4",
+      "__version": 1,
+      "__Prefab": "prefabs/furnitures/stove station.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Position",
+            "Value": "0,-119.886,0"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "e37f8508-1dcc-4216-923f-91fa88831df4",
+        "f5e63b53-f719-4eac-af41-719dda1d022a": "99f08901-3ba7-4c01-9d49-7e75152365ba",
+        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "31449a00-1ec8-4662-9adb-80015281aa8b",
+        "12e79558-d7cf-48c2-8503-5e47be544c90": "aab3f236-c3f5-4602-ac85-3d93f5d1f283",
+        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "53d8c528-7300-483f-93b8-e1d90be163c5"
+      }
+    },
+    {
+      "__guid": "383cdf23-58ab-428e-9bcf-a1e063dd17ea",
       "__version": 1,
       "__Prefab": "prefabs/frying pan.prefab",
       "__PrefabInstancePatch": {
@@ -1014,92 +979,47 @@
               "IdValue": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26"
             },
             "Property": "Position",
-            "Value": "-148.4341,0,0"
+            "Value": "-118.3264,-30.09424,-0.007865191"
           }
         ],
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26": "64a9171a-ee3c-4108-861f-6ea915c7184c",
-        "170c7751-3db5-481e-99aa-92931d9be4f5": "1ffc01b0-c977-45f9-af15-bebc623d2ed1",
-        "df190c73-07ce-42f8-a5c3-2fe94b5b9aed": "fe943e05-17fe-4426-8a9b-6b3bac65167e",
-        "eb907826-1d2b-45c7-a949-95e6a84d8394": "21d0cfd6-9595-4b91-b7bf-63203f350298",
-        "de6a50ed-93f5-4c10-951b-fffd5df017e3": "aa8ea53a-b879-436d-808e-deafc4de3445",
-        "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d": "898ff64a-5be3-4a33-9b92-1dc894e5b587",
-        "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72": "6e6c0e3b-08b5-4add-a240-938c78a8edcf"
+        "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26": "383cdf23-58ab-428e-9bcf-a1e063dd17ea",
+        "df190c73-07ce-42f8-a5c3-2fe94b5b9aed": "18b5e11e-0f14-4a6a-801d-0c7ccd0a8ce7",
+        "eb907826-1d2b-45c7-a949-95e6a84d8394": "b263ccc0-d661-428e-9f2e-c28cf1a62db1",
+        "de6a50ed-93f5-4c10-951b-fffd5df017e3": "13a38496-c116-42f8-bae0-406f67e00259",
+        "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d": "cf4db782-bd7f-4773-88df-adc1c160d3bf",
+        "c7f0880a-d37d-4866-8d82-de05612730c8": "d2029173-3816-4452-99d9-24a2dde0dbbd",
+        "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72": "07611294-e102-473f-8852-376f56f62b17"
       }
     },
     {
-      "__guid": "31703d4a-234a-43fb-bb46-aead09e34d3b",
-      "__version": 1,
-      "__Prefab": "prefabs/furnitures/chop counter.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Position",
-            "Value": "-23.49843,133.9944,0"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "31703d4a-234a-43fb-bb46-aead09e34d3b",
-        "076d140e-bea3-4e26-bc64-55fe0dfb5d6e": "e732f7e2-3f6c-458d-bb26-1bb5f5589ebf",
-        "f5e63b53-f719-4eac-af41-719dda1d022a": "f46d735b-fdd1-4db4-8d24-499b587ec4b5",
-        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "f54e2a8a-7c84-446b-b3c7-9de3a57db9c3",
-        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "e49a3c78-f5ec-4478-9583-0b1585db2443"
-      }
-    },
-    {
-      "__guid": "47a2fde5-e288-4475-837d-172b0f156967",
-      "__version": 1,
-      "__Prefab": "prefabs/furnitures/stove.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Position",
-            "Value": "-126.0445,110.0582,0"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "47a2fde5-e288-4475-837d-172b0f156967",
-        "9f0604b6-8486-44b7-bfc8-1bc5c1b79bd7": "8b169ef1-499a-44f3-8d82-7bd0aba7a12f",
-        "f5e63b53-f719-4eac-af41-719dda1d022a": "e039c27a-4648-4962-bcc3-db1ea4fe9cfc",
-        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "3044fb35-e09f-4b2d-9daf-96f7a820fce0",
-        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "9366c6be-1a05-485f-8161-b7e37877fc95"
-      }
-    },
-    {
-      "__guid": "3900dadc-b8e5-46b9-b24e-d0646f5e633d",
+      "__guid": "25c9911c-2274-44e9-9148-55e708975093",
       "__version": 1,
       "__Prefab": "prefabs/plate.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
         "RemovedObjects": [],
-        "PropertyOverrides": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "40104537-eecd-40a7-91cc-b51ba8d977ee"
+            },
+            "Property": "Position",
+            "Value": "-111.3084,36.21915,-0.1585433"
+          }
+        ],
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
-        "40104537-eecd-40a7-91cc-b51ba8d977ee": "3900dadc-b8e5-46b9-b24e-d0646f5e633d",
-        "3928b24c-3f8a-41a3-9ca2-5bd31d5c44ea": "1a0f15fe-f5a5-4d61-a1ab-1e734ea62120",
-        "72825219-71f1-4ba1-a907-d81bf4f7f416": "a562c9c2-9b78-4bd2-9f6b-dfa7843e24ba",
-        "15dec150-e11d-4340-9be4-6239fe76c00a": "cc92ac8a-1872-4fb7-b6c0-e8e813113012",
-        "a15bc636-03b6-4767-a1cf-3bb2e52fba7d": "5308670c-52ef-4574-8a6a-179741bc4834",
-        "7e5782d7-3e46-4f1a-8ed3-c6675b31d259": "872fe47e-12f7-48ff-89e7-bb60e69caff1"
+        "40104537-eecd-40a7-91cc-b51ba8d977ee": "25c9911c-2274-44e9-9148-55e708975093",
+        "72825219-71f1-4ba1-a907-d81bf4f7f416": "e4e2f8c2-ac9f-49b6-b9d0-f1ff3c208631",
+        "15dec150-e11d-4340-9be4-6239fe76c00a": "f8a1c1a0-5860-4143-a586-17252a4f582c",
+        "a15bc636-03b6-4767-a1cf-3bb2e52fba7d": "b87c5c89-93f2-4cbb-a912-e0f57960700a",
+        "d014b7e0-65d7-4de0-8c4e-5675e8a405e3": "9a584515-f44a-429e-be28-7db6a8f4ebe5",
+        "7e5782d7-3e46-4f1a-8ed3-c6675b31d259": "2d530f8a-e83c-4e51-b4a3-15ea6625a58d"
       }
     }
   ],

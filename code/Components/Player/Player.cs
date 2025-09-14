@@ -1,4 +1,4 @@
-using Sandbox;
+#nullable enable
 
 namespace Undercooked.Components;
 
@@ -8,15 +8,15 @@ public class Player : Component
 	[Property]
 	[Group( "Components" )]
 	[RequireComponent]
-	public PlayerController PlayerController { get; set; }
+	public required PlayerController PlayerController { get; set; }
 
 	[Property]
 	[Group( "Components" )]
 	[RequireComponent]
-	public PlayerUse PlayerUse { get; set; }
+	public required PlayerInteraction PlayerInteraction { get; set; }
 
 	[Property]
 	[Group( "Components" )]
 	[RequireComponent]
-	public PlayerPickup PlayerPickup { get; set; }
+	public required PlayerSlot PlayerSlot { get; set; }
 }

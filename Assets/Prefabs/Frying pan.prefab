@@ -15,45 +15,6 @@
     "OwnerTransfer": 1,
     "Components": [
       {
-        "__type": "Undercooked.Components.CookingUtensil",
-        "__guid": "170c7751-3db5-481e-99aa-92931d9be4f5",
-        "__enabled": true,
-        "AttachmentBone": "hand_r",
-        "AttachmentOffset": "0,0,0",
-        "AttachmentRotation": "0,0,0,0",
-        "CookProgress": 0,
-        "HoldType": "HoldItem",
-        "Ingredient": null,
-        "ItemAnchorPoint": {
-          "_type": "gameobject",
-          "go": "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72"
-        },
-        "ModelCollider": {
-          "_type": "component",
-          "component_id": "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d",
-          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
-          "component_type": "ModelCollider"
-        },
-        "ModelRenderer": {
-          "_type": "component",
-          "component_id": "df190c73-07ce-42f8-a5c3-2fe94b5b9aed",
-          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
-          "component_type": "ModelRenderer"
-        },
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Rigidbody": {
-          "_type": "component",
-          "component_id": "de6a50ed-93f5-4c10-951b-fffd5df017e3",
-          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
-          "component_type": "Rigidbody"
-        }
-      },
-      {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "df190c73-07ce-42f8-a5c3-2fe94b5b9aed",
         "__enabled": true,
@@ -153,6 +114,45 @@
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Undercooked.Components.FryingPanItem",
+        "__guid": "c7f0880a-d37d-4866-8d82-de05612730c8",
+        "__enabled": true,
+        "AttachmentBone": "hand_r",
+        "AttachmentOffset": "0,0,0",
+        "AttachmentRotation": "0,0,0,0",
+        "CookProgress": 0,
+        "HoldType": "HoldItem",
+        "Ingredient": null,
+        "ModelCollider": {
+          "_type": "component",
+          "component_id": "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d",
+          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
+          "component_type": "ModelCollider"
+        },
+        "ModelRenderer": {
+          "_type": "component",
+          "component_id": "df190c73-07ce-42f8-a5c3-2fe94b5b9aed",
+          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
+          "component_type": "ModelRenderer"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Rigidbody": {
+          "_type": "component",
+          "component_id": "de6a50ed-93f5-4c10-951b-fffd5df017e3",
+          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
+          "component_type": "Rigidbody"
+        },
+        "Socket": {
+          "_type": "gameobject",
+          "go": "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72"
+        }
       }
     ],
     "Children": [
@@ -160,7 +160,7 @@
         "__guid": "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72",
         "__version": 1,
         "Flags": 0,
-        "Name": "Item Anchor Point",
+        "Name": "Socket",
         "Position": "0,0,0.5",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",

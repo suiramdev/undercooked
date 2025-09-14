@@ -9,16 +9,26 @@ public interface IPickable
 {
 	GameObject GameObject { get; }
 
+	// The bone to attach the pickable to
 	string AttachmentBone { get; }
 
+	// The hold type to use when picking up the pickable
 	CitizenAnimationHelper.HoldTypes HoldType { get; }
 
+	// The offset to use when picking up the pickable
 	Vector3 AttachmentOffset { get; }
 
+	// The rotation to use when picking up the pickable
 	Rotation AttachmentRotation { get; }
 
-	bool CanPickup( Player player );
+	bool CanBePickedUp( Player by );
 
-	bool CanDrop( Player player );
+	void OnPickedUp( Player by );
+
+	bool CanBeDroppedOn( IDepositable surface, Player by );
+
+	void OnDroppedOn( IDepositable surface, Player by );
+
+	void OnWorldDropped( Vector3 position, Rotation rotation );
 }
 

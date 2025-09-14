@@ -7,14 +7,11 @@ namespace Undercooked.Components.Interfaces;
 /// </summary>
 public interface IDepositable
 {
-	bool CanAccept( IPickable pickable, Player player );
+	bool Empty { get; }
 
-	bool CanWithdraw( Player player );
+	bool TryDeposit( IPickable pickable, Player by );
 
-	void OnDeposit( IPickable pickable, Player player );
+	IPickable? GetPickable();
 
-	void OnWithdraw( IPickable pickable, Player player );
-
-	IPickable? GetStoredPickable();
+	IPickable? TakePickable();
 }
-

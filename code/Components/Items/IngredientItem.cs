@@ -1,21 +1,22 @@
 #nullable enable
 
 using System;
-using Undercooked.Components.Enums;
+using Undercooked.Components.Interfaces;
 using Undercooked.Resources;
 
 namespace Undercooked.Components;
 
-public class IngredientItem : Item
+public class IngredientItem : ItemBase
 {
 	[Property]
 	[Description( "The resource of the ingredient" )]
-	public required IngredientResource Resource { get; set; }
+	[Change]
+	public IngredientResource? Resource { get; set; } = null;
 
 	[Property]
 	[FeatureEnabled( "Chop" )]
 	[ReadOnly]
-	public bool ChopFeatureEnabled => Resource.ChopFeatureEnabled;
+	public bool ChopFeatureEnabled => Resource?.ChopFeatureEnabled ?? false;
 
 	[Property]
 	[Feature( "Chop" )]
@@ -27,7 +28,7 @@ public class IngredientItem : Item
 	[Property]
 	[FeatureEnabled( "Cook" )]
 	[ReadOnly]
-	public bool CookFeatureEnabled => Resource.CookFeatureEnabled;
+	public bool CookFeatureEnabled => Resource?.CookFeatureEnabled ?? false;
 
 	[Property]
 	[Feature( "Cook" )]
@@ -35,50 +36,46 @@ public class IngredientItem : Item
 	[ReadOnly]
 	public float CookProgress { get; set; } = 0f;
 
-	public bool Choppable => Resource.ChopFeatureEnabled && ChopProgress < 1f;
+	public bool Choppable => Resource?.ChopFeatureEnabled ?? false && ChopProgress < 1f;
 
-	public bool Cookable => Resource.CookFeatureEnabled && CookProgress < 1f;
-
+	public bool Cookable => Resource?.CookFeatureEnabled ?? false && CookProgress < 1f;
 
 	protected override void OnAwake()
 	{
 		base.OnAwake();
-		Reset( Resource );
 	}
 
-	public void Reset( IngredientResource? resource = null )
+	public override bool CanBePickedUp( Player by )
 	{
-		Resource = resource ?? Resource;
-		GameObject.Name = Resource.Name;
-		ModelRenderer.Model = Resource.Model;
-		ModelCollider.Model = Resource.Model;
-		ChopProgress = 0f;
-		CookProgress = 0f;
+		return base.CanBePickedUp( by ) && Depositable is not FryingPanItem;
+	}
+
+	public override bool CanBeDroppedOn( IDepositable depositable, Player by )
+	{
+		return true;
 	}
 
 	public void OnChopped()
 	{
-		Reset( Resource.ChoppedResource );
+		Resource = Resource?.ChoppedResource;
 	}
 
 	public void OnBurned()
 	{
-		Reset( Resource.BurnedResource );
+		Resource = Resource?.BurnedResource;
 	}
 
 	public void OnCooked()
 	{
-		Reset( Resource.CookedResource );
+		Resource = Resource?.CookedResource;
 	}
 
-
-	public override bool CanPickup( Player player )
+	protected virtual void OnResourceChanged( IngredientResource? oldResource, IngredientResource? newResource )
 	{
-		return true;
-	}
-
-	public override bool CanDrop( Player player )
-	{
-		return true;
+		GameObject.Name = newResource?.Name ?? "Ingredient";
+		ModelRenderer.Model = newResource?.Model;
+		ModelCollider.Model = newResource?.Model;
+		ChopProgress = 0f;
+		CookProgress = 0f;
 	}
 }

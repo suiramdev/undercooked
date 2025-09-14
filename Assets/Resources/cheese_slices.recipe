@@ -1,0 +1,9 @@
+{
+  "Name": "Cheese slices",
+  "RequiredIngredients": [
+    "resources/cheese_slices.ingr"
+  ],
+  "Result": "prefabs/recipes/cheese slices.prefab",
+  "__references": [],
+  "__version": 0
+}
