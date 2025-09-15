@@ -1,6 +1,7 @@
 #nullable enable
 
 using Undercooked.Components.Interfaces;
+using Undercooked.Components.Enums;
 
 namespace Undercooked.Components;
 
@@ -28,18 +29,36 @@ public class PlayerInteraction : Component
 	[RequireComponent]
 	public required PlayerSlot PlayerSlot { get; set; }
 
+	[Property]
+	[ReadOnly]
+	public IInteractable? InteractableTarget { get; set; }
+
 	protected override void OnFixedUpdate()
 	{
 		base.OnFixedUpdate();
 
-		if ( Input.Pressed( "drop" ) )
+		InteractableTarget = GetInteractableTarget();
+
+		// Primary interaction ("drop" input)
+		if (
+			(InteractableTarget is null && Input.Pressed( "drop" )) ||
+			(InteractableTarget?.InteractionType == InteractionType.Press && Input.Pressed( "drop" )) ||
+			(InteractableTarget?.InteractionType == InteractionType.Hold && Input.Down( "drop" )) ||
+			(InteractableTarget?.InteractionType == InteractionType.Release && Input.Released( "drop" ))
+		)
 		{
-			TryInteractPrimary();
+			InteractPrimary();
 		}
 
-		if ( Input.Pressed( "use" ) )
+		// Alternate interaction ("use" input)
+		if (
+			(InteractableTarget is null && Input.Pressed( "use" )) ||
+			(InteractableTarget?.AlternateInteractionType == InteractionType.Press && Input.Pressed( "use" )) ||
+			(InteractableTarget?.AlternateInteractionType == InteractionType.Hold && Input.Down( "use" )) ||
+			(InteractableTarget?.AlternateInteractionType == InteractionType.Release && Input.Released( "use" ))
+		)
 		{
-			TryInteractAlternate();
+			InteractAlternate();
 		}
 	}
 
@@ -51,6 +70,16 @@ public class PlayerInteraction : Component
 
 		Gizmo.Draw.Color = GizmoColor;
 		Gizmo.Draw.LineSphere( Vector3.Zero, InteractRadius );
+
+		if ( InteractableTarget is not null )
+		{
+			var transform = new Transform( InteractableTarget.GameObject.WorldPosition, InteractableTarget.GameObject.WorldRotation, InteractableTarget.GameObject.WorldScale );
+			using ( Gizmo.Scope( "Interactable Target", transform ) )
+			{
+				Gizmo.Transform = transform;
+				Gizmo.Draw.Text( InteractableTarget.GameObject.Name, new Transform( Vector3.Zero, Rotation.Identity, Vector3.One ) );
+			}
+		}
 	}
 
 	private IInteractable? GetInteractableTarget()
@@ -83,24 +112,20 @@ public class PlayerInteraction : Component
 			.FirstOrDefault();
 	}
 
-	protected bool TryInteractPrimary()
+	protected void InteractPrimary()
 	{
-		var target = GetInteractableTarget();
-		if ( target is null || (target is ItemBase && !PlayerSlot.Empty) )
+		if ( !PlayerSlot.Empty && (InteractableTarget is null || InteractableTarget is ItemBase) )
 		{
 			// Attempt to drop the currently held item if no interactable target is found
 			PlayerSlot.TryDrop();
-			return false;
+			return;
 		}
 
-		return target.TryInteract( Player );
+		InteractableTarget?.TryInteract( Player );
 	}
 
-	protected bool TryInteractAlternate()
+	protected void InteractAlternate()
 	{
-		var target = GetInteractableTarget();
-		if ( target is null ) return false;
-
-		return target.TryAlternateInteract( Player );
+		InteractableTarget?.TryAlternateInteract( Player );
 	}
 }

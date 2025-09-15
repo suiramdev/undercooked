@@ -1,9 +1,9 @@
 namespace Undercooked.Components.Enums;
 
 /// <summary>
-/// Represents the type of use of an object
+/// Represents the type of interaction of an object
 /// </summary>
-public enum UseType
+public enum InteractionType
 {
 	Press,
 	Hold,

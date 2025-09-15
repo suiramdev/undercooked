@@ -1,6 +1,8 @@
 
 #nullable enable
 
+using Undercooked.Components.Enums;
+
 namespace Undercooked.Components.Interfaces;
 
 /// <summary>
@@ -9,6 +11,10 @@ namespace Undercooked.Components.Interfaces;
 public interface IInteractable
 {
 	GameObject GameObject { get; }
+
+	InteractionType InteractionType { get; }
+
+	InteractionType AlternateInteractionType { get; }
 
 	bool TryInteract( Player by );
 

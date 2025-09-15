@@ -2,11 +2,20 @@
 
 using Sandbox.Citizen;
 using Undercooked.Components.Interfaces;
+using Undercooked.Components.Enums;
 
 namespace Undercooked.Components;
 
 public abstract class ItemBase : Component, IPickable, IInteractable
 {
+	[Property]
+	[Description( "The type of interaction for the item" )]
+	public virtual InteractionType InteractionType { get; set; } = InteractionType.Press;
+
+	[Property]
+	[Description( "The type of interaction for the item" )]
+	public virtual InteractionType AlternateInteractionType { get; set; } = InteractionType.Press;
+
 	[Property]
 	[Description( "The bone to attach the item to" )]
 	public string AttachmentBone { get; set; } = "hand_r";
@@ -72,18 +81,15 @@ public abstract class ItemBase : Component, IPickable, IInteractable
 	public virtual void OnPickedUp( Player player )
 	{
 		Depositable = player.PlayerInteraction.PlayerSlot;
-		Log.Info( $"Picking up pickable {this} on {Depositable}" );
 	}
 
 	public virtual void OnDroppedOn( IDepositable depositable, Player player )
 	{
 		Depositable = depositable;
-		Log.Info( $"Dropping pickable {this} on {depositable}" );
 	}
 
 	public virtual void OnWorldDropped( Vector3 position, Rotation rotation )
 	{
 		Depositable = null;
-		Log.Info( $"Dropping pickable {this}" );
 	}
 }

@@ -1,8 +1,8 @@
 #nullable enable
 
 using System;
-using Undercooked.Components.Enums;
 using Undercooked.Components.Interfaces;
+using Undercooked.Components.Enums;
 
 namespace Undercooked.Components;
 
@@ -10,7 +10,7 @@ public class CuttingBoardStation : StationBase<IPickable>
 {
 	[Property]
 	[Description( "The type of use for the chop counter" )]
-	public UseType UseType { get; set; } = UseType.Hold;
+	public override InteractionType InteractionType { get; set; } = InteractionType.Hold;
 
 	[Property]
 	[Description( "How fast the chopping progress increases per second" )]

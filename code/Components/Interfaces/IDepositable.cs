@@ -7,6 +7,8 @@ namespace Undercooked.Components.Interfaces;
 /// </summary>
 public interface IDepositable
 {
+	GameObject GameObject { get; }
+
 	bool Empty { get; }
 
 	bool TryDeposit( IPickable pickable, Player by );

@@ -1,12 +1,21 @@
 #nullable enable
 
 using Undercooked.Components.Interfaces;
+using Undercooked.Components.Enums;
 
 namespace Undercooked.Components;
 
 [Icon( "inventory" )]
 public abstract class StationBase<T> : Component, IDepositable, IInteractable where T : IPickable
 {
+	[Property]
+	[Description( "The type of interaction for the station" )]
+	public virtual InteractionType InteractionType { get; set; } = InteractionType.Press;
+
+	[Property]
+	[Description( "The type of interaction for the station" )]
+	public virtual InteractionType AlternateInteractionType { get; set; } = InteractionType.Press;
+
 	[Property]
 	[Description( "The socket to deposit the pickable into" )]
 	public required GameObject Socket { get; set; }
