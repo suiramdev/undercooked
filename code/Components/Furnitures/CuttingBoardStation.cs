@@ -10,7 +10,7 @@ public class CuttingBoardStation : StationBase<IPickable>
 {
 	[Property]
 	[Description( "The type of use for the chop counter" )]
-	public override InteractionType InteractionType { get; set; } = InteractionType.Hold;
+	public override InteractionType AlternateInteractionType { get; set; } = InteractionType.Hold;
 
 	[Property]
 	[Description( "How fast the chopping progress increases per second" )]

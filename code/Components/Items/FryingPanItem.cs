@@ -4,7 +4,7 @@ using Undercooked.Components.Interfaces;
 
 namespace Undercooked.Components;
 
-public class FryingPanItem : ItemBase, IDepositable
+public class FryingPanItem : ItemBase, IDepositable, ITransferable
 {
 	[Property]
 	[Description( "The attachment object of the utensil" )]
@@ -36,6 +36,11 @@ public class FryingPanItem : ItemBase, IDepositable
 		pickable.OnDroppedOn( this, by );
 
 		return true;
+	}
+
+	public bool TryTransfer( IDepositable depositable, Player by )
+	{
+		return Ingredient is not null && depositable.TryDeposit( Ingredient, by );
 	}
 
 	public override bool CanBePickedUp( Player by )

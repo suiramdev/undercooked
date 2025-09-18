@@ -30,6 +30,8 @@ public abstract class StationBase<T> : Component, IDepositable, IInteractable wh
 	public virtual bool TryInteract( Player player )
 	{
 		var held = player.PlayerSlot.GetPickable();
+
+		// Attempt to retrieve the stored item from the station
 		if ( held is null )
 		{
 			var pickable = TakePickable();
@@ -38,8 +40,17 @@ public abstract class StationBase<T> : Component, IDepositable, IInteractable wh
 			return player.PlayerSlot.TryDeposit( pickable, player );
 		}
 
+		// Attempt to deposit the held item into the pickable currently stored on the station (if any)
 		if ( StoredPickable is not null && StoredPickable is IDepositable depositable )
 		{
+			// Special case: If the held item is a transferable, allow transferring its contents to the stored pickable
+			// e.g. If the player is holding a pan, they can transfer the contents to the pickable currently on the station
+			if ( held is ITransferable transferable && !transferable.Empty )
+			{
+				return transferable.TryTransfer( depositable, player );
+			}
+
+			// Attempt to deposit the held item into the pickable currently stored on the station
 			if ( depositable.TryDeposit( held, player ) )
 			{
 				player.PlayerSlot.TakePickable();
@@ -47,6 +58,7 @@ public abstract class StationBase<T> : Component, IDepositable, IInteractable wh
 			}
 		}
 
+		// Attempt to deposit the held item into the station
 		if ( TryDeposit( held, player ) )
 		{
 			player.PlayerSlot.TakePickable();
