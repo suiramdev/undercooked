@@ -74,7 +74,10 @@
               "__enabled": true,
               "AvailableRecipes": [
                 "resources/cheese_slices.recipe",
-                "resources/hamburger.recipe"
+                "resources/bun.recipe",
+                "resources/patty_cooked.recipe",
+                "resources/hamburger.recipe",
+                "resources/cheeseburger.recipe"
               ],
               "OnComponentDestroy": null,
               "OnComponentDisabled": null,
@@ -364,6 +367,7 @@
           "__type": "Undercooked.Components.IngredientItem",
           "__guid": "3bbeacb4-a716-469d-8d2d-f8a5cb90b7c7",
           "__enabled": true,
+          "AlternateInteractionType": "Press",
           "AttachmentBone": "hand_r",
           "AttachmentOffset": "0,0,0",
           "AttachmentRotation": "0,0,0,0",
@@ -373,6 +377,7 @@
           "CookProgress": 0,
           "Depositable": null,
           "HoldType": "HoldItem",
+          "InteractionType": "Press",
           "ModelCollider": {
             "_type": "component",
             "component_id": "161a4567-ef7b-42e3-93ec-4c89b2fed202",
@@ -498,6 +503,7 @@
           "__type": "Undercooked.Components.IngredientItem",
           "__guid": "0e73e010-c7bc-465d-9965-106ea5ab8e32",
           "__enabled": true,
+          "AlternateInteractionType": "Press",
           "AttachmentBone": "hand_r",
           "AttachmentOffset": "0,0,0",
           "AttachmentRotation": "0,0,0,0",
@@ -507,6 +513,7 @@
           "CookProgress": 0,
           "Depositable": null,
           "HoldType": "HoldItem",
+          "InteractionType": "Press",
           "ModelCollider": {
             "_type": "component",
             "component_id": "d73a62bd-da81-449d-86ee-ba5c94835e70",
@@ -632,6 +639,7 @@
           "__type": "Undercooked.Components.IngredientItem",
           "__guid": "91f076a7-b72e-43ce-828a-b0be88ec0cf4",
           "__enabled": true,
+          "AlternateInteractionType": "Press",
           "AttachmentBone": "hand_r",
           "AttachmentOffset": "0,0,0",
           "AttachmentRotation": "0,0,0,0",
@@ -641,6 +649,7 @@
           "CookProgress": 0,
           "Depositable": null,
           "HoldType": "HoldItem",
+          "InteractionType": "Press",
           "ModelCollider": {
             "_type": "component",
             "component_id": "bc975e6a-c800-46b7-9043-59c1ada7191d",
@@ -829,6 +838,22 @@
             },
             "Property": "Position",
             "Value": "0,39.3967,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "9ddc72be-7879-4c12-9ece-f850b482f8a2"
+            },
+            "Property": "AlternateInteractionType",
+            "Value": "Hold"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "9ddc72be-7879-4c12-9ece-f850b482f8a2"
+            },
+            "Property": "InteractionType",
+            "Value": "Press"
           }
         ],
         "MovedObjects": []

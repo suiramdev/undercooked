@@ -1,0 +1,9 @@
+{
+  "Name": "Bun",
+  "RequiredIngredients": [
+    "resources/bun.ingr"
+  ],
+  "Result": "prefabs/recipes/bun.prefab",
+  "__references": [],
+  "__version": 0
+}

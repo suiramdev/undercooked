@@ -3,7 +3,7 @@
     "__guid": "4fb9b21f-7ee7-4d58-8bb1-703e193db097",
     "__version": 1,
     "Flags": 0,
-    "Name": "hamburger",
+    "Name": "cheeseburger",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -16,7 +16,7 @@
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
-        "__guid": "7a39bbdd-a43c-4637-9e8c-a7b50f971006",
+        "__guid": "c708e165-3107-4d2c-83b4-8aef3c3e2815",
         "__enabled": true,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
@@ -59,7 +59,7 @@
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
-            "__guid": "2c555ea9-1286-45a0-b44e-abe2c0fdabe0",
+            "__guid": "593fd202-831c-43af-be7a-4e47c38d1a68",
             "__enabled": true,
             "BodyGroups": 18446744073709551615,
             "CreateAttachments": false,
@@ -68,6 +68,50 @@
             "MaterialOverride": null,
             "Materials": null,
             "Model": "models/patty_cooked.vmdl",
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": []
+      },
+      {
+        "__guid": "3d13fefe-d6c7-4d08-8b3a-eb11355c5554",
+        "__version": 1,
+        "Flags": 0,
+        "Name": "cheese_slices",
+        "Position": "0,0,0",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "NetworkOrphaned": 0,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "36ad0011-8dfb-42f3-bbd1-eca34c950a82",
+            "__enabled": true,
+            "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
+            "LodOverride": null,
+            "MaterialGroup": null,
+            "MaterialOverride": null,
+            "Materials": null,
+            "Model": "models/cheese_slices.vmdl",
             "OnComponentDestroy": null,
             "OnComponentDisabled": null,
             "OnComponentEnabled": null,

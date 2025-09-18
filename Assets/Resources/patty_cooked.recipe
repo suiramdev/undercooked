@@ -1,0 +1,9 @@
+{
+  "Name": "Patty cooked",
+  "RequiredIngredients": [
+    "resources/patty_cooked.ingr"
+  ],
+  "Result": "prefabs/recipes/bun.prefab",
+  "__references": [],
+  "__version": 0
+}

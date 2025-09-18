@@ -3,7 +3,7 @@
     "__guid": "4fb9b21f-7ee7-4d58-8bb1-703e193db097",
     "__version": 1,
     "Flags": 0,
-    "Name": "hamburger",
+    "Name": "bun",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -16,7 +16,7 @@
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
-        "__guid": "7a39bbdd-a43c-4637-9e8c-a7b50f971006",
+        "__guid": "e940f5cf-73b4-4698-b8dc-f8e9b29d6487",
         "__enabled": true,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
@@ -41,52 +41,7 @@
         "Tint": "1,1,1,1"
       }
     ],
-    "Children": [
-      {
-        "__guid": "69f84b45-2d32-4580-ab13-705c4be8b5f5",
-        "__version": 1,
-        "Flags": 0,
-        "Name": "patty_cooked",
-        "Position": "0,0,-1.12492",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "OwnerTransfer": 1,
-        "Components": [
-          {
-            "__type": "Sandbox.ModelRenderer",
-            "__guid": "2c555ea9-1286-45a0-b44e-abe2c0fdabe0",
-            "__enabled": true,
-            "BodyGroups": 18446744073709551615,
-            "CreateAttachments": false,
-            "LodOverride": null,
-            "MaterialGroup": null,
-            "MaterialOverride": null,
-            "Materials": null,
-            "Model": "models/patty_cooked.vmdl",
-            "OnComponentDestroy": null,
-            "OnComponentDisabled": null,
-            "OnComponentEnabled": null,
-            "OnComponentFixedUpdate": null,
-            "OnComponentStart": null,
-            "OnComponentUpdate": null,
-            "RenderOptions": {
-              "GameLayer": true,
-              "OverlayLayer": false,
-              "BloomLayer": false,
-              "AfterUILayer": false
-            },
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          }
-        ],
-        "Children": []
-      }
-    ],
+    "Children": [],
     "__properties": {
       "NetworkInterpolation": true,
       "TimeScale": 1,

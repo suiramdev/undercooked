@@ -1,0 +1,11 @@
+{
+  "Name": "Hamburger",
+  "RequiredIngredients": [
+    "resources/bun.ingr",
+    "resources/patty_cooked.ingr",
+    "resources/cheese_slices.ingr"
+  ],
+  "Result": "prefabs/recipes/cheeseburger.prefab",
+  "__references": [],
+  "__version": 0
+}
