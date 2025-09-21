@@ -4,17 +4,13 @@ using Undercooked.Resources;
 
 namespace Undercooked.Components;
 
-public class RecipeManager : Component
+public class RecipeManager : GameObjectSystem
 {
-	public static RecipeManager Instance { get; private set; } = null!;
+	public IEnumerable<RecipeResource> AvailableRecipes { get; set; } = [];
 
-	[Property]
-	[Description( "The recipes that the player can make" )]
-	public List<RecipeResource> AvailableRecipes { get; set; } = [];
-
-	public RecipeManager()
+	public RecipeManager( Scene scene ) : base( scene )
 	{
-		Instance = this;
+		AvailableRecipes = ResourceLibrary.GetAll<RecipeResource>();
 	}
 
 	/// <summary>

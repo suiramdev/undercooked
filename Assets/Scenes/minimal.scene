@@ -38,60 +38,6 @@
       "Children": []
     },
     {
-      "__guid": "323c206e-88aa-47e2-9c82-619951f491f0",
-      "__version": 1,
-      "Flags": 0,
-      "Name": "Managers",
-      "Position": "-62.29703,14.20718,60.70269",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "NetworkOrphaned": 0,
-      "OwnerTransfer": 1,
-      "Components": [],
-      "Children": [
-        {
-          "__guid": "ad751d81-e188-4dfd-b962-271875298073",
-          "__version": 1,
-          "Flags": 0,
-          "Name": "Recipe Manager",
-          "Position": "62.29703,-14.20718,-60.70269",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "NetworkOrphaned": 0,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Undercooked.Components.RecipeManager",
-              "__guid": "b1784e65-e300-4382-88f0-4efd3496512c",
-              "__enabled": true,
-              "AvailableRecipes": [
-                "resources/cheese_slices.recipe",
-                "resources/bun.recipe",
-                "resources/patty_cooked.recipe",
-                "resources/hamburger.recipe",
-                "resources/cheeseburger.recipe"
-              ],
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null
-            }
-          ],
-          "Children": []
-        }
-      ]
-    },
-    {
       "__guid": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
       "__version": 1,
       "Flags": 0,
@@ -838,22 +784,6 @@
             },
             "Property": "Position",
             "Value": "0,39.3967,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "9ddc72be-7879-4c12-9ece-f850b482f8a2"
-            },
-            "Property": "AlternateInteractionType",
-            "Value": "Hold"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "9ddc72be-7879-4c12-9ece-f850b482f8a2"
-            },
-            "Property": "InteractionType",
-            "Value": "Press"
           }
         ],
         "MovedObjects": []

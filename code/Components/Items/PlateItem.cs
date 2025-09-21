@@ -28,7 +28,7 @@ public sealed class PlateItem : ItemBase, IDepositable
 	{
 		return pickable is IngredientItem ingredient
 			&& ingredient.Resource is not null
-			&& RecipeManager.Instance.CanAddIngredient( ingredient.Resource, Ingredients );
+			&& Scene.GetSystem<RecipeManager>().CanAddIngredient( ingredient.Resource, Ingredients );
 	}
 
 	public bool TryDeposit( IPickable pickable, Player by )
@@ -40,7 +40,7 @@ public sealed class PlateItem : ItemBase, IDepositable
 		ingredient.GameObject.Destroy();
 
 		// Get the recipe that the plate can make
-		Recipe = RecipeManager.Instance.GetRecipeFromIngredients( Ingredients );
+		Recipe = Scene.GetSystem<RecipeManager>().GetRecipeFromIngredients( Ingredients );
 
 		if ( Recipe != null )
 		{
