@@ -12,14 +12,6 @@ public class PlayerInteraction : Component
 	public float InteractRadius { get; set; } = 50f;
 
 	[Property]
-	[FeatureEnabled( "Gizmos" )]
-	public bool EnableGizmos { get; set; } = true;
-
-	[Property]
-	[Feature( "Gizmos" )]
-	public Color GizmoColor { get; set; } = Color.Green;
-
-	[Property]
 	[Group( "Components" )]
 	[RequireComponent]
 	public required Player Player { get; set; }
@@ -39,23 +31,23 @@ public class PlayerInteraction : Component
 
 		InteractableTarget = GetInteractableTarget();
 
-		// Primary interaction ("drop" input)
+		// Primary interaction ("Interact" input)
 		if (
-			(InteractableTarget is null && Input.Pressed( "drop" )) ||
-			(InteractableTarget?.InteractionType == InteractionType.Press && Input.Pressed( "drop" )) ||
-			(InteractableTarget?.InteractionType == InteractionType.Hold && Input.Down( "drop" )) ||
-			(InteractableTarget?.InteractionType == InteractionType.Release && Input.Released( "drop" ))
+			(InteractableTarget is null && Input.Pressed( "Interact" )) ||
+			(InteractableTarget?.InteractionType == InteractionType.Press && Input.Pressed( "Interact" )) ||
+			(InteractableTarget?.InteractionType == InteractionType.Hold && Input.Down( "Interact" )) ||
+			(InteractableTarget?.InteractionType == InteractionType.Release && Input.Released( "Interact" ))
 		)
 		{
 			InteractPrimary();
 		}
 
-		// Alternate interaction ("use" input)
+		// Alternate interaction ("AltInteract" input)
 		if (
-			(InteractableTarget is null && Input.Pressed( "use" )) ||
-			(InteractableTarget?.AlternateInteractionType == InteractionType.Press && Input.Pressed( "use" )) ||
-			(InteractableTarget?.AlternateInteractionType == InteractionType.Hold && Input.Down( "use" )) ||
-			(InteractableTarget?.AlternateInteractionType == InteractionType.Release && Input.Released( "use" ))
+			(InteractableTarget is null && Input.Pressed( "AltInteract" )) ||
+			(InteractableTarget?.AlternateInteractionType == InteractionType.Press && Input.Pressed( "AltInteract" )) ||
+			(InteractableTarget?.AlternateInteractionType == InteractionType.Hold && Input.Down( "AltInteract" )) ||
+			(InteractableTarget?.AlternateInteractionType == InteractionType.Release && Input.Released( "AltInteract" ))
 		)
 		{
 			InteractAlternate();
@@ -64,11 +56,12 @@ public class PlayerInteraction : Component
 
 	protected override void DrawGizmos()
 	{
-		if ( !EnableGizmos ) return;
-
 		base.DrawGizmos();
 
-		Gizmo.Draw.Color = GizmoColor;
+		if ( !Gizmo.IsSelected && !Gizmo.IsHovered )
+			return;
+
+		Gizmo.Draw.Color = Color.Green;
 		Gizmo.Draw.LineSphere( Vector3.Zero, InteractRadius );
 
 		if ( InteractableTarget is not null )

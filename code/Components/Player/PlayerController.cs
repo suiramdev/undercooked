@@ -15,9 +15,6 @@ public class PlayerController : Component
 	public float DefaultSpeed { get; set; } = 100f;
 
 	[Property]
-	public float RunSpeedMultiplier { get; set; } = 2f;
-
-	[Property]
 	public float AirSpeedMultiplier { get; set; } = 0.5f;
 
 	[Property]
@@ -41,6 +38,11 @@ public class PlayerController : Component
 	[RequireComponent]
 	public required CitizenAnimationHelper CitizenAnimationHelper { get; set; }
 
+	[Property]
+	[Group( "Components" )]
+	[Description( "Optional camera controller for camera-relative movement" )]
+	public PlayerCameraController? CameraController { get; set; }
+
 	protected override void OnFixedUpdate()
 	{
 		base.OnFixedUpdate();
@@ -51,11 +53,9 @@ public class PlayerController : Component
 	private float GetMovementSpeed()
 	{
 		if ( !CharacterController.IsOnGround )
-		{
 			return DefaultSpeed * AirSpeedMultiplier;
-		}
 
-		return Input.Down( "Run" ) ? DefaultSpeed * RunSpeedMultiplier : DefaultSpeed;
+		return DefaultSpeed;
 	}
 
 	private void Move()
@@ -63,50 +63,55 @@ public class PlayerController : Component
 		float movementSpeed = GetMovementSpeed();
 		Vector3 inputDirection = Input.AnalogMove;
 
-		ApplyMovement( inputDirection, movementSpeed );
+		Vector3 moveDirection = ApplyMovement( inputDirection, movementSpeed );
 		ApplyGravity();
-		HandleRotation( inputDirection );
+		HandleRotation( inputDirection, moveDirection );
 
 		CharacterController.Move();
 	}
 
-	private void ApplyMovement( Vector3 inputDirection, float speed )
+	private Vector3 ApplyMovement( Vector3 inputDirection, float speed )
 	{
-		// Convert input direction to world space movement direction
-		// We use the forward vector and scale it by input magnitude
-		Vector3 moveDirection = WorldRotation.Forward * inputDirection.Length;
+		Vector3 moveDirection;
 
-		// Apply movement speed to horizontal velocity while preserving vertical velocity
-		// This allows gravity and jumping to work independently of movement
+		if ( CameraController != null )
+		{
+			// Camera-relative movement: convert input to world space based on camera orientation
+			Vector3 cameraForward = CameraController.CameraForward;
+			Vector3 cameraRight = CameraController.CameraRight;
+			moveDirection = (cameraForward * inputDirection.x + cameraRight * inputDirection.y).Normal;
+		}
+		else
+		{
+			// Fallback: use character's forward direction
+			moveDirection = WorldRotation.Forward;
+		}
+
+		// Scale by input magnitude to support analog input (e.g., controller sticks)
+		float inputMagnitude = Math.Min( inputDirection.Length, 1f );
+
+		// Apply horizontal movement while preserving vertical velocity (for gravity/jumping)
 		CharacterController.Velocity = new Vector3(
-			moveDirection.x * speed,
-			moveDirection.y * speed,
+			moveDirection.x * speed * inputMagnitude,
+			moveDirection.y * speed * inputMagnitude,
 			CharacterController.Velocity.z );
+
+		return moveDirection;
 	}
 
 	private void ApplyGravity()
 	{
 		if ( !CharacterController.IsOnGround )
-		{
 			CharacterController.Velocity += Vector3.Down * Gravity * Time.Delta;
-		}
 	}
 
-	private void HandleRotation( Vector3 inputDirection )
+	private void HandleRotation( Vector3 inputDirection, Vector3 moveDirection )
 	{
 		if ( inputDirection.Length <= MovementThreshold )
-		{
 			return;
-		}
 
-		// Convert 2D input vector to angle in degrees (arctangent of y/x)
-		float targetAngle = MathF.Atan2( inputDirection.y, inputDirection.x ) * 180 / MathF.PI;
-
-		// Create rotation around vertical axis based on calculated angle
-		Rotation targetRotation = Rotation.FromYaw( targetAngle );
-
-		// Smooth interpolation between current and target rotation
-		// Time.Delta * RotationSpeed controls rotation rate independent of framerate
+		// Smoothly rotate to face movement direction
+		Rotation targetRotation = Rotation.LookAt( moveDirection, Vector3.Up );
 		WorldRotation = Rotation.Lerp( WorldRotation, targetRotation, Time.Delta * RotationSpeed );
 	}
 
