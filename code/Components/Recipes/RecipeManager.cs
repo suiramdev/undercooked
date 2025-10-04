@@ -4,13 +4,16 @@ using Undercooked.Resources;
 
 namespace Undercooked.Components;
 
-public class RecipeManager : GameObjectSystem
+public class RecipeManager : Component
 {
-	public IEnumerable<RecipeResource> AvailableRecipes { get; set; } = [];
+	public static RecipeManager Instance { get; private set; } = null!;
 
-	public RecipeManager( Scene scene ) : base( scene )
+	[Property]
+	public List<RecipeResource> AvailableRecipes { get; set; } = [];
+
+	public RecipeManager() : base()
 	{
-		AvailableRecipes = ResourceLibrary.GetAll<RecipeResource>();
+		Instance = this;
 	}
 
 	/// <summary>
@@ -45,7 +48,7 @@ public class RecipeManager : GameObjectSystem
 		foreach ( var recipe in AvailableRecipes )
 		{
 			// Check if ingredients exactly match the recipe requirements (same count and all ingredients present)
-			if ( recipe.RequiredIngredients.Count == ingredients.Count && recipe.RequiredIngredients.All( i => ingredients.Contains( i ) ) )
+			if ( recipe.RequiredIngredients.Count == ingredients.Count && recipe.RequiredIngredients.All( ingredients.Contains ) )
 			{
 				return recipe;
 			}

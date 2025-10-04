@@ -38,6 +38,42 @@
       "Children": []
     },
     {
+      "__guid": "2d4a32a0-df38-4a47-94e5-81245bb3413a",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Recipe Manager",
+      "Position": "-74.01857,-21.32283,85.73978",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Undercooked.Components.RecipeManager",
+          "__guid": "be6d78d0-8141-4306-b8f1-ce6d67d198e7",
+          "__enabled": true,
+          "AvailableRecipes": [
+            "resources/patty_cooked.recipe",
+            "resources/hamburger.recipe",
+            "resources/cheese_slices.recipe",
+            "resources/cheeseburger.recipe",
+            "resources/bun.recipe"
+          ],
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ],
+      "Children": []
+    },
+    {
       "__guid": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
       "__version": 1,
       "Flags": 0,
@@ -146,6 +182,7 @@
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": false,
+          "Normal": "0,0,1",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -210,6 +247,7 @@
           "__guid": "d73ef723-c888-41d4-802e-f797c79318be",
           "__enabled": true,
           "__version": 1,
+          "Filter": "Bilinear",
           "Gamma": 2.2,
           "Mode": "Additive",
           "OnComponentDestroy": null,
@@ -251,7 +289,8 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "Scale": 0.2
+          "Scale": 0.2,
+          "TexelSize": 1
         }
       ],
       "Children": []
