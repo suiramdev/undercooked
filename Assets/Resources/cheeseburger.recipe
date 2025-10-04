@@ -1,5 +1,5 @@
 {
-  "Name": "Hamburger",
+  "Name": "Cheeseburger",
   "RequiredIngredients": [
     "resources/bun.ingr",
     "resources/patty_cooked.ingr",

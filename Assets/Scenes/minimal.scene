@@ -63,6 +63,7 @@
             "resources/hamburger.recipe",
             "resources/patty_cooked.recipe"
           ],
+          "MaxOrders": 3,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -71,12 +72,14 @@
           "OnComponentUpdate": null,
           "OrderableRecipes": [
             {
-              "Weight": 0
+              "Weight": 1
             },
             {
-              "Weight": 0
+              "Weight": 1
             }
-          ]
+          ],
+          "OrdersPerMinute": 6,
+          "OrderTimeout": 10
         }
       ],
       "Children": []
@@ -106,7 +109,7 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PendingOrders": []
+          "Orders": []
         }
       ],
       "Children": []

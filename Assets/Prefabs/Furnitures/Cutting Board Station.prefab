@@ -68,7 +68,9 @@
         "__type": "Undercooked.Components.CuttingBoardStation",
         "__guid": "9ddc72be-7879-4c12-9ece-f850b482f8a2",
         "__enabled": true,
+        "AlternateInteractionType": "Hold",
         "ChopSpeed": 0.2,
+        "InteractionType": "Press",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -79,8 +81,7 @@
           "_type": "gameobject",
           "go": "8cac4bd3-a1c5-40d7-87be-9a065ea63065"
         },
-        "StoredPickable": null,
-        "UseType": "Hold"
+        "StoredPickable": null
       }
     ],
     "Children": [

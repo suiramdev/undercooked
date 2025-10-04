@@ -6,7 +6,7 @@ using Undercooked.Components.Enums;
 
 namespace Undercooked.Components;
 
-public class CuttingBoardStation : StationBase<IPickable>
+public class CuttingBoardStation : StationBase
 {
 	[Property]
 	[Description( "The type of use for the chop counter" )]

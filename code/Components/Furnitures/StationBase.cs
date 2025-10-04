@@ -6,7 +6,7 @@ using Undercooked.Components.Enums;
 namespace Undercooked.Components;
 
 [Icon( "inventory" )]
-public abstract class StationBase<T> : Component, IDepositable, IInteractable where T : IPickable
+public abstract class StationBase : Component, IDepositable, IInteractable
 {
 	[Property]
 	[Description( "The type of interaction for the station" )]
@@ -23,7 +23,7 @@ public abstract class StationBase<T> : Component, IDepositable, IInteractable wh
 	[Property]
 	[Description( "The pickable that is stored on the station" )]
 	[ReadOnly]
-	protected T? StoredPickable { get; set; }
+	public IPickable? StoredPickable { get; set; }
 
 	public bool Empty => StoredPickable is null;
 
@@ -75,7 +75,7 @@ public abstract class StationBase<T> : Component, IDepositable, IInteractable wh
 
 	public virtual bool TryDeposit( IPickable pickable, Player by )
 	{
-		if ( StoredPickable is not null || pickable is not T item ) return false;
+		if ( StoredPickable is not null || pickable is not IPickable item ) return false;
 
 		StoredPickable = item;
 		StoredPickable.GameObject.SetParent( Socket );

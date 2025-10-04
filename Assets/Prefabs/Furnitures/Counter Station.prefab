@@ -68,6 +68,8 @@
         "__type": "Undercooked.Components.CounterStation",
         "__guid": "8a312fcb-984d-43a5-a7db-7eed24bc1f10",
         "__enabled": true,
+        "AlternateInteractionType": "Press",
+        "InteractionType": "Press",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,

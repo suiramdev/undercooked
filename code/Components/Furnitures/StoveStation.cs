@@ -5,7 +5,7 @@ using Undercooked.Components.Interfaces;
 
 namespace Undercooked.Components;
 
-public class StoveStation : StationBase<FryingPanItem>
+public class StoveStation : StationBase
 {
 	[Property]
 	[Description( "How many seconds it takes to fully cook an ingredient" )]
@@ -20,9 +20,17 @@ public class StoveStation : StationBase<FryingPanItem>
 		TryCook();
 	}
 
+	public override bool TryDeposit( IPickable pickable, Player by )
+	{
+		if ( pickable is not FryingPanItem fryingPan ) return false;
+		return base.TryDeposit( fryingPan, by );
+	}
+
 	private void TryCook()
 	{
-		IngredientItem? ingredient = StoredPickable?.Ingredient;
+		if ( StoredPickable is not FryingPanItem fryingPan ) return;
+
+		IngredientItem? ingredient = fryingPan.Ingredient;
 
 		// Check if the utensil has an ingredient and if it is in the correct state
 		// Also check if the utensil is not already burnt
