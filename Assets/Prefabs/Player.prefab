@@ -95,6 +95,7 @@
         "__guid": "6358c100-be8d-4d08-bdc7-0a563864d7db",
         "__enabled": true,
         "AirSpeedMultiplier": 0.5,
+        "CameraController": null,
         "CharacterController": {
           "_type": "component",
           "component_id": "97f96dc7-d65c-41b1-970e-767e0e89a3e9",
@@ -107,7 +108,7 @@
           "go": "22fc2a11-d36b-44e8-b056-6ebfb1f5d301",
           "component_type": "CitizenAnimationHelper"
         },
-        "DefaultSpeed": 100,
+        "DefaultSpeed": 150,
         "Gravity": 980,
         "MovementThreshold": 0.1,
         "OnComponentDestroy": null,
@@ -116,15 +117,13 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "RotationSpeed": 10,
-        "RunSpeedMultiplier": 2
+        "RotationSpeed": 10
       },
       {
         "__type": "Undercooked.Components.PlayerInteraction",
         "__guid": "c2303ce2-8195-448d-83d4-be0111ad773f",
         "__enabled": true,
-        "EnableGizmos": true,
-        "GizmoColor": "0,1,0,1",
+        "InteractableTarget": null,
         "InteractRadius": 50,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,

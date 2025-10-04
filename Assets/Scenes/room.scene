@@ -725,7 +725,6 @@
             "go": "227fa6d7-7376-4c3e-924d-a0d3c097269b",
             "component_type": "CameraComponent"
           },
-          "FollowDeadZone": 0.15,
           "FollowSpeed": 4,
           "HeightOffset": 1.5,
           "InitialYaw": 0,
