@@ -38,6 +38,80 @@
       "Children": []
     },
     {
+      "__guid": "d76d1a04-af22-4f65-8d65-46eabc3595b5",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Level Config",
+      "Position": "-64.39375,-41.47334,71.69287",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Undercooked.Components.LevelConfig",
+          "__guid": "6df7b50b-7273-4182-8cf3-226baf3d6950",
+          "__enabled": true,
+          "CookableRecipes": [
+            "resources/bun.recipe",
+            "resources/cheeseburger.recipe",
+            "resources/cheese_slices.recipe",
+            "resources/hamburger.recipe",
+            "resources/patty_cooked.recipe"
+          ],
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OrderableRecipes": [
+            {
+              "Weight": 0
+            },
+            {
+              "Weight": 0
+            }
+          ]
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "142fb728-5ef9-4f64-8018-4a2b32cdf5c6",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Order Manager",
+      "Position": "-64.39375,-41.47334,71.69287",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Undercooked.Components.OrderManager",
+          "__guid": "153e7124-4ea3-433b-8be7-62634c792dcc",
+          "__enabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PendingOrders": []
+        }
+      ],
+      "Children": []
+    },
+    {
       "__guid": "2d4a32a0-df38-4a47-94e5-81245bb3413a",
       "__version": 1,
       "Flags": 0,
@@ -56,13 +130,6 @@
           "__type": "Undercooked.Components.RecipeManager",
           "__guid": "be6d78d0-8141-4306-b8f1-ce6d67d198e7",
           "__enabled": true,
-          "AvailableRecipes": [
-            "resources/patty_cooked.recipe",
-            "resources/hamburger.recipe",
-            "resources/cheese_slices.recipe",
-            "resources/cheeseburger.recipe",
-            "resources/bun.recipe"
-          ],
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -986,34 +1053,6 @@
         "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d": "cf4db782-bd7f-4773-88df-adc1c160d3bf",
         "c7f0880a-d37d-4866-8d82-de05612730c8": "d2029173-3816-4452-99d9-24a2dde0dbbd",
         "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72": "07611294-e102-473f-8852-376f56f62b17"
-      }
-    },
-    {
-      "__guid": "25c9911c-2274-44e9-9148-55e708975093",
-      "__version": 1,
-      "__Prefab": "prefabs/plate.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "40104537-eecd-40a7-91cc-b51ba8d977ee"
-            },
-            "Property": "Position",
-            "Value": "-111.3084,36.21915,-0.1585433"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "40104537-eecd-40a7-91cc-b51ba8d977ee": "25c9911c-2274-44e9-9148-55e708975093",
-        "72825219-71f1-4ba1-a907-d81bf4f7f416": "e4e2f8c2-ac9f-49b6-b9d0-f1ff3c208631",
-        "15dec150-e11d-4340-9be4-6239fe76c00a": "f8a1c1a0-5860-4143-a586-17252a4f582c",
-        "a15bc636-03b6-4767-a1cf-3bb2e52fba7d": "b87c5c89-93f2-4cbb-a912-e0f57960700a",
-        "d014b7e0-65d7-4de0-8c4e-5675e8a405e3": "9a584515-f44a-429e-be28-7db6a8f4ebe5",
-        "7e5782d7-3e46-4f1a-8ed3-c6675b31d259": "2d530f8a-e83c-4e51-b4a3-15ea6625a58d"
       }
     }
   ],
