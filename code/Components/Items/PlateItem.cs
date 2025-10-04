@@ -18,7 +18,7 @@ public sealed class PlateItem : ItemBase, IDepositable
 	[Property]
 	[Description( "The recipe that the plate contains" )]
 	[ReadOnly]
-	private RecipeResource? Recipe { get; set; }
+	public RecipeResource? Recipe { get; private set; }
 
 	private GameObject? _recipeResultObject;
 
