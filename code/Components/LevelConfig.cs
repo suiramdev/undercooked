@@ -5,20 +5,14 @@ using Undercooked.Resources;
 
 namespace Undercooked.Components;
 
-public struct WeightedRecipe
+public class WeightedRecipe
 {
     [Property]
-    public required RecipeResource Recipe;
+    public required RecipeResource Recipe { get; set; }
 
     [Property]
     [Range( 1, 100 )]
     public int Weight { get; set; } = 1;
-
-    public WeightedRecipe( RecipeResource recipe, int weight = 1 )
-    {
-        Recipe = recipe;
-        Weight = weight;
-    }
 }
 
 public class LevelConfig : Component
@@ -78,6 +72,8 @@ public class LevelConfig : Component
         if ( totalWeight <= 0 )
             throw new InvalidOperationException( "Total weight of orderable recipes must be greater than zero." );
 
+        Log.Info( $"Total weight of orderable recipes: {totalWeight}" );
+
         // Generate a random float between 0 and the total weight of all orderable recipes.
         float rand = Game.Random.Float( 0, totalWeight );
         // This variable will keep a running total of the weights as we iterate.
@@ -92,8 +88,13 @@ public class LevelConfig : Component
             // select and return this recipe. This ensures recipes with higher
             // weights are more likely to be chosen.
             if ( rand <= cumulative )
+            {
+                Log.Info( $"Selected recipe {wr.Recipe} for {rand} / {totalWeight}" );
                 return wr.Recipe;
+            }
         }
+
+        Log.Info( $"No orderable recipe found for {rand} / {totalWeight}" );
 
         // Fallback, should not happen, but return the last recipe
         return OrderableRecipes.Last().Recipe;

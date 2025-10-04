@@ -72,9 +72,11 @@
           "OnComponentUpdate": null,
           "OrderableRecipes": [
             {
+              "Recipe": "resources/cheeseburger.recipe",
               "Weight": 1
             },
             {
+              "Recipe": "resources/hamburger.recipe",
               "Weight": 1
             }
           ],

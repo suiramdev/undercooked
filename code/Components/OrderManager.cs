@@ -6,9 +6,13 @@ namespace Undercooked.Components;
 
 public class Order( RecipeResource recipe )
 {
-	public RecipeResource Recipe = recipe;
+	[Property]
+	[ReadOnly]
+	public readonly RecipeResource Recipe = recipe;
 
-	public float PlacedAt = Time.Now;
+	[Property]
+	[ReadOnly]
+	public readonly float PlacedAt = Time.Now;
 
 	public override string ToString()
 	{
@@ -45,7 +49,9 @@ public class OrderManager : Component
 		// Check if it's time to place a new order
 		if ( Time.Now - _lastOrderTime >= 60f / LevelConfig.Instance.OrdersPerMinute )
 		{
-			PlaceOrder( LevelConfig.Instance.GetRandomOrderableRecipe() );
+			RecipeResource recipe = LevelConfig.Instance.GetRandomOrderableRecipe();
+			Log.Info( $"Placing order for {recipe}" );
+			PlaceOrder( recipe );
 			_lastOrderTime = Time.Now;
 		}
 	}
