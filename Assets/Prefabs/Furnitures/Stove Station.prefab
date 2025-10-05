@@ -9,7 +9,7 @@
     "Scale": "1,1,0.7",
     "Tags": "playerclip",
     "Enabled": true,
-    "NetworkMode": 2,
+    "NetworkMode": 1,
     "NetworkInterpolation": true,
     "NetworkOrphaned": 0,
     "OwnerTransfer": 1,
@@ -81,8 +81,7 @@
         "Socket": {
           "_type": "gameobject",
           "go": "8cac4bd3-a1c5-40d7-87be-9a065ea63065"
-        },
-        "StoredPickable": null
+        }
       }
     ],
     "Children": [

@@ -25,10 +25,10 @@ public interface IPickable
 
 	void OnPickedUp( Player by );
 
-	bool CanBeDroppedOn( IDepositable surface, Player by );
+	bool CanBeDepositedOn( IDepositable surface, Player by );
 
-	void OnDroppedOn( IDepositable surface, Player by );
+	void OnDeposited( IDepositable surface, Player by );
 
-	void OnWorldDropped( Vector3 position, Rotation rotation );
+	void OnDropped();
 }
 

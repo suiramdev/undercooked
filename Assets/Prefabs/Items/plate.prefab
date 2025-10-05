@@ -1,12 +1,12 @@
 {
   "RootObject": {
-    "__guid": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
+    "__guid": "40104537-eecd-40a7-91cc-b51ba8d977ee",
     "__version": 1,
     "Flags": 0,
-    "Name": "counter station",
-    "Position": "-200.1538,-75,0",
+    "Name": "plate",
+    "Position": "0,0,0",
     "Rotation": "0,0,0,1",
-    "Scale": "1,1,0.7",
+    "Scale": "1,1,1",
     "Tags": "",
     "Enabled": true,
     "NetworkMode": 1,
@@ -16,7 +16,7 @@
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
-        "__guid": "f5e63b53-f719-4eac-af41-719dda1d022a",
+        "__guid": "72825219-71f1-4ba1-a907-d81bf4f7f416",
         "__enabled": true,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
@@ -24,7 +24,7 @@
         "MaterialGroup": null,
         "MaterialOverride": null,
         "Materials": null,
-        "Model": "models/clear_counter.vmdl",
+        "Model": "models/plate.vmdl",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -41,13 +41,13 @@
         "Tint": "1,1,1,1"
       },
       {
-        "__type": "Sandbox.BoxCollider",
-        "__guid": "e524bfd4-2f19-4d10-899d-3f9a13ae13b5",
+        "__type": "Sandbox.ModelCollider",
+        "__guid": "15dec150-e11d-4340-9be4-6239fe76c00a",
         "__enabled": true,
-        "Center": "0,0.02148438,60.44725",
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
+        "Model": "models/plate.vmdl",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -59,36 +59,88 @@
         "OnTriggerEnter": null,
         "OnTriggerExit": null,
         "RollingResistance": null,
-        "Scale": "39.40005,39.53906,120.8945",
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "Undercooked.Components.CounterStation",
-        "__guid": "8a312fcb-984d-43a5-a7db-7eed24bc1f10",
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "a15bc636-03b6-4767-a1cf-3bb2e52fba7d",
         "__enabled": true,
-        "AlternateInteractionType": "Press",
-        "InteractionType": "Press",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": false,
+          "Y": false,
+          "Z": false,
+          "Pitch": false,
+          "Yaw": false,
+          "Roll": false
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Undercooked.Components.PlateItem",
+        "__guid": "d014b7e0-65d7-4de0-8c4e-5675e8a405e3",
+        "__enabled": true,
+        "AlternateInteractionType": "Press",
+        "AttachmentBone": "hand_r",
+        "AttachmentOffset": "0,0,0",
+        "AttachmentRotation": "0,0,0,0",
+        "Depositable": null,
+        "HoldType": "HoldItem",
+        "Ingredients": [],
+        "InteractionType": "Press",
+        "ModelCollider": {
+          "_type": "component",
+          "component_id": "15dec150-e11d-4340-9be4-6239fe76c00a",
+          "go": "40104537-eecd-40a7-91cc-b51ba8d977ee",
+          "component_type": "ModelCollider"
+        },
+        "ModelRenderer": {
+          "_type": "component",
+          "component_id": "72825219-71f1-4ba1-a907-d81bf4f7f416",
+          "go": "40104537-eecd-40a7-91cc-b51ba8d977ee",
+          "component_type": "ModelRenderer"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Recipe": null,
+        "Rigidbody": {
+          "_type": "component",
+          "component_id": "a15bc636-03b6-4767-a1cf-3bb2e52fba7d",
+          "go": "40104537-eecd-40a7-91cc-b51ba8d977ee",
+          "component_type": "Rigidbody"
+        },
         "Socket": {
           "_type": "gameobject",
-          "go": "8cac4bd3-a1c5-40d7-87be-9a065ea63065"
+          "go": "7e5782d7-3e46-4f1a-8ed3-c6675b31d259"
         }
       }
     ],
     "Children": [
       {
-        "__guid": "8cac4bd3-a1c5-40d7-87be-9a065ea63065",
+        "__guid": "7e5782d7-3e46-4f1a-8ed3-c6675b31d259",
         "__version": 1,
         "Flags": 0,
         "Name": "Socket",
-        "Position": "0,0,20",
+        "Position": "0,0,0",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Tags": "",

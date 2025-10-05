@@ -1,22 +1,63 @@
 {
   "RootObject": {
-    "__guid": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
+    "__guid": "50b5693f-15d4-438f-b625-7f8324775ebe",
     "__version": 1,
     "Flags": 0,
-    "Name": "frying pan",
+    "Name": "patty raw",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
     "Tags": "",
     "Enabled": true,
-    "NetworkMode": 2,
+    "NetworkMode": 1,
     "NetworkInterpolation": true,
     "NetworkOrphaned": 0,
     "OwnerTransfer": 1,
     "Components": [
       {
+        "__type": "Undercooked.Components.IngredientItem",
+        "__guid": "ab3bdc1d-2be3-477b-a7e3-c71685ba0cc9",
+        "__enabled": true,
+        "AlternateInteractionType": "Press",
+        "AttachmentBone": "hand_r",
+        "AttachmentOffset": "0,0,0",
+        "AttachmentRotation": "0,0,0,0",
+        "ChopFeatureEnabled": false,
+        "ChopProgress": 0,
+        "CookFeatureEnabled": true,
+        "CookProgress": 0,
+        "Depositable": null,
+        "HoldType": "HoldItem",
+        "InteractionType": "Press",
+        "ModelCollider": {
+          "_type": "component",
+          "component_id": "72c8746d-f9eb-414b-a0e1-4ec397adee66",
+          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
+          "component_type": "ModelCollider"
+        },
+        "ModelRenderer": {
+          "_type": "component",
+          "component_id": "e0781b68-f6ce-4a5c-8d15-c56d481628bb",
+          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
+          "component_type": "ModelRenderer"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Resource": "resources/patty_raw.ingr",
+        "Rigidbody": {
+          "_type": "component",
+          "component_id": "e7c60352-2d67-488a-99c4-af819314a6a4",
+          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
+          "component_type": "Rigidbody"
+        }
+      },
+      {
         "__type": "Sandbox.ModelRenderer",
-        "__guid": "df190c73-07ce-42f8-a5c3-2fe94b5b9aed",
+        "__guid": "e0781b68-f6ce-4a5c-8d15-c56d481628bb",
         "__enabled": true,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
@@ -24,7 +65,7 @@
         "MaterialGroup": null,
         "MaterialOverride": null,
         "Materials": null,
-        "Model": "models/frying_pan.vmdl",
+        "Model": "models/patty_raw.vmdl",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -41,32 +82,8 @@
         "Tint": "1,1,1,1"
       },
       {
-        "__type": "Sandbox.BoxCollider",
-        "__guid": "eb907826-1d2b-45c7-a949-95e6a84d8394",
-        "__enabled": true,
-        "Center": "7.6,0,2.430665",
-        "Elasticity": null,
-        "Friction": null,
-        "IsTrigger": false,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "OnObjectTriggerEnter": null,
-        "OnObjectTriggerExit": null,
-        "OnTriggerEnter": null,
-        "OnTriggerExit": null,
-        "RollingResistance": null,
-        "Scale": "40,25,4.86133",
-        "Static": false,
-        "Surface": null,
-        "SurfaceVelocity": "0,0,0"
-      },
-      {
         "__type": "Sandbox.Rigidbody",
-        "__guid": "de6a50ed-93f5-4c10-951b-fffd5df017e3",
+        "__guid": "e7c60352-2d67-488a-99c4-af819314a6a4",
         "__enabled": true,
         "AngularDamping": 0,
         "Gravity": true,
@@ -94,12 +111,12 @@
       },
       {
         "__type": "Sandbox.ModelCollider",
-        "__guid": "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d",
+        "__guid": "72c8746d-f9eb-414b-a0e1-4ec397adee66",
         "__enabled": true,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
-        "Model": "models/frying_pan.vmdl",
+        "Model": "models/patty_raw.vmdl",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,
@@ -114,66 +131,9 @@
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
-      },
-      {
-        "__type": "Undercooked.Components.FryingPanItem",
-        "__guid": "c7f0880a-d37d-4866-8d82-de05612730c8",
-        "__enabled": true,
-        "AttachmentBone": "hand_r",
-        "AttachmentOffset": "0,0,0",
-        "AttachmentRotation": "0,0,0,0",
-        "CookProgress": 0,
-        "HoldType": "HoldItem",
-        "Ingredient": null,
-        "ModelCollider": {
-          "_type": "component",
-          "component_id": "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d",
-          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
-          "component_type": "ModelCollider"
-        },
-        "ModelRenderer": {
-          "_type": "component",
-          "component_id": "df190c73-07ce-42f8-a5c3-2fe94b5b9aed",
-          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
-          "component_type": "ModelRenderer"
-        },
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Rigidbody": {
-          "_type": "component",
-          "component_id": "de6a50ed-93f5-4c10-951b-fffd5df017e3",
-          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
-          "component_type": "Rigidbody"
-        },
-        "Socket": {
-          "_type": "gameobject",
-          "go": "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72"
-        }
       }
     ],
-    "Children": [
-      {
-        "__guid": "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72",
-        "__version": 1,
-        "Flags": 0,
-        "Name": "Socket",
-        "Position": "0,0,0.5",
-        "Rotation": "0,0,0,1",
-        "Scale": "1,1,1",
-        "Tags": "",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
-        "NetworkOrphaned": 0,
-        "OwnerTransfer": 1,
-        "Components": [],
-        "Children": []
-      }
-    ],
+    "Children": [],
     "__properties": {
       "NetworkInterpolation": true,
       "TimeScale": 1,

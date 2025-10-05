@@ -23,11 +23,13 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 	[Property]
 	[Description( "The pickable that is stored on the station" )]
 	[ReadOnly]
-	public IPickable? StoredPickable { get; set; }
+	[Sync( SyncFlags.FromHost )]
+	protected IPickable? StoredPickable { get; set; }
 
 	public bool Empty => StoredPickable is null;
 
-	public virtual bool TryInteract( Player player )
+	[Rpc.Host]
+	public virtual void Interact( Player player )
 	{
 		var held = player.PlayerSlot.GetPickable();
 
@@ -35,9 +37,10 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 		if ( held is null )
 		{
 			var pickable = TakePickable();
-			if ( pickable is null ) return false;
+			if ( pickable is null ) return;
 
-			return player.PlayerSlot.TryDeposit( pickable, player );
+			player.PlayerSlot.Deposit( pickable, player );
+			return;
 		}
 
 		// Attempt to deposit the held item into the pickable currently stored on the station (if any)
@@ -47,35 +50,28 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 			// e.g. If the player is holding a pan, they can transfer the contents to the pickable currently on the station
 			if ( held is ITransferable transferable && !transferable.Empty )
 			{
-				return transferable.TryTransfer( depositable, player );
+				transferable.TransferPickable( depositable, player );
+				return;
 			}
 
 			// Attempt to deposit the held item into the pickable currently stored on the station
-			if ( depositable.TryDeposit( held, player ) )
-			{
-				player.PlayerSlot.TakePickable();
-				return true;
-			}
+			depositable.Deposit( held, player );
 		}
 
 		// Attempt to deposit the held item into the station
-		if ( TryDeposit( held, player ) )
-		{
-			player.PlayerSlot.TakePickable();
-			return true;
-		}
-
-		return false;
+		Deposit( held, player );
 	}
 
-	public virtual bool TryAlternateInteract( Player player )
+	[Rpc.Host]
+	public virtual void AlternateInteract( Player player )
 	{
-		return false;
+		return;
 	}
 
-	public virtual bool TryDeposit( IPickable pickable, Player by )
+	[Rpc.Host]
+	public virtual void Deposit( IPickable pickable, Player by )
 	{
-		if ( StoredPickable is not null || pickable is not IPickable item ) return false;
+		if ( StoredPickable is not null || pickable is not IPickable item ) return;
 
 		StoredPickable = item;
 		StoredPickable.GameObject.SetParent( Socket );
@@ -89,9 +85,7 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 		if ( collider is not null ) collider.Enabled = false;
 
 		// Notify the pickable that it was dropped on the counter
-		pickable.OnDroppedOn( this, by );
-
-		return true;
+		pickable.OnDeposited( this, by );
 	}
 
 	public virtual IPickable? GetPickable() => StoredPickable;

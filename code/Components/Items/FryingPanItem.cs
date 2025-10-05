@@ -13,13 +13,15 @@ public class FryingPanItem : ItemBase, IDepositable, ITransferable
 	[Property]
 	[Description( "The ingredients that the utensil contains" )]
 	[ReadOnly]
+	[Sync( SyncFlags.FromHost )]
 	public IngredientItem? Ingredient { get; set; }
 
 	public bool Empty => Ingredient is null;
 
-	public bool TryDeposit( IPickable pickable, Player by )
+	[Rpc.Host]
+	public void Deposit( IPickable pickable, Player by )
 	{
-		if ( pickable is not IngredientItem ingredient || !ingredient.Cookable ) return false;
+		if ( pickable is not IngredientItem ingredient || !ingredient.Cookable ) return;
 
 		Ingredient = ingredient;
 		ingredient.GameObject.SetParent( Socket );
@@ -33,14 +35,16 @@ public class FryingPanItem : ItemBase, IDepositable, ITransferable
 		if ( collider is not null ) collider.Enabled = false;
 
 		// Notify the ingredient that it was dropped on the pan
-		pickable.OnDroppedOn( this, by );
-
-		return true;
+		pickable.OnDeposited( this, by );
 	}
 
-	public bool TryTransfer( IDepositable depositable, Player by )
+	[Rpc.Host]
+	public void TransferPickable( IDepositable depositable, Player by )
 	{
-		return Ingredient is not null && depositable.TryDeposit( Ingredient, by );
+		if ( Ingredient is not null )
+		{
+			depositable.Deposit( Ingredient, by );
+		}
 	}
 
 	public override bool CanBePickedUp( Player by )
@@ -48,7 +52,7 @@ public class FryingPanItem : ItemBase, IDepositable, ITransferable
 		return true;
 	}
 
-	public override bool CanBeDroppedOn( IDepositable depositable, Player by )
+	public override bool CanBeDepositedOn( IDepositable depositable, Player by )
 	{
 		return true;
 	}

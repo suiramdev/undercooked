@@ -11,7 +11,7 @@ public interface IDepositable
 
 	bool Empty { get; }
 
-	bool TryDeposit( IPickable pickable, Player by );
+	void Deposit( IPickable pickable, Player by );
 
 	IPickable? GetPickable();
 

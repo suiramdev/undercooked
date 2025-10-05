@@ -19,13 +19,15 @@ public class PlayerSlot : Component, IDepositable
 
 	[Property]
 	[ReadOnly]
+	[Sync( SyncFlags.FromHost )]
 	private IPickable? StoredPickable { get; set; }
 
 	public bool Empty => StoredPickable is null;
 
-	public bool TryDeposit( IPickable pickable, Player player )
+	[Rpc.Host]
+	public void Deposit( IPickable pickable, Player player )
 	{
-		if ( !Empty ) return false;
+		if ( !Empty ) return;
 
 		StoredPickable = pickable;
 
@@ -50,7 +52,7 @@ public class PlayerSlot : Component, IDepositable
 
 		pickable.OnPickedUp( player );
 
-		return true;
+		return;
 	}
 
 	// Look at what we're holding without removing it
@@ -65,11 +67,11 @@ public class PlayerSlot : Component, IDepositable
 		return temp;
 	}
 
-	public bool TryDrop()
+	[Rpc.Host]
+	public void DropPickable()
 	{
 		var pickable = TakePickable();
-		if ( pickable is null ) return false;
-
+		if ( pickable is null ) return;
 
 		var ent = pickable.GameObject;
 
@@ -86,8 +88,6 @@ public class PlayerSlot : Component, IDepositable
 		if ( collider != null )
 			collider.Enabled = true;
 
-		pickable.OnWorldDropped( GameObject.WorldPosition, GameObject.WorldRotation );
-
-		return true;
+		pickable.OnDropped();
 	}
 }

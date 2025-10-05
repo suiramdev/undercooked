@@ -13,28 +13,31 @@ public sealed class PlateItem : ItemBase, IDepositable
 	[Property]
 	[Description( "The ingredients that the plate contains" )]
 	[ReadOnly]
+	[Sync( SyncFlags.FromHost )]
 	public List<IngredientResource> Ingredients { get; set; } = [];
 
 	[Property]
 	[Description( "The recipe that the plate contains" )]
 	[ReadOnly]
+	[Sync( SyncFlags.FromHost )]
 	public RecipeResource? Recipe { get; private set; }
 
 	private GameObject? _recipeResultObject;
 
 	public bool Empty => Ingredients.Count == 0;
 
-	public bool CanDeposit( IPickable pickable, Player by )
+	public bool CanDeposit( IPickable pickable, Player _ )
 	{
 		return pickable is IngredientItem ingredient
 			&& ingredient.Resource is not null
 			&& RecipeManager.Instance.CanAddIngredient( ingredient.Resource, Ingredients );
 	}
 
-	public bool TryDeposit( IPickable pickable, Player by )
+	[Rpc.Host]
+	public void Deposit( IPickable pickable, Player by )
 	{
-		if ( !CanDeposit( pickable, by ) ) return false;
-		if ( pickable is not IngredientItem ingredient || ingredient.Resource is null ) return false;
+		if ( !CanDeposit( pickable, by ) ) return;
+		if ( pickable is not IngredientItem ingredient || ingredient.Resource is null ) return;
 
 		Ingredients.Add( ingredient.Resource );
 		ingredient.GameObject.Destroy();
@@ -53,17 +56,15 @@ public sealed class PlateItem : ItemBase, IDepositable
 		}
 
 		// Notify the ingredient that it was dropped on the plate
-		pickable.OnDroppedOn( this, by );
-
-		return true;
+		pickable.OnDeposited( this, by );
 	}
 
-	public override bool CanBePickedUp( Player by )
+	public override bool CanBePickedUp( Player _ )
 	{
 		return true;
 	}
 
-	public override bool CanBeDroppedOn( IDepositable depositable, Player by )
+	public override bool CanBeDepositedOn( IDepositable _, Player __ )
 	{
 		return true;
 	}

@@ -7,5 +7,5 @@ namespace Undercooked.Components.Interfaces;
 /// </summary>
 public interface ITransferable : IDepositable
 {
-	bool TryTransfer( IDepositable depositable, Player by );
+	void TransferPickable( IDepositable depositable, Player by );
 }

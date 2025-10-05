@@ -113,15 +113,15 @@ public class PlayerInteraction : Component
 		if ( !PlayerSlot.Empty && (InteractableTarget is null || InteractableTarget is ItemBase) )
 		{
 			// Attempt to drop the currently held item if no interactable target is found
-			PlayerSlot.TryDrop();
+			PlayerSlot.DropPickable();
 			return;
 		}
 
-		InteractableTarget?.TryInteract( Player );
+		InteractableTarget?.Interact( Player );
 	}
 
 	protected void InteractAlternate()
 	{
-		InteractableTarget?.TryAlternateInteract( Player );
+		InteractableTarget?.AlternateInteract( Player );
 	}
 }

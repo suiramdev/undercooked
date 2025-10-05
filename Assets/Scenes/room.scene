@@ -404,414 +404,6 @@
       "Children": []
     },
     {
-      "__guid": "d0298997-f7b3-473d-861e-22e88fdb3f6a",
-      "__version": 1,
-      "Flags": 0,
-      "Name": "Cheese",
-      "Position": "-63.26983,-80.6969,0.004344313",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "NetworkOrphaned": 0,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Undercooked.Components.IngredientItem",
-          "__guid": "eebdf095-29b8-43f8-9cec-aab8175f6ad4",
-          "__enabled": true,
-          "AlternateInteractionType": "Press",
-          "AttachmentBone": "hand_r",
-          "AttachmentOffset": "0,0,0",
-          "AttachmentRotation": "0,0,0,0",
-          "ChopFeatureEnabled": true,
-          "ChopProgress": 0,
-          "CookFeatureEnabled": false,
-          "CookProgress": 0,
-          "Depositable": null,
-          "HoldType": "HoldItem",
-          "InteractionType": "Press",
-          "ModelCollider": {
-            "_type": "component",
-            "component_id": "53c5354f-3317-4b2c-8624-d4ecfdbfe804",
-            "go": "d0298997-f7b3-473d-861e-22e88fdb3f6a",
-            "component_type": "ModelCollider"
-          },
-          "ModelRenderer": {
-            "_type": "component",
-            "component_id": "a313741b-7b73-4732-8b6e-246e1f20a4cb",
-            "go": "d0298997-f7b3-473d-861e-22e88fdb3f6a",
-            "component_type": "ModelRenderer"
-          },
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Resource": "resources/cheese.ingr",
-          "Rigidbody": {
-            "_type": "component",
-            "component_id": "d4387d8d-9a04-48c6-8e84-0a82c429147a",
-            "go": "d0298997-f7b3-473d-861e-22e88fdb3f6a",
-            "component_type": "Rigidbody"
-          }
-        },
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "a313741b-7b73-4732-8b6e-246e1f20a4cb",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/cheese.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "d4387d8d-9a04-48c6-8e84-0a82c429147a",
-          "__enabled": true,
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {
-            "X": false,
-            "Y": false,
-            "Z": false,
-            "Pitch": false,
-            "Yaw": false,
-            "Roll": false
-          },
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
-        },
-        {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "53c5354f-3317-4b2c-8624-d4ecfdbfe804",
-          "__enabled": true,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "Model": "models/cheese.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "df85a734-6ee0-4338-920c-a386fd236846",
-      "__version": 1,
-      "Flags": 0,
-      "Name": "Patty raw",
-      "Position": "-63.26983,-217.7258,0.004344313",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "NetworkOrphaned": 0,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Undercooked.Components.IngredientItem",
-          "__guid": "b68d6536-a4b1-4d5d-9fb1-03d1d95a773d",
-          "__enabled": true,
-          "AlternateInteractionType": "Press",
-          "AttachmentBone": "hand_r",
-          "AttachmentOffset": "0,0,0",
-          "AttachmentRotation": "0,0,0,0",
-          "ChopFeatureEnabled": false,
-          "ChopProgress": 0,
-          "CookFeatureEnabled": true,
-          "CookProgress": 0,
-          "Depositable": null,
-          "HoldType": "HoldItem",
-          "InteractionType": "Press",
-          "ModelCollider": {
-            "_type": "component",
-            "component_id": "d65f7afe-b8a9-4601-a5c8-46f5879d18da",
-            "go": "df85a734-6ee0-4338-920c-a386fd236846",
-            "component_type": "ModelCollider"
-          },
-          "ModelRenderer": {
-            "_type": "component",
-            "component_id": "397d89eb-e992-4266-bab3-ac1df2d432f8",
-            "go": "df85a734-6ee0-4338-920c-a386fd236846",
-            "component_type": "ModelRenderer"
-          },
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Resource": "resources/patty_raw.ingr",
-          "Rigidbody": {
-            "_type": "component",
-            "component_id": "cb63135f-37d6-4828-9792-d27393a9ae47",
-            "go": "df85a734-6ee0-4338-920c-a386fd236846",
-            "component_type": "Rigidbody"
-          }
-        },
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "397d89eb-e992-4266-bab3-ac1df2d432f8",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/patty_raw.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "cb63135f-37d6-4828-9792-d27393a9ae47",
-          "__enabled": true,
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {
-            "X": false,
-            "Y": false,
-            "Z": false,
-            "Pitch": false,
-            "Yaw": false,
-            "Roll": false
-          },
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
-        },
-        {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "d65f7afe-b8a9-4601-a5c8-46f5879d18da",
-          "__enabled": true,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "Model": "models/patty_raw.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "6bd99902-a71b-4293-b861-e1361d488cc6",
-      "__version": 1,
-      "Flags": 0,
-      "Name": "Bun",
-      "Position": "-63.26983,-165.6676,2.714717",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "NetworkOrphaned": 0,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Undercooked.Components.IngredientItem",
-          "__guid": "2086f79c-9c41-4643-a168-f4f1d4ac6e28",
-          "__enabled": true,
-          "AlternateInteractionType": "Press",
-          "AttachmentBone": "hand_r",
-          "AttachmentOffset": "0,0,0",
-          "AttachmentRotation": "0,0,0,0",
-          "ChopFeatureEnabled": false,
-          "ChopProgress": 0,
-          "CookFeatureEnabled": false,
-          "CookProgress": 0,
-          "Depositable": null,
-          "HoldType": "HoldItem",
-          "InteractionType": "Press",
-          "ModelCollider": {
-            "_type": "component",
-            "component_id": "fc3a924b-0708-47ab-a746-604e79ffb529",
-            "go": "6bd99902-a71b-4293-b861-e1361d488cc6",
-            "component_type": "ModelCollider"
-          },
-          "ModelRenderer": {
-            "_type": "component",
-            "component_id": "d47eee19-c969-475f-8cec-44d3bb73aa8f",
-            "go": "6bd99902-a71b-4293-b861-e1361d488cc6",
-            "component_type": "ModelRenderer"
-          },
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Resource": "resources/bun.ingr",
-          "Rigidbody": {
-            "_type": "component",
-            "component_id": "68e0b785-1466-4050-b5a6-7aa423274bf4",
-            "go": "6bd99902-a71b-4293-b861-e1361d488cc6",
-            "component_type": "Rigidbody"
-          }
-        },
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "d47eee19-c969-475f-8cec-44d3bb73aa8f",
-          "__enabled": true,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/bun.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "68e0b785-1466-4050-b5a6-7aa423274bf4",
-          "__enabled": true,
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {
-            "X": false,
-            "Y": false,
-            "Z": false,
-            "Pitch": false,
-            "Yaw": false,
-            "Roll": false
-          },
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
-        },
-        {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "fc3a924b-0708-47ab-a746-604e79ffb529",
-          "__enabled": true,
-          "Elasticity": null,
-          "Friction": null,
-          "IsTrigger": false,
-          "Model": "models/bun.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "OnObjectTriggerEnter": null,
-          "OnObjectTriggerExit": null,
-          "OnTriggerEnter": null,
-          "OnTriggerExit": null,
-          "RollingResistance": null,
-          "Static": false,
-          "Surface": null,
-          "SurfaceVelocity": "0,0,0"
-        }
-      ],
-      "Children": []
-    },
-    {
       "__guid": "9f3d8c27-c7d2-4309-9cae-dbee0c15f257",
       "__version": 1,
       "__Prefab": "prefabs/camera rig.prefab",
@@ -838,35 +430,6 @@
       }
     },
     {
-      "__guid": "9acc4c7f-a57a-4911-ab03-2aed5981dc33",
-      "__version": 1,
-      "__Prefab": "prefabs/frying pan.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26"
-            },
-            "Property": "Position",
-            "Value": "-81.28268,65.51276,2.87175"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26": "9acc4c7f-a57a-4911-ab03-2aed5981dc33",
-        "df190c73-07ce-42f8-a5c3-2fe94b5b9aed": "abdd0522-e46f-46c5-b056-2a551d32d9dd",
-        "eb907826-1d2b-45c7-a949-95e6a84d8394": "39e2f54e-5f7b-49a9-95a8-078e2cb0032e",
-        "de6a50ed-93f5-4c10-951b-fffd5df017e3": "1717591a-5b09-4b0c-8b1d-e0e34168d1d1",
-        "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d": "66b9cf7f-d404-4ef8-9fb6-0002e5ceff0c",
-        "c7f0880a-d37d-4866-8d82-de05612730c8": "f84cb729-71cd-4f00-a1db-35afb3c2702c",
-        "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72": "99560048-4e1d-4bad-a898-064238bb90c3"
-      }
-    },
-    {
       "__guid": "2401eb79-c60b-4ed5-866f-eefaf579bca7",
       "__version": 1,
       "__Prefab": "prefabs/furnitures/cutting board station.prefab",
@@ -881,6 +444,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,39.3967,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "9ddc72be-7879-4c12-9ece-f850b482f8a2"
+            },
+            "Property": "StoredPickable",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -916,6 +487,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,39.3967,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "9ddc72be-7879-4c12-9ece-f850b482f8a2"
+            },
+            "Property": "StoredPickable",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -943,6 +522,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,0,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
+            },
+            "Property": "StoredPickable",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -978,6 +565,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,0,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
+            },
+            "Property": "StoredPickable",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -1013,6 +608,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,-39.93866,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
+            },
+            "Property": "StoredPickable",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -1048,6 +651,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,-39.93866,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
+            },
+            "Property": "StoredPickable",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -1083,6 +694,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,-79.75552,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
+            },
+            "Property": "StoredPickable",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -1110,6 +729,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,-119.886,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "12e79558-d7cf-48c2-8503-5e47be544c90"
+            },
+            "Property": "StoredPickable",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -1120,34 +747,6 @@
         "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "53fd20ad-b24b-4d1c-93ef-db2aa2628477",
         "12e79558-d7cf-48c2-8503-5e47be544c90": "b2263eb6-0854-430c-9634-d5c2a8b1fe31",
         "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "4eed9b7f-4f8d-4183-a61d-7766eb33d7b8"
-      }
-    },
-    {
-      "__guid": "4a6f5e8e-f668-4509-a21e-21ebfb590bdb",
-      "__version": 1,
-      "__Prefab": "prefabs/plate.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "40104537-eecd-40a7-91cc-b51ba8d977ee"
-            },
-            "Property": "Position",
-            "Value": "-161.5147,45.14105,0.7210649"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "40104537-eecd-40a7-91cc-b51ba8d977ee": "4a6f5e8e-f668-4509-a21e-21ebfb590bdb",
-        "72825219-71f1-4ba1-a907-d81bf4f7f416": "1c0a7e99-4ec2-46b1-9f9b-56c39ffe60f5",
-        "15dec150-e11d-4340-9be4-6239fe76c00a": "3da2704a-18d6-4d06-b609-19080f846b40",
-        "a15bc636-03b6-4767-a1cf-3bb2e52fba7d": "d49ab62a-af9a-4ccf-afce-e75c5b10a767",
-        "d014b7e0-65d7-4de0-8c4e-5675e8a405e3": "64a6067d-07e4-478b-a1cd-5b2c655c32f0",
-        "7e5782d7-3e46-4f1a-8ed3-c6675b31d259": "8f9f57f0-93a1-48dc-9fab-8402a66a2f35"
       }
     },
     {
@@ -1174,6 +773,152 @@
         "f5e63b53-f719-4eac-af41-719dda1d022a": "b1a13cfa-c57f-4f99-a66e-d29ed2d01584",
         "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "5b7183ed-39ba-4d70-aaf9-fffcab20b21d",
         "d1ee47b9-2a9e-40e5-a7f5-3b07a0e5db5e": "0aa96edb-4d28-4b14-beb8-e329d0b7ea6f"
+      }
+    },
+    {
+      "__guid": "4595e2d0-21a4-48d5-a845-4d91bba88628",
+      "__version": 1,
+      "__Prefab": "prefabs/items/frying pan.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26"
+            },
+            "Property": "Position",
+            "Value": "-109.1313,7.592468,0.8717504"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26": "4595e2d0-21a4-48d5-a845-4d91bba88628",
+        "df190c73-07ce-42f8-a5c3-2fe94b5b9aed": "86791c05-96b8-4cc9-afc4-8c60b727ca2c",
+        "eb907826-1d2b-45c7-a949-95e6a84d8394": "027170c2-d307-430f-9180-1e56a02eea06",
+        "de6a50ed-93f5-4c10-951b-fffd5df017e3": "f734eef8-869e-4f32-b0e1-67d5445dfc87",
+        "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d": "7b4d2abe-f594-43c6-b692-1c9a0f0df498",
+        "c7f0880a-d37d-4866-8d82-de05612730c8": "2ffb707c-2336-4aaf-a004-f3aefa947de0",
+        "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72": "2dc3b6b8-1ed4-4ceb-b9f1-9c76975a56ba"
+      }
+    },
+    {
+      "__guid": "012e6b6f-5633-4d81-a264-49851106615e",
+      "__version": 1,
+      "__Prefab": "prefabs/items/plate.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "40104537-eecd-40a7-91cc-b51ba8d977ee"
+            },
+            "Property": "Position",
+            "Value": "-3.618958,-97.36436,0.7210649"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "40104537-eecd-40a7-91cc-b51ba8d977ee"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,0,0.9999999"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "40104537-eecd-40a7-91cc-b51ba8d977ee": "012e6b6f-5633-4d81-a264-49851106615e",
+        "72825219-71f1-4ba1-a907-d81bf4f7f416": "e2a68366-a6c0-46cf-baac-53d1c8b8ead4",
+        "15dec150-e11d-4340-9be4-6239fe76c00a": "783cc616-3583-45c2-8c4f-3605a82d37fe",
+        "a15bc636-03b6-4767-a1cf-3bb2e52fba7d": "204fa849-1fc4-4d51-878a-1c8593cd5802",
+        "d014b7e0-65d7-4de0-8c4e-5675e8a405e3": "605413f2-7a61-4114-8ed5-44b1e802e594",
+        "7e5782d7-3e46-4f1a-8ed3-c6675b31d259": "f681231b-7e8c-4523-a7c5-1b493d710440"
+      }
+    },
+    {
+      "__guid": "fc24e7f9-3dbe-4c3f-bce8-928bfd5e156a",
+      "__version": 1,
+      "__Prefab": "prefabs/items/patty raw.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "50b5693f-15d4-438f-b625-7f8324775ebe"
+            },
+            "Property": "Position",
+            "Value": "7.575806,-148.6962,0.7812414"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "50b5693f-15d4-438f-b625-7f8324775ebe": "fc24e7f9-3dbe-4c3f-bce8-928bfd5e156a",
+        "ab3bdc1d-2be3-477b-a7e3-c71685ba0cc9": "ff193f56-0ceb-4e00-a597-dae7fe4f985b",
+        "e0781b68-f6ce-4a5c-8d15-c56d481628bb": "443ce1ec-3189-4ead-96ee-0db4c7094ed9",
+        "e7c60352-2d67-488a-99c4-af819314a6a4": "3f85aa99-ccfc-4ede-aee0-b261d3a743df",
+        "72c8746d-f9eb-414b-a0e1-4ec397adee66": "f8e23a1c-7193-4508-9960-64fca37e7eeb"
+      }
+    },
+    {
+      "__guid": "3fd1b07e-3488-4a7b-96c4-c09a3cddd32a",
+      "__version": 1,
+      "__Prefab": "prefabs/items/cheese.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "f47053c7-4980-43ba-afd8-01dd71ceac76"
+            },
+            "Property": "Position",
+            "Value": "-188.7392,6.09787,0.5043449"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "f47053c7-4980-43ba-afd8-01dd71ceac76": "3fd1b07e-3488-4a7b-96c4-c09a3cddd32a",
+        "40c5942b-42f0-485d-95f3-7680f4600f70": "1c2a1125-2f89-4d83-901b-3e7213f7ec10",
+        "ebc239f4-77fa-4f18-9e23-9857bba5bf08": "6452f3ca-62fa-4ad0-bd3a-9fc0ccd38cd6",
+        "944f6d97-9683-483d-b257-21f60f39fe4f": "b73d903b-8044-4be1-9194-f462283334b6",
+        "8081ddda-a44d-416a-a490-b1c3d34dd798": "51b33374-631b-48b9-8541-cfe6a75c7198"
+      }
+    },
+    {
+      "__guid": "d33414b0-0799-495a-aca1-34483ac698cc",
+      "__version": 1,
+      "__Prefab": "prefabs/items/bun.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "bb0b0810-7e91-46a3-b730-9288975ac44a"
+            },
+            "Property": "Position",
+            "Value": "-159.0864,164.4364,4.503474"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "bb0b0810-7e91-46a3-b730-9288975ac44a": "d33414b0-0799-495a-aca1-34483ac698cc",
+        "bfdb5bd1-ecd6-43f1-9fbb-725a5ffb74ba": "a51eac3a-05b4-4a8f-9cd8-a41b1d129740",
+        "d4e1897c-1836-4f1c-943a-f2e12526da55": "b4784e07-1f0f-4d8f-92af-d3ab3c0cc016",
+        "3aa22846-0dea-44e4-ac79-10908fdb3ee9": "4b73fbc5-93b5-4297-b49d-c5bf8c8228b1",
+        "8d1729dc-a5cf-40e9-a156-0c5b7ef78d43": "731486be-e057-403a-baf4-3d74b60b472c"
       }
     }
   ],

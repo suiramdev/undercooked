@@ -1,7 +1,6 @@
 #nullable enable
 
 using System;
-using Undercooked.Components.Interfaces;
 using Undercooked.Components.Enums;
 
 namespace Undercooked.Components;
@@ -19,13 +18,14 @@ public class CuttingBoardStation : StationBase
 	private TimeSince _lastChopTime = 0f;
 	private const float CHOP_COOLDOWN = 0.1f;
 
-	public override bool TryAlternateInteract( Player by )
+	[Rpc.Host]
+	public override void AlternateInteract( Player by )
 	{
-		if ( StoredPickable is null || StoredPickable is not IngredientItem ingredient ) return false;
+		if ( StoredPickable is null || StoredPickable is not IngredientItem ingredient ) return;
 
 		if ( !ingredient.Choppable || _lastChopTime < CHOP_COOLDOWN )
 		{
-			return false;
+			return;
 		}
 
 		ingredient.ChopProgress = MathF.Min( ingredient.ChopProgress + ChopSpeed * CHOP_COOLDOWN, 1f );
@@ -35,7 +35,5 @@ public class CuttingBoardStation : StationBase
 		{
 			ingredient.OnChopped();
 		}
-
-		return true;
 	}
 }

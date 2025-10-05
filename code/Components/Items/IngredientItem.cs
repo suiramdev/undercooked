@@ -11,6 +11,7 @@ public class IngredientItem : ItemBase
 	[Property]
 	[Description( "The resource of the ingredient" )]
 	[Change]
+	[Sync( SyncFlags.FromHost )]
 	public IngredientResource? Resource { get; set; } = null;
 
 	[Property]
@@ -50,7 +51,7 @@ public class IngredientItem : ItemBase
 		return base.CanBePickedUp( by ) && Depositable is not FryingPanItem;
 	}
 
-	public override bool CanBeDroppedOn( IDepositable depositable, Player by )
+	public override bool CanBeDepositedOn( IDepositable depositable, Player by )
 	{
 		return true;
 	}

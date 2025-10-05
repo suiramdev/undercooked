@@ -50,25 +50,27 @@ public abstract class ItemBase : Component, IPickable, IInteractable
 	[Property]
 	[Description( "The depositable that the item is on" )]
 	[ReadOnly]
+	[Sync( SyncFlags.FromHost )]
 	public IDepositable? Depositable { get; set; }
 
-	public virtual bool TryInteract( Player player )
+	[Rpc.Host]
+	public virtual void Interact( Player player )
 	{
 		// If the player's slot is not empty, we can't interact with the item
-		if ( !player.PlayerSlot.Empty ) return false;
+		if ( !player.PlayerSlot.Empty ) return;
 
 		// If the item can be picked up, we can deposit it into the player's slot
 		if ( CanBePickedUp( player ) )
 		{
-			return player.PlayerSlot.TryDeposit( this, player );
+			player.PlayerSlot.Deposit( this, player );
+			return;
 		}
-
-		return false;
 	}
 
-	public virtual bool TryAlternateInteract( Player player )
+	[Rpc.Host]
+	public virtual void AlternateInteract( Player player )
 	{
-		return false;
+		return;
 	}
 
 	public virtual bool CanBePickedUp( Player player )
@@ -76,20 +78,32 @@ public abstract class ItemBase : Component, IPickable, IInteractable
 		return Depositable is null;
 	}
 
-	public abstract bool CanBeDroppedOn( IDepositable depositable, Player player );
+	public abstract bool CanBeDepositedOn( IDepositable depositable, Player player );
 
 	public virtual void OnPickedUp( Player player )
 	{
 		Depositable = player.PlayerInteraction.PlayerSlot;
 	}
 
-	public virtual void OnDroppedOn( IDepositable depositable, Player player )
+	[Rpc.Host]
+	public virtual void OnDeposited( IDepositable depositable, Player player )
 	{
+		if ( Depositable is PlayerSlot playerSlot )
+		{
+			playerSlot.TakePickable();
+		}
+
 		Depositable = depositable;
 	}
 
-	public virtual void OnWorldDropped( Vector3 position, Rotation rotation )
+	[Rpc.Host]
+	public virtual void OnDropped()
 	{
+		if ( Depositable is PlayerSlot playerSlot )
+		{
+			playerSlot.TakePickable();
+		}
+
 		Depositable = null;
 	}
 }

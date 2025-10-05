@@ -20,12 +20,14 @@ public class StoveStation : StationBase
 		TryCook();
 	}
 
-	public override bool TryDeposit( IPickable pickable, Player by )
+	[Rpc.Host]
+	public override void Deposit( IPickable pickable, Player by )
 	{
-		if ( pickable is not FryingPanItem fryingPan ) return false;
-		return base.TryDeposit( fryingPan, by );
+		if ( pickable is not FryingPanItem fryingPan ) return;
+		base.Deposit( fryingPan, by );
 	}
 
+	[Rpc.Host]
 	private void TryCook()
 	{
 		if ( StoredPickable is not FryingPanItem fryingPan ) return;
