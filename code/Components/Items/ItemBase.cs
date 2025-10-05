@@ -54,56 +54,31 @@ public abstract class ItemBase : Component, IPickable, IInteractable
 	public IDepositable? Depositable { get; set; }
 
 	[Rpc.Host]
-	public virtual void Interact( Player player )
+	public virtual void TryInteract( Player player )
 	{
-		// If the player's slot is not empty, we can't interact with the item
-		if ( !player.PlayerSlot.Empty ) return;
-
-		// If the item can be picked up, we can deposit it into the player's slot
-		if ( CanBePickedUp( player ) )
-		{
-			player.PlayerSlot.Deposit( this, player );
-			return;
-		}
+		player.PlayerSlot.TryDeposit( this );
 	}
 
 	[Rpc.Host]
-	public virtual void AlternateInteract( Player player )
+	public virtual void TryAlternateInteract( Player player )
 	{
 		return;
 	}
 
-	public virtual bool CanBePickedUp( Player player )
+	public virtual bool CanBeDepositedOn( IDepositable depositable, Player player )
 	{
-		return Depositable is null;
-	}
-
-	public abstract bool CanBeDepositedOn( IDepositable depositable, Player player );
-
-	public virtual void OnPickedUp( Player player )
-	{
-		Depositable = player.PlayerInteraction.PlayerSlot;
+		return true;
 	}
 
 	[Rpc.Host]
-	public virtual void OnDeposited( IDepositable depositable, Player player )
+	public virtual void OnDeposit( IDepositable depositable )
 	{
-		if ( Depositable is PlayerSlot playerSlot )
-		{
-			playerSlot.TakePickable();
-		}
-
 		Depositable = depositable;
 	}
 
 	[Rpc.Host]
-	public virtual void OnDropped()
+	public virtual void OnDrop()
 	{
-		if ( Depositable is PlayerSlot playerSlot )
-		{
-			playerSlot.TakePickable();
-		}
-
 		Depositable = null;
 	}
 }

@@ -16,12 +16,16 @@ public class FryingPanItem : ItemBase, IDepositable, ITransferable
 	[Sync( SyncFlags.FromHost )]
 	public IngredientItem? Ingredient { get; set; }
 
-	public bool Empty => Ingredient is null;
+	public bool CanAccept( IPickable pickable )
+	{
+		return pickable is IngredientItem ingredient && ingredient.Cookable;
+	}
 
 	[Rpc.Host]
-	public void Deposit( IPickable pickable, Player by )
+	public void TryDeposit( IPickable pickable )
 	{
-		if ( pickable is not IngredientItem ingredient || !ingredient.Cookable ) return;
+		if ( !CanAccept( pickable ) ) return;
+		if ( pickable is not IngredientItem ingredient ) return;
 
 		Ingredient = ingredient;
 		ingredient.GameObject.SetParent( Socket );
@@ -35,38 +39,15 @@ public class FryingPanItem : ItemBase, IDepositable, ITransferable
 		if ( collider is not null ) collider.Enabled = false;
 
 		// Notify the ingredient that it was dropped on the pan
-		pickable.OnDeposited( this, by );
+		pickable.OnDeposit( this );
 	}
 
 	[Rpc.Host]
-	public void TransferPickable( IDepositable depositable, Player by )
+	public void TryTransfer( IDepositable depositable )
 	{
 		if ( Ingredient is not null )
 		{
-			depositable.Deposit( Ingredient, by );
+			depositable.TryDeposit( Ingredient );
 		}
-	}
-
-	public override bool CanBePickedUp( Player by )
-	{
-		return true;
-	}
-
-	public override bool CanBeDepositedOn( IDepositable depositable, Player by )
-	{
-		return true;
-	}
-
-	public IPickable? GetPickable() => Ingredient;
-
-	public IPickable? TakePickable()
-	{
-		var temp = Ingredient;
-		Ingredient = null;
-
-		// If the ingredient is embedded, unembed it
-		if ( temp is not null ) temp.Depositable = null;
-
-		return temp;
 	}
 }

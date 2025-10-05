@@ -9,11 +9,7 @@ public interface IDepositable
 {
 	GameObject GameObject { get; }
 
-	bool Empty { get; }
+	bool CanAccept( IPickable pickable );
 
-	void Deposit( IPickable pickable, Player by );
-
-	IPickable? GetPickable();
-
-	IPickable? TakePickable();
+	void TryDeposit( IPickable pickable );
 }

@@ -92,7 +92,7 @@ public class PlayerInteraction : Component
 			.Where( x =>
 				x.Interactable is not null &&
 				// We don't want to interact with the object we are holding
-				x.GameObject != PlayerSlot.GetPickable()?.GameObject
+				x.GameObject != PlayerSlot.StoredPickable?.GameObject
 			)
 			.OrderByDescending( x =>
 			{
@@ -110,18 +110,17 @@ public class PlayerInteraction : Component
 
 	protected void InteractPrimary()
 	{
-		if ( !PlayerSlot.Empty && (InteractableTarget is null || InteractableTarget is ItemBase) )
+		if ( InteractableTarget is not null )
 		{
-			// Attempt to drop the currently held item if no interactable target is found
-			PlayerSlot.DropPickable();
+			InteractableTarget.TryInteract( Player );
 			return;
 		}
 
-		InteractableTarget?.Interact( Player );
+		PlayerSlot.Drop();
 	}
 
 	protected void InteractAlternate()
 	{
-		InteractableTarget?.AlternateInteract( Player );
+		InteractableTarget?.TryAlternateInteract( Player );
 	}
 }

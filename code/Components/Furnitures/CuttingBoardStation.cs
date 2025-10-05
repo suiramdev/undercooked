@@ -19,7 +19,7 @@ public class CuttingBoardStation : StationBase
 	private const float CHOP_COOLDOWN = 0.1f;
 
 	[Rpc.Host]
-	public override void AlternateInteract( Player by )
+	public override void TryAlternateInteract( Player by )
 	{
 		if ( StoredPickable is null || StoredPickable is not IngredientItem ingredient ) return;
 

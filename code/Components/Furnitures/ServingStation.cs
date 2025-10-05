@@ -15,22 +15,22 @@ public class ServingStation : Component, IInteractable
     public InteractionType AlternateInteractionType => InteractionType.Press;
 
     [Rpc.Host]
-    public void Interact( Player player )
+    public void TryInteract( Player by )
     {
-        var held = player.PlayerSlot.GetPickable();
+        // var held = player.PlayerSlot.GetPickable();
 
-        // If player is holding a plate, try to submit it
-        if ( held is PlateItem plate )
-        {
-            SubmitPlate( plate, player );
-        }
+        // // If player is holding a plate, try to submit it
+        // if ( held is PlateItem plate )
+        // {
+        //     SubmitPlate( plate, player );
+        // }
     }
 
     [Rpc.Host]
-    public void AlternateInteract( Player player )
+    public void TryAlternateInteract( Player by )
     {
         // Alternate interaction is the same as primary interaction
-        Interact( player );
+        TryInteract( by );
     }
 
     [Rpc.Host]

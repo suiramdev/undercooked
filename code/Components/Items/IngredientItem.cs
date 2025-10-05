@@ -1,7 +1,6 @@
 #nullable enable
 
 using System;
-using Undercooked.Components.Interfaces;
 using Undercooked.Resources;
 
 namespace Undercooked.Components;
@@ -46,16 +45,6 @@ public class IngredientItem : ItemBase
 		base.OnAwake();
 	}
 
-	public override bool CanBePickedUp( Player by )
-	{
-		return base.CanBePickedUp( by ) && Depositable is not FryingPanItem;
-	}
-
-	public override bool CanBeDepositedOn( IDepositable depositable, Player by )
-	{
-		return true;
-	}
-
 	public void OnChopped()
 	{
 		Resource = Resource?.ChoppedResource;
@@ -80,3 +69,4 @@ public class IngredientItem : ItemBase
 		CookProgress = 0f;
 	}
 }
+

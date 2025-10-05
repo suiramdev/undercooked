@@ -24,9 +24,7 @@ public sealed class PlateItem : ItemBase, IDepositable
 
 	private GameObject? _recipeResultObject;
 
-	public bool Empty => Ingredients.Count == 0;
-
-	public bool CanDeposit( IPickable pickable, Player _ )
+	public bool CanAccept( IPickable pickable )
 	{
 		return pickable is IngredientItem ingredient
 			&& ingredient.Resource is not null
@@ -34,9 +32,9 @@ public sealed class PlateItem : ItemBase, IDepositable
 	}
 
 	[Rpc.Host]
-	public void Deposit( IPickable pickable, Player by )
+	public void TryDeposit( IPickable pickable )
 	{
-		if ( !CanDeposit( pickable, by ) ) return;
+		if ( !CanAccept( pickable ) ) return;
 		if ( pickable is not IngredientItem ingredient || ingredient.Resource is null ) return;
 
 		Ingredients.Add( ingredient.Resource );
@@ -55,24 +53,6 @@ public sealed class PlateItem : ItemBase, IDepositable
 			_recipeResultObject.LocalRotation = Rotation.Identity;
 		}
 
-		// Notify the ingredient that it was dropped on the plate
-		pickable.OnDeposited( this, by );
-	}
-
-	public override bool CanBePickedUp( Player _ )
-	{
-		return true;
-	}
-
-	public override bool CanBeDepositedOn( IDepositable _, Player __ )
-	{
-		return true;
-	}
-
-	public IPickable? GetPickable() => null;
-
-	public IPickable? TakePickable()
-	{
-		return null;
+		pickable.OnDeposit( this );
 	}
 }

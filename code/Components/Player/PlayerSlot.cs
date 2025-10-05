@@ -17,77 +17,82 @@ public class PlayerSlot : Component, IDepositable
 	[RequireComponent]
 	public required CitizenAnimationHelper CitizenAnimationHelper { get; set; }
 
-	[Property]
-	[ReadOnly]
+	[Change( nameof( OnStoredPickableChanged ) )]
 	[Sync( SyncFlags.FromHost )]
-	private IPickable? StoredPickable { get; set; }
+	public IPickable? StoredPickable { get; private set; }
 
-	public bool Empty => StoredPickable is null;
+	public bool CanAccept( IPickable _ )
+	{
+		return StoredPickable is null;
+	}
 
 	[Rpc.Host]
-	public void Deposit( IPickable pickable, Player player )
+	public void TryDeposit( IPickable pickable )
 	{
-		if ( !Empty ) return;
+		if ( !CanAccept( pickable ) ) return;
 
 		StoredPickable = pickable;
 
 		// Attach item to the appropriate hand bone
-		var ent = pickable.GameObject;
 		GameObject attachmentObject = SkinnedModelRenderer.GetAttachmentObject( pickable.AttachmentBone );
-		ent.SetParent( attachmentObject );
-		ent.LocalPosition = pickable.AttachmentOffset;
-		ent.LocalRotation = pickable.AttachmentRotation;
+		pickable.GameObject.SetParent( attachmentObject );
+		pickable.GameObject.LocalPosition = pickable.AttachmentOffset;
+		pickable.GameObject.LocalRotation = pickable.AttachmentRotation;
 
 		// Disable the object's physics
-		var rigidbody = ent.GetComponent<Rigidbody>( true );
+		var rigidbody = pickable.GameObject.GetComponent<Rigidbody>( true );
 		if ( rigidbody != null )
 			rigidbody.Enabled = false;
 
-		var collider = ent.GetComponent<Collider>( true );
+		var collider = pickable.GameObject.GetComponent<Collider>( true );
 		if ( collider != null )
 			collider.Enabled = false;
 
-		// Set the player's hold type
-		CitizenAnimationHelper.HoldType = pickable.HoldType;
-
-		pickable.OnPickedUp( player );
-
-		return;
+		pickable.OnDeposit( this );
 	}
 
-	// Look at what we're holding without removing it
-	public IPickable? GetPickable() => StoredPickable;
-
-	// Remove and return the held item
-	public IPickable? TakePickable()
+	/// <summary>
+	/// Attempts to transfer the currently held pickable to another depositable surface.
+	/// Clears the slot if the transfer is successful.
+	/// </summary>
+	[Rpc.Host]
+	public void TryTransferTo( IDepositable target )
 	{
-		var temp = StoredPickable;
-		StoredPickable = default;
-		CitizenAnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.None;
-		return temp;
+		if ( StoredPickable is null ) return;
+		if ( !target.CanAccept( StoredPickable ) ) return;
+
+		var pickable = StoredPickable;
+		StoredPickable = null;
+
+		target.TryDeposit( pickable );
 	}
 
 	[Rpc.Host]
-	public void DropPickable()
+	public void Drop()
 	{
-		var pickable = TakePickable();
-		if ( pickable is null ) return;
+		if ( StoredPickable is null ) return;
 
-		var ent = pickable.GameObject;
+		var pickable = StoredPickable;
+		StoredPickable = null;
 
-		ent.SetParent( null );
-		ent.WorldPosition = GameObject.WorldPosition + GameObject.WorldRotation.Forward * 30.0f;
-		ent.WorldRotation = GameObject.WorldRotation;
+		pickable.GameObject.SetParent( null );
+		pickable.GameObject.WorldPosition = GameObject.WorldPosition + GameObject.WorldRotation.Forward * 30.0f;
+		pickable.GameObject.WorldRotation = GameObject.WorldRotation;
 
 		// Re-enable the object's physics
-		var rigidbody = ent.GetComponent<Rigidbody>( true );
+		var rigidbody = pickable.GameObject.GetComponent<Rigidbody>( true );
 		if ( rigidbody != null )
 			rigidbody.Enabled = true;
 
-		var collider = ent.GetComponent<Collider>( true );
+		var collider = pickable.GameObject.GetComponent<Collider>( true );
 		if ( collider != null )
 			collider.Enabled = true;
 
-		pickable.OnDropped();
+		pickable.OnDrop();
+	}
+
+	protected void OnStoredPickableChanged( IPickable? _, IPickable? newPickable )
+	{
+		CitizenAnimationHelper.HoldType = newPickable?.HoldType ?? CitizenAnimationHelper.HoldTypes.None;
 	}
 }

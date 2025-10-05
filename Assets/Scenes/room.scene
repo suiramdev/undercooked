@@ -444,14 +444,6 @@
             },
             "Property": "Position",
             "Value": "73.47443,39.3967,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "9ddc72be-7879-4c12-9ece-f850b482f8a2"
-            },
-            "Property": "StoredPickable",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -487,14 +479,6 @@
             },
             "Property": "Position",
             "Value": "73.47443,39.3967,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "9ddc72be-7879-4c12-9ece-f850b482f8a2"
-            },
-            "Property": "StoredPickable",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -522,14 +506,6 @@
             },
             "Property": "Position",
             "Value": "73.47443,0,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
-            },
-            "Property": "StoredPickable",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -565,14 +541,6 @@
             },
             "Property": "Position",
             "Value": "73.47443,0,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
-            },
-            "Property": "StoredPickable",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -608,14 +576,6 @@
             },
             "Property": "Position",
             "Value": "73.47443,-39.93866,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
-            },
-            "Property": "StoredPickable",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -651,14 +611,6 @@
             },
             "Property": "Position",
             "Value": "73.47443,-39.93866,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
-            },
-            "Property": "StoredPickable",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -694,14 +646,6 @@
             },
             "Property": "Position",
             "Value": "73.47443,-79.75552,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "8a312fcb-984d-43a5-a7db-7eed24bc1f10"
-            },
-            "Property": "StoredPickable",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -729,14 +673,6 @@
             },
             "Property": "Position",
             "Value": "73.47443,-119.886,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "12e79558-d7cf-48c2-8503-5e47be544c90"
-            },
-            "Property": "StoredPickable",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -819,14 +755,6 @@
             },
             "Property": "Position",
             "Value": "-3.618958,-97.36436,0.7210649"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "40104537-eecd-40a7-91cc-b51ba8d977ee"
-            },
-            "Property": "Rotation",
-            "Value": "0,0,0,0.9999999"
           }
         ],
         "MovedObjects": []

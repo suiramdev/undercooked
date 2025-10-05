@@ -16,7 +16,7 @@ public interface IInteractable
 
 	InteractionType AlternateInteractionType { get; }
 
-	void Interact( Player by );
+	void TryInteract( Player by );
 
-	void AlternateInteract( Player by );
+	void TryAlternateInteract( Player by );
 }

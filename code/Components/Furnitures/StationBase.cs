@@ -2,6 +2,7 @@
 
 using Undercooked.Components.Interfaces;
 using Undercooked.Components.Enums;
+using System.Runtime.InteropServices;
 
 namespace Undercooked.Components;
 
@@ -24,56 +25,61 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 	[Description( "The pickable that is stored on the station" )]
 	[ReadOnly]
 	[Sync( SyncFlags.FromHost )]
-	protected IPickable? StoredPickable { get; set; }
-
-	public bool Empty => StoredPickable is null;
+	public IPickable? StoredPickable { get; protected set; }
 
 	[Rpc.Host]
-	public virtual void Interact( Player player )
+	public virtual void TryInteract( Player by )
 	{
-		var held = player.PlayerSlot.GetPickable();
+		var held = by.PlayerSlot.StoredPickable;
 
 		// Attempt to retrieve the stored item from the station
-		if ( held is null )
+		if ( held is null && StoredPickable is not null )
 		{
-			var pickable = TakePickable();
-			if ( pickable is null ) return;
-
-			player.PlayerSlot.Deposit( pickable, player );
+			if ( by.PlayerSlot.CanAccept( StoredPickable ) )
+			{
+				var pickable = StoredPickable;
+				StoredPickable = null;
+				by.PlayerSlot.TryDeposit( pickable );
+			}
 			return;
 		}
 
 		// Attempt to deposit the held item into the pickable currently stored on the station (if any)
-		if ( StoredPickable is not null && StoredPickable is IDepositable depositable )
+		if ( StoredPickable is not null && StoredPickable is IDepositable storedDepositable )
 		{
 			// Special case: If the held item is a transferable, allow transferring its contents to the stored pickable
 			// e.g. If the player is holding a pan, they can transfer the contents to the pickable currently on the station
-			if ( held is ITransferable transferable && !transferable.Empty )
+			if ( held is ITransferable transferable )
 			{
-				transferable.TransferPickable( depositable, player );
+				transferable.TryTransfer( storedDepositable );
 				return;
 			}
-
-			// Attempt to deposit the held item into the pickable currently stored on the station
-			depositable.Deposit( held, player );
 		}
 
-		// Attempt to deposit the held item into the station
-		Deposit( held, player );
+		// Attempt to deposit the held item onto the station
+		if ( held is not null )
+		{
+			by.PlayerSlot.TryTransferTo( this );
+		}
 	}
 
 	[Rpc.Host]
-	public virtual void AlternateInteract( Player player )
+	public virtual void TryAlternateInteract( Player by )
 	{
 		return;
 	}
 
-	[Rpc.Host]
-	public virtual void Deposit( IPickable pickable, Player by )
+	public virtual bool CanAccept( IPickable pickable )
 	{
-		if ( StoredPickable is not null || pickable is not IPickable item ) return;
+		return StoredPickable is null;
+	}
 
-		StoredPickable = item;
+	[Rpc.Host]
+	public virtual void TryDeposit( IPickable pickable )
+	{
+		if ( !CanAccept( pickable ) ) return;
+
+		StoredPickable = pickable;
 		StoredPickable.GameObject.SetParent( Socket );
 		StoredPickable.GameObject.LocalPosition = Vector3.Zero;
 		StoredPickable.GameObject.LocalRotation = Rotation.Identity;
@@ -84,17 +90,6 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 		Collider? collider = StoredPickable.GameObject.GetComponent<Collider>( true );
 		if ( collider is not null ) collider.Enabled = false;
 
-		// Notify the pickable that it was dropped on the counter
-		pickable.OnDeposited( this, by );
-	}
-
-	public virtual IPickable? GetPickable() => StoredPickable;
-
-	public virtual IPickable? TakePickable()
-	{
-		var temp = StoredPickable;
-		StoredPickable = default;
-
-		return temp;
+		pickable.OnDeposit( this );
 	}
 }
