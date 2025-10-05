@@ -38,6 +38,81 @@
       "Children": []
     },
     {
+      "__guid": "d714bc87-c3a7-4cc1-8036-9845ae26dd7e",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Spawn Points",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [],
+      "Children": [
+        {
+          "__guid": "dc7bbd7f-4c11-4f6b-b02c-ebde74e0158c",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Spawn Point (1)",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [],
+          "Children": []
+        }
+      ]
+    },
+    {
+      "__guid": "50f9c034-c390-42fa-95ff-8eb9a280771f",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Network Manager",
+      "Position": "114.0189,-165.7776,64.44945",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.NetworkHelper",
+          "__guid": "d2a9cb1c-5d21-45ff-b1a9-0edaab43b313",
+          "__enabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "dc7bbd7f-4c11-4f6b-b02c-ebde74e0158c"
+            }
+          ],
+          "StartServer": true
+        }
+      ],
+      "Children": []
+    },
+    {
       "__guid": "c79f1c3a-9ab6-45e4-9f93-57f3704ba581",
       "__version": 1,
       "Flags": 0,
@@ -327,78 +402,6 @@
       "OwnerTransfer": 1,
       "Components": [],
       "Children": []
-    },
-    {
-      "__guid": "52cc876d-ad38-44d8-b020-bff0389c9d98",
-      "__version": 1,
-      "__Prefab": "prefabs/player.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "6358c100-be8d-4d08-bdc7-0a563864d7db"
-            },
-            "Property": "CameraController",
-            "Value": {
-              "_type": "component",
-              "component_id": "70753eee-f5b8-450a-b652-19dbf644f3f7",
-              "go": "9f3d8c27-c7d2-4309-9cae-dbee0c15f257",
-              "component_type": "PlayerCameraController"
-            }
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "22fc2a11-d36b-44e8-b056-6ebfb1f5d301": "52cc876d-ad38-44d8-b020-bff0389c9d98",
-        "97f96dc7-d65c-41b1-970e-767e0e89a3e9": "a6c6e7c4-1f39-45d6-b2c6-48d2f3e17db8",
-        "a79dc321-2bc6-4e9d-9d63-26865382fa87": "0390628a-ba92-4c5e-a9ff-d21123adba35",
-        "e602d163-82ac-452d-b27a-ec7baeb0549b": "7bfbc410-e2ac-4729-b250-af4cb796985f",
-        "6358c100-be8d-4d08-bdc7-0a563864d7db": "aa0c7467-327f-403d-a4c8-156b01d3ef5c",
-        "c2303ce2-8195-448d-83d4-be0111ad773f": "5caf87c0-09e9-4134-a18f-ea5aa494a33d",
-        "b32104f7-2401-4ea4-b89e-aa23fe8b0730": "aac40afd-2b2b-4027-8d6f-197443038a36",
-        "f2dc5d31-972e-47b8-8bc5-e65ac605fa05": "ecdb8375-5691-44d8-ace4-7145cdd453b1",
-        "7917d778-8770-454a-b24f-66457bbd9aba": "b791f740-be74-44a9-92c2-a8f569e61267",
-        "8c86880c-2d1f-4aef-9e80-79e9a14dbc95": "be57d9db-2c50-4c05-abc3-30073baabb04",
-        "a90d17f3-e2f0-443a-8477-3c00ad3118b5": "2eb75e8f-adb8-4c70-a54c-8274a9ef405b",
-        "16cdcb9e-6bb3-4b62-8956-609c20b87c6b": "55b39d07-fbc6-4da5-9e19-fdd1b6998884",
-        "36ec5f3b-ebeb-44ec-9a7b-581cccf6a8b5": "3f58d09f-3609-4487-ac4e-e7731e8325c8",
-        "712b6e1c-6cff-4c2c-b233-0f835341ead4": "2badfd3a-f414-444d-a4cf-cd31095591da",
-        "91e07105-49ed-45ab-a037-e7e801ddd2ff": "22367536-4081-413c-ab67-23f3abeff049",
-        "a095c60d-7be9-40e2-aa70-9696da512212": "a6a73e86-c006-481a-9cf8-ba5fc58e369e",
-        "1d8f4dfd-e88a-4ef5-bde8-c5a97da91abf": "5701c36c-5875-4174-b97a-a172bd8896d9",
-        "82399865-1a82-4b4e-8968-b77380a77e22": "9cf6cca8-c9a9-4575-95b6-58259ac82e84",
-        "36380c9e-264d-4e4a-a6a4-3b4a87a5a6d3": "7f935781-3310-46e8-8d6a-605115fd2293",
-        "c8fe30c9-684e-47d9-b061-95714ac6ce62": "9900da05-42d1-4b88-ac80-d55616d7e759",
-        "a854dd16-0e65-49ff-bfb5-6b51e1a5b1d0": "88910449-2dbf-44c3-884e-428c471b0671",
-        "1dc2493e-abe2-4cf5-8a43-46b916f148d9": "0c78643a-8f36-4eb1-b7b1-4c68b1e6571e",
-        "36456ed7-a001-4e9f-a03c-be1e11fdde85": "c070655d-7c68-4a76-b19b-5d2cd740fddf",
-        "fa2665b1-fa34-407d-91ab-1ffd409b055c": "b0545800-81c8-4672-8329-f08bdb810d07",
-        "5fac830a-6951-451c-a00a-00028ab7b9cb": "c961864f-2def-4fc1-919d-e76b5acefe3b",
-        "d1c98795-6b91-4ece-a5ca-9d1ec3fb1f67": "3bf9c837-45f2-4807-92af-e0116afae7e5",
-        "dd4bee5b-ee32-4245-8b00-e3420bdc2146": "a9fa8e9a-41b7-4b42-91e8-3782ad6d844a",
-        "57d070af-bc67-4640-aa10-2190ae1f8177": "b6b35db6-b9d5-4055-a9bb-e9c6dbbe782f",
-        "9b9cfb39-a2fe-4c4a-a354-1f358b802225": "6c6f0bd2-7e29-47fe-960e-fe2e590c32a7",
-        "1a388f42-9acd-4b35-b2b7-c9a521306ced": "e320fc8a-014c-481c-874e-5c1dade4d48a",
-        "45003a26-b347-4494-b3ab-04ef8fc5a106": "c3a93bfb-58ba-40ab-a3fe-d432e8162ac3",
-        "2b2b6478-b348-4462-bf0a-61bfa4dc465b": "783c82b9-e587-47a6-93f0-63ab0614db27",
-        "f95622bc-1b65-4a37-a97f-55e9cf435174": "70edaab5-798f-4fa7-8895-c83baad00a40",
-        "c745a87c-264f-4469-9ae1-d7635dc82621": "c2060b6a-fc5b-42c3-a4e1-91295c1e402d",
-        "2c7769f1-c144-4475-9d7f-3eb8b56beb6e": "6b6aa0f4-496d-4d41-a678-99c386119297",
-        "e170f85f-54e6-4a93-a0fa-6e4cba82f5ce": "31319473-8c94-4173-b6b5-0cd5dc37c951",
-        "389f7713-a118-4adc-8953-4fceaddf703d": "1ad9da32-72fc-4da2-9c68-db66dc92c431",
-        "2c38706f-0e95-44ab-998c-c4a214dc1603": "1cdb04fe-b005-4484-9533-214b1a193155",
-        "c9527d12-e68e-4fe6-991b-394347d9d585": "f5a298d1-43a5-41ec-82dc-8d2c00b60c59",
-        "d79a6b81-fa43-4e02-9baa-4367a10a9378": "38137702-efc1-4651-9c60-a38269620947",
-        "59a3451b-e807-488c-9055-9157423cc750": "504ff26b-4dcb-49e2-9cc1-a9d2062ee83a",
-        "a706daaa-4117-4d43-b1c5-0f56950e50d7": "d037a64e-80cb-4b05-9737-13794619b13b",
-        "9ad6fc3c-c9f6-46c5-8c5b-340fc37b2131": "a4fc2125-6427-46be-89d4-b145f93e06e1",
-        "87217889-94c1-4753-8a3e-e9a552e89cce": "ac62cb2f-3b4f-4d3b-b7cf-907ebe3fdb51",
-        "e10c6846-37ea-4a0d-a0ca-2537ec0a51f5": "4ca4af07-5d50-4e2c-8864-7116e7851fe9"
-      }
     },
     {
       "__guid": "d0298997-f7b3-473d-861e-22e88fdb3f6a",
@@ -811,101 +814,28 @@
     {
       "__guid": "9f3d8c27-c7d2-4309-9cae-dbee0c15f257",
       "__version": 1,
-      "Flags": 0,
-      "Name": "Camera Rig",
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "NetworkOrphaned": 0,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Undercooked.Components.PlayerCameraController",
-          "__guid": "70753eee-f5b8-450a-b652-19dbf644f3f7",
-          "__enabled": true,
-          "Camera": {
-            "_type": "component",
-            "component_id": "1fc79bad-d89b-4b1b-9ae2-f0de4e04583b",
-            "go": "227fa6d7-7376-4c3e-924d-a0d3c097269b",
-            "component_type": "CameraComponent"
-          },
-          "FollowSpeed": 4,
-          "HeightOffset": 1.5,
-          "InitialYaw": 0,
-          "ManualRotationSpeed": 90,
-          "MaxDistance": 600,
-          "MaxTiltAngle": 45,
-          "MaxZoom": 1,
-          "MinDistance": 300,
-          "MinTiltAngle": 25,
-          "MinZoom": 0,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Player": {
-            "_type": "gameobject",
-            "go": "52cc876d-ad38-44d8-b020-bff0389c9d98"
-          },
-          "RotateCCWAction": "RotateCCW",
-          "RotateCWAction": "RotateCW",
-          "ZoomInAction": "ZoomIn",
-          "ZoomOutAction": "ZoomOut",
-          "ZoomSmoothness": 0.8,
-          "ZoomSpeed": 0.8
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "227fa6d7-7376-4c3e-924d-a0d3c097269b",
-          "__version": 1,
-          "Flags": 0,
-          "Name": "Camera",
-          "Position": "0,0,0",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "maincamera",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "NetworkOrphaned": 0,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.CameraComponent",
-              "__guid": "1fc79bad-d89b-4b1b-9ae2-f0de4e04583b",
-              "__enabled": true,
-              "BackgroundColor": "0.33333,0.46275,0.52157,1",
-              "ClearFlags": "All",
-              "FieldOfView": 60,
-              "FovAxis": "Horizontal",
-              "IsMainCamera": true,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "Orthographic": false,
-              "OrthographicHeight": 1204,
-              "Priority": 1,
-              "RenderExcludeTags": "",
-              "RenderTags": "",
-              "TargetEye": "None",
-              "Viewport": "0,0,1,1",
-              "ZFar": 10000,
-              "ZNear": 10
-            }
-          ],
-          "Children": []
-        }
-      ]
+      "__Prefab": "prefabs/camera rig.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "32539581-0a5e-4129-9ae8-f15f2e37b65c"
+            },
+            "Property": "Name",
+            "Value": "Camera Rig"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "32539581-0a5e-4129-9ae8-f15f2e37b65c": "9f3d8c27-c7d2-4309-9cae-dbee0c15f257",
+        "fd9f4823-2169-4071-b06c-2aad1e580a8d": "70753eee-f5b8-450a-b652-19dbf644f3f7",
+        "b182eb29-4623-45db-b2c9-500f607de76c": "227fa6d7-7376-4c3e-924d-a0d3c097269b",
+        "cd9cedcc-7352-43fc-902d-fef02d56c695": "1fc79bad-d89b-4b1b-9ae2-f0de4e04583b"
+      }
     },
     {
       "__guid": "9acc4c7f-a57a-4911-ab03-2aed5981dc33",
@@ -1207,14 +1137,6 @@
             },
             "Property": "Position",
             "Value": "-161.5147,45.14105,0.7210649"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "40104537-eecd-40a7-91cc-b51ba8d977ee"
-            },
-            "Property": "Rotation",
-            "Value": "0,0,0,0.9999999"
           }
         ],
         "MovedObjects": []
@@ -1243,14 +1165,6 @@
             },
             "Property": "Position",
             "Value": "-164.9692,-191.6426,0"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Rotation",
-            "Value": "0,0,0,0.9999999"
           }
         ],
         "MovedObjects": []

@@ -13,11 +13,6 @@ public sealed class PlayerCameraController : Component
     public required CameraComponent Camera { get; set; }
 
     [Property]
-    [Category( "Target" )]
-    [Description( "The player GameObject to follow" )]
-    public GameObject? Player { get; set; }
-
-    [Property]
     [Category( "Positioning" )]
     [Description( "Camera distance from player when fully zoomed in" )]
     public float MinDistance { get; set; } = 300f;
@@ -139,17 +134,14 @@ public sealed class PlayerCameraController : Component
     {
         base.OnAwake();
 
-        if ( Camera == null )
-            Camera = Components.Get<CameraComponent>();
-
         _currentYaw = InitialYaw;
         _currentDistance = MaxZoom;
         _targetDistance = MaxZoom;
 
-        if ( Player != null )
+        if ( Player.Local != null )
         {
-            _smoothedPosition = Player.WorldPosition;
-            _targetPosition = Player.WorldPosition;
+            _smoothedPosition = Player.Local.WorldPosition;
+            _targetPosition = Player.Local.WorldPosition;
         }
         else
         {
@@ -164,7 +156,7 @@ public sealed class PlayerCameraController : Component
     {
         base.OnUpdate();
 
-        if ( Player == null )
+        if ( Player.Local == null )
             return;
 
         // Handle rotation input
@@ -198,10 +190,10 @@ public sealed class PlayerCameraController : Component
         // Smooth zoom interpolation
         float smoothSpeed = 20f - (ZoomSmoothness * 15f);
         float zoomSmoothFactor = 1f - MathF.Exp( -smoothSpeed * Time.Delta );
-        _currentDistance = _currentDistance + (_targetDistance - _currentDistance) * zoomSmoothFactor;
+        _currentDistance += (_targetDistance - _currentDistance) * zoomSmoothFactor;
 
         // Update target position
-        _targetPosition = Player.WorldPosition;
+        _targetPosition = Player.Local.WorldPosition;
 
         // Smooth follow
         float followLerpFactor = 1f - MathF.Exp( -FollowSpeed * Time.Delta );
@@ -226,7 +218,7 @@ public sealed class PlayerCameraController : Component
         float tiltRad = actualTiltAngle * MathF.PI / 180f;
         float horizontalDist = actualDistance * MathF.Cos( tiltRad );
 
-        Vector3 offset = new Vector3(
+        Vector3 offset = new(
             MathF.Sin( yawRad ) * horizontalDist,
             -MathF.Cos( yawRad ) * horizontalDist,
             actualDistance * MathF.Sin( tiltRad )
@@ -243,8 +235,8 @@ public sealed class PlayerCameraController : Component
         if ( !Gizmo.IsSelected && !Gizmo.IsHovered )
             return;
 
-        Vector3 pivotPosition = Player != null
-            ? Player.WorldPosition + Vector3.Up * HeightOffset
+        Vector3 pivotPosition = Player.Local != null
+            ? Player.Local.WorldPosition + Vector3.Up * HeightOffset
             : WorldPosition + Vector3.Up * HeightOffset;
 
         // Draw pivot point (yellow)
@@ -269,7 +261,7 @@ public sealed class PlayerCameraController : Component
             float tiltRad = actualTiltAngle * MathF.PI / 180f;
             float horizontalDist = actualDistance * MathF.Cos( tiltRad );
 
-            Vector3 offset = new Vector3(
+            Vector3 offset = new(
                 MathF.Sin( yawRad ) * horizontalDist,
                 -MathF.Cos( yawRad ) * horizontalDist,
                 actualDistance * MathF.Sin( tiltRad )

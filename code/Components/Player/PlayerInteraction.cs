@@ -29,6 +29,9 @@ public class PlayerInteraction : Component
 	{
 		base.OnFixedUpdate();
 
+		if ( IsProxy )
+			return;
+
 		InteractableTarget = GetInteractableTarget();
 
 		// Primary interaction ("Interact" input)

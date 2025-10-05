@@ -43,6 +43,17 @@ public class PlayerController : Component
 	[Description( "Optional camera controller for camera-relative movement" )]
 	public PlayerCameraController? CameraController { get; set; }
 
+	protected override void OnAwake()
+	{
+		base.OnAwake();
+
+		if ( !IsProxy )
+		{
+			// Assign the first available PlayerCameraController from the scene to this player
+			CameraController = Scene.Components.GetAll<PlayerCameraController>().FirstOrDefault();
+		}
+	}
+
 	protected override void OnFixedUpdate()
 	{
 		base.OnFixedUpdate();
@@ -60,6 +71,9 @@ public class PlayerController : Component
 
 	private void Move()
 	{
+		if ( IsProxy )
+			return;
+
 		float movementSpeed = GetMovementSpeed();
 		Vector3 inputDirection = Input.AnalogMove;
 
