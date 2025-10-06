@@ -101,13 +101,10 @@ public class PlayerController : Component
 			moveDirection = WorldRotation.Forward;
 		}
 
-		// Scale by input magnitude to support analog input (e.g., controller sticks)
-		float inputMagnitude = Math.Min( inputDirection.Length, 1f );
-
 		// Apply horizontal movement while preserving vertical velocity (for gravity/jumping)
 		CharacterController.Velocity = new Vector3(
-			moveDirection.x * speed * inputMagnitude,
-			moveDirection.y * speed * inputMagnitude,
+			moveDirection.x * speed,
+			moveDirection.y * speed,
 			CharacterController.Velocity.z );
 
 		return moveDirection;
