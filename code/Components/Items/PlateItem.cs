@@ -51,6 +51,7 @@ public sealed class PlateItem : ItemBase, IDepositable
 			_recipeResultObject.SetParent( Socket );
 			_recipeResultObject.LocalPosition = Vector3.Zero;
 			_recipeResultObject.LocalRotation = Rotation.Identity;
+			_recipeResultObject.NetworkSpawn();
 		}
 
 		pickable.OnDeposit( this );
