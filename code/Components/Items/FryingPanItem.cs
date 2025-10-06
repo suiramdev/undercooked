@@ -45,6 +45,7 @@ public class FryingPanItem : ItemBase, IDepositable, ITransferable
 	[Rpc.Host]
 	public void TryTransfer( IDepositable depositable )
 	{
+		Log.Info( "Trying to transfer ingredient to depositable" );
 		if ( Ingredient is not null )
 		{
 			depositable.TryDeposit( Ingredient );

@@ -2,7 +2,6 @@
 
 using Undercooked.Components.Interfaces;
 using Undercooked.Components.Enums;
-using System.Runtime.InteropServices;
 
 namespace Undercooked.Components;
 
@@ -44,23 +43,26 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 			return;
 		}
 
-		// Attempt to deposit the held item into the pickable currently stored on the station (if any)
-		if ( StoredPickable is not null && StoredPickable is IDepositable storedDepositable )
+		// If holding something and station has a depositable item, try interacting with nested depositable
+		if ( held is not null && StoredPickable is IDepositable nestedDepositable )
 		{
-			// Special case: If the held item is a transferable, allow transferring its contents to the stored pickable
-			// e.g. If the player is holding a pan, they can transfer the contents to the pickable currently on the station
+			// If holding a transferable (like frying pan), try transferring its contents to the nested item
 			if ( held is ITransferable transferable )
 			{
-				transferable.TryTransfer( storedDepositable );
+				transferable.TryTransfer( nestedDepositable );
+				return;
+			}
+
+			// If holding a direct item (like an ingredient), try depositing into the nested item
+			if ( nestedDepositable.CanAccept( held ) )
+			{
+				by.PlayerSlot.TryTransfer( nestedDepositable );
 				return;
 			}
 		}
 
-		// Attempt to deposit the held item onto the station
-		if ( held is not null )
-		{
-			by.PlayerSlot.TryTransferTo( this );
-		}
+		// Default: try depositing the held item into the station itself
+		by.PlayerSlot.TryTransfer( this );
 	}
 
 	[Rpc.Host]
@@ -71,13 +73,18 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 
 	public virtual bool CanAccept( IPickable pickable )
 	{
-		return StoredPickable is null;
+		return StoredPickable is null || (StoredPickable is IDepositable depositable && depositable.CanAccept( pickable ));
 	}
 
 	[Rpc.Host]
 	public virtual void TryDeposit( IPickable pickable )
 	{
 		if ( !CanAccept( pickable ) ) return;
+		if ( StoredPickable is IDepositable depositable )
+		{
+			depositable.TryDeposit( pickable );
+			return;
+		}
 
 		StoredPickable = pickable;
 		StoredPickable.GameObject.SetParent( Socket );

@@ -5,7 +5,7 @@ using Undercooked.Components.Interfaces;
 
 namespace Undercooked.Components;
 
-public class PlayerSlot : Component, IDepositable
+public class PlayerSlot : Component, IDepositable, ITransferable
 {
 	[Property]
 	[Group( "Components" )]
@@ -51,12 +51,8 @@ public class PlayerSlot : Component, IDepositable
 		pickable.OnDeposit( this );
 	}
 
-	/// <summary>
-	/// Attempts to transfer the currently held pickable to another depositable surface.
-	/// Clears the slot if the transfer is successful.
-	/// </summary>
 	[Rpc.Host]
-	public void TryTransferTo( IDepositable target )
+	public void TryTransfer( IDepositable target )
 	{
 		if ( StoredPickable is null ) return;
 		if ( !target.CanAccept( StoredPickable ) ) return;
