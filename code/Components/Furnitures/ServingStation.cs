@@ -17,13 +17,13 @@ public class ServingStation : Component, IInteractable
     [Rpc.Host]
     public void TryInteract( Player by )
     {
-        // var held = player.PlayerSlot.GetPickable();
+        var held = by.PlayerSlot.StoredPickable;
 
-        // // If player is holding a plate, try to submit it
-        // if ( held is PlateItem plate )
-        // {
-        //     SubmitPlate( plate, player );
-        // }
+        // If player is holding a plate, try to submit it
+        if ( held is PlateItem plate )
+        {
+            SubmitPlate( plate, by );
+        }
     }
 
     [Rpc.Host]
