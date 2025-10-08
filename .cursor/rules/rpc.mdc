@@ -1,0 +1,131 @@
+---
+description: Rules for writing s&box RPCs — using attributes, flags, and filters to sync multiplayer events safely and efficiently.
+globs: "*.cs"
+alwaysApply: false
+---
+
+# s&box RPC Messages
+
+## When to use
+
+- Trigger visual/audio effects for everyone or a subset of players.
+- Send small, transient events (button pressed, play sound, spawn FX).
+- Call host/owner-restricted logic from the right side.
+
+## Core rules
+
+1. **Declare RPCs with attributes** on instance or static methods:
+
+   - `Rpc.Broadcast` → call on everyone.
+   - `Rpc.Owner` → only the networked object’s owner (or host if none).
+   - `Rpc.Host` → only the host.
+
+2. **Static RPCs are allowed.** They can live in any static class.
+3. **RPCs can't return values.** They can't return values, they can only be used to trigger actions.
+4. **Arguments:** Must be the same types supported by Sync Properties (serialize-ready types).
+5. **Flags:** Choose delivery semantics deliberately:
+
+   - `NetFlags.Unreliable` – fastest/cheapest; may drop or arrive out of order (good for FX/positions).
+   - `NetFlags.Reliable` – default; guaranteed delivery (chat/important events).
+   - `NetFlags.SendImmediate` – don’t batch (e.g., voice-like streaming).
+   - `NetFlags.DiscardOnDelay` – drop if late (only for Unreliable).
+   - `NetFlag.HostOnly` – callable only by host.
+   - `NetFlag.OwnerOnly` – callable only by owner.
+
+6. **Filter recipients (Broadcast only):**
+
+   - `using (Rpc.FilterExclude(predicate)) { ... }`
+   - `using (Rpc.FilterInclude(predicate)) { ... }`
+
+7. **Inspect the caller** inside RPCs via `Rpc.Caller` (e.g., `IsHost`, `DisplayName`, `SteamId`).
+
+## Patterns (generate code like this)
+
+### Instance RPC (broadcast a sound/effect)
+
+```csharp
+public sealed class Door : Component
+{
+    public void OnPressed()
+    {
+        PlayOpenEffects( "bing", WorldPosition );
+    }
+
+    [Rpc.Broadcast] // everyone hears it
+    public void PlayOpenEffects( string soundName, Vector3 position )
+    {
+        Sound.FromWorld( soundName, position );
+    }
+}
+```
+
+### Static RPC
+
+```csharp
+public static class Fx
+{
+    [Rpc.Broadcast]
+    public static void PlaySoundAllClients( string soundName, Vector3 position )
+    {
+        Sound.Play( soundName, position );
+    }
+}
+```
+
+### Owner-only / Host-only
+
+```csharp
+[Rpc.Owner]
+public void ShowPrivatePrompt( string text ) { /* only the owner sees this */ }
+
+[Rpc.Host]
+public void HostAudit( string reason ) { /* runs on host only */ }
+```
+
+### Flags (choose reliability)
+
+```csharp
+[Rpc.Broadcast( NetFlags.Unreliable | NetFlag.OwnerOnly )]
+public void PlayMuzzleFlash( Vector3 pos ) { /* fast, okay to drop */ }
+```
+
+### Filter recipients
+
+```csharp
+// exclude specific players
+using ( Rpc.FilterExclude( c => c.DisplayName == "Harry" ) )
+{
+    PlayOpenEffects( "bing", WorldPosition );
+}
+
+// include only specific players
+using ( Rpc.FilterInclude( c => c.DisplayName == "Garry" ) )
+{
+    PlayOpenEffects( "bing", WorldPosition );
+}
+```
+
+### Caller information
+
+```csharp
+[Rpc.Broadcast]
+public void Announce( string msg )
+{
+    if ( !Rpc.Caller.IsHost ) return;
+    Log.Info( $"{Rpc.Caller.DisplayName} ({Rpc.Caller.SteamId}) said: {msg}" );
+}
+```
+
+## Naming & style
+
+- Name RPCs by the effect they cause (`PlayOpenEffects`, `SpawnHitFx`), not by transport (`SendRpc...`).
+- Keep payloads small and serializable; prefer IDs/refs over big structs.
+- Use `Unreliable` for purely cosmetic, `Reliable` for gameplay-critical.
+
+## Quick checklist
+
+- [ ] Right attribute? (`Broadcast` / `Owner` / `Host`)
+- [ ] Correct flags for reliability/latency?
+- [ ] Arguments are serializable (sync-prop compatible)?
+- [ ] Need filtering? Wrap call with `Rpc.FilterInclude/Exclude`.
+- [ ] Validate caller if security matters (`Rpc.Caller`).

@@ -1,0 +1,242 @@
+---
+description: Rules for writing HTTP requests and responses in s&box
+globs: "*.cs"
+alwaysApply: true
+---
+
+# HTTP Requests and Responses
+
+## When to use
+
+- When you need to make an HTTP request to an external API or web service
+- When you need to fetch or send data to a remote server
+- When integrating with REST APIs, webhooks, or third-party services
+
+## Core rules
+
+### 1. Use the `Http` static class from Sandbox namespace
+
+```csharp
+using Sandbox;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+
+// All HTTP methods are static on the Http class
+var response = await Http.RequestAsync("https://api.example.com/data");
+```
+
+### 2. HTTP Methods
+
+**GET Requests:**
+
+```csharp
+// Simple GET
+var response = await Http.RequestAsync("https://api.example.com/endpoint");
+
+// GET with query parameters (build URL manually)
+var url = "https://api.example.com/search?q=test&limit=10";
+var response = await Http.RequestAsync(url);
+```
+
+**POST Requests:**
+
+```csharp
+// POST with JSON body
+var json = JsonSerializer.Serialize(myObject);
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await Http.RequestAsync("https://api.example.com/create",
+    method: "POST",
+    content: content);
+
+// POST with form data
+var formData = new Dictionary<string, string>
+{
+    { "name", "value" },
+    { "key", "data" }
+};
+var json = JsonSerializer.Serialize(formData);
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await Http.RequestAsync("https://api.example.com/form",
+    method: "POST",
+    content: content);
+```
+
+**PUT/DELETE Requests:**
+
+```csharp
+// PUT request
+var json = JsonSerializer.Serialize(updatedData);
+var content = new StringContent(json, Encoding.UTF8, "application/json");
+var response = await Http.RequestAsync("https://api.example.com/update/123",
+    method: "PUT",
+    content: content);
+
+// DELETE request
+var response = await Http.RequestAsync("https://api.example.com/delete/123",
+    method: "DELETE");
+```
+
+### 3. Headers
+
+```csharp
+// Add custom headers
+var headers = new Dictionary<string, string>
+{
+    { "Authorization", "Bearer your-token-here" },
+    { "Content-Type", "application/json" },
+    { "X-Custom-Header", "value" }
+};
+
+var response = await Http.RequestAsync("https://api.example.com/endpoint",
+    headers: headers);
+```
+
+### 4. Response Handling
+
+```csharp
+var response = await Http.RequestAsync("https://api.example.com/data");
+
+// Check status code
+if (response.StatusCode == 200)
+{
+    // Parse JSON response
+    var data = await response.Content.ReadFromJsonAsync<MyDataType>();
+
+    // Or get raw body
+    var rawBody = await response.Content.ReadAsStringAsync();
+}
+else
+{
+    Log.Error($"Request failed with status {response.StatusCode}");
+}
+```
+
+### 5. Async/Await Pattern
+
+- **ALWAYS** use `await` with HTTP requests - they are asynchronous operations
+- Methods calling HTTP requests should be marked `async`
+- Handle the Task properly in your code flow
+
+```csharp
+public async Task<MyData> FetchDataAsync()
+{
+    var response = await Http.RequestAsync("https://api.example.com/data");
+
+    if (response.StatusCode == 200)
+    {
+        var data = await response.Content.ReadFromJsonAsync<MyData>();
+        return data;
+    }
+
+    return null;
+}
+```
+
+### 6. Error Handling
+
+```csharp
+try
+{
+    var response = await Http.RequestAsync("https://api.example.com/data");
+
+    if (response.StatusCode >= 200 && response.StatusCode < 300)
+    {
+        // Success
+        var data = await response.Content.ReadFromJsonAsync<MyData>();
+        return data;
+    }
+    else
+    {
+        Log.Warning($"HTTP request failed: {response.StatusCode} - {response.Content}");
+    }
+}
+catch (Exception ex)
+{
+    Log.Error($"HTTP request exception: {ex.Message}");
+}
+```
+
+### 7. Security Best Practices
+
+- **Never hardcode API keys or tokens** in your code
+- Store sensitive credentials in configuration files (not committed to version control)
+- Use HTTPS endpoints whenever possible
+- Validate and sanitize any user input before including in requests
+- Be cautious with CORS and cross-origin requests
+
+### 8. Common Patterns
+
+**Reusable API Client:**
+
+```csharp
+public class ApiClient
+{
+    private readonly string _baseUrl;
+    private readonly Dictionary<string, string> _defaultHeaders;
+
+    public ApiClient(string baseUrl, string apiKey)
+    {
+        _baseUrl = baseUrl;
+        _defaultHeaders = new Dictionary<string, string>
+        {
+            { "Authorization", $"Bearer {apiKey}" },
+            { "Content-Type", "application/json" }
+        };
+    }
+
+    public async Task<T> GetAsync<T>(string endpoint)
+    {
+        var response = await Http.RequestAsync($"{_baseUrl}/{endpoint}",
+            headers: _defaultHeaders);
+
+        if (response.StatusCode == 200)
+        {
+            return await response.Content.ReadFromJsonAsync<T>();
+        }
+
+        throw new Exception($"Request failed: {response.StatusCode}");
+    }
+
+    public async Task<T> PostAsync<T>(string endpoint, object data)
+    {
+        var json = JsonSerializer.Serialize(data);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var response = await Http.RequestAsync($"{_baseUrl}/{endpoint}",
+            method: "POST",
+            headers: _defaultHeaders,
+            content: content);
+
+        if (response.StatusCode >= 200 && response.StatusCode < 300)
+        {
+            return await response.Content.ReadFromJsonAsync<T>();
+        }
+
+        throw new Exception($"Request failed: {response.StatusCode}");
+    }
+}
+```
+
+**Usage:**
+
+```csharp
+var client = new ApiClient("https://api.example.com", "your-api-key");
+var data = await client.GetAsync<MyData>("endpoint");
+```
+
+### 9. Client vs Server
+
+- HTTP requests can be made from **both client and server**
+- Be mindful of where you're executing HTTP requests
+- Consider rate limiting and performance implications
+- Server-side requests are generally more secure for sensitive operations
+
+### 10. Response Object Properties
+
+- `response.StatusCode` - HTTP status code (200, 404, 500, etc.) - use `HttpStatusCode` enum for comparison
+- `response.Content` - HttpContent object containing the response body
+- Use `await response.Content.ReadFromJsonAsync<T>()` to parse JSON responses
+- Use `await response.Content.ReadAsStringAsync()` to get raw string content
+- Check `response.StatusCode` using enum comparisons: `response.StatusCode == HttpStatusCode.OK` or numeric ranges: `response.StatusCode >= 200 && response.StatusCode < 300`
