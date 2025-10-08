@@ -59,17 +59,32 @@ public class ConvexResult<T>
     public List<string>? LogLines { get; set; }
 }
 
-/// <summary>
-/// Client for interacting with Convex HTTP API
-/// </summary>
-/// <remarks>
-/// Creates a new Convex client
-/// </remarks>
-/// <param name="deploymentUrl">The Convex deployment URL (e.g., https://acoustic-panther-728.convex.cloud)</param>
-public class ConvexClient( string deploymentUrl )
+public partial class ConvexClient
+
 {
-    private readonly string _deploymentUrl = deploymentUrl.TrimEnd( '/' );
+    private readonly string _deploymentUrl;
     private string? _authToken;
+    private WebSocket? _socket;
+
+    public ConvexClient( string deploymentUrl )
+    {
+        _deploymentUrl = deploymentUrl.TrimEnd( '/' );
+        KeepSocketAlive();
+    }
+
+    private void KeepSocketAlive()
+    {
+        if ( _socket is null || !_socket.IsConnected )
+        {
+            _socket?.Dispose();
+            _socket = new WebSocket();
+            var socketUrl = _deploymentUrl.TrimStart( "https://".ToCharArray() ).TrimStart( "http://".ToCharArray() );
+            _socket.Connect( $"wss://{socketUrl}/api/sync" );
+            _socket.OnDisconnected += OnSocketDisconnected;
+            _socket.OnDataReceived += OnSocketDataReceived;
+            _socket.OnMessageReceived += OnSocketMessageReceived;
+        }
+    }
 
     /// <summary>
     /// Sets the authentication token for API calls
@@ -145,6 +160,21 @@ public class ConvexClient( string deploymentUrl )
         return await ExecuteRequestAsync<T>( url, requestBody );
     }
 
+    // TODO: Implement this
+    // public async Task SubcribeQuerySetAsync( string functionPath, Action<JsonElement> onUpdate )
+    // {
+    //     var functionIdentifier = functionPath.Replace( ":", "/" );
+    //     var json = JsonSerializer.Serialize( new
+    //     {
+    //         type = "ModifyQuerySet",
+    //         path = functionIdentifier,
+    //         args = args ?? new { },
+    //         format = "json"
+    //     } );
+
+    //     _socket.Send( json );
+    // }
+
     private async Task<ConvexResult<T>> CallFunctionAsync<T>( string functionType, string functionPath, object? args )
     {
         var url = $"{_deploymentUrl}/api/{functionType}";
@@ -163,6 +193,9 @@ public class ConvexClient( string deploymentUrl )
     {
         try
         {
+            // Ensure the WebSocket connection is active
+            KeepSocketAlive();
+
             var json = JsonSerializer.Serialize( requestBody );
 
             // Build headers
@@ -242,5 +275,20 @@ public class ConvexClient( string deploymentUrl )
                 ErrorMessage = $"Request failed: {ex.Message}"
             };
         }
+    }
+
+    private void OnSocketDisconnected( int status, string reason )
+    {
+        Log.Info( $"WebSocket disconnected: {status} {reason}" );
+    }
+
+    private void OnSocketDataReceived( Span<byte> data )
+    {
+        Log.Info( "WebSocket data received" );
+    }
+
+    private void OnSocketMessageReceived( string message )
+    {
+        Log.Info( "WebSocket message received: " + message );
     }
 }

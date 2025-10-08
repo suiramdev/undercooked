@@ -15,11 +15,13 @@ public static partial class Convex
     public static async Task<T> WithAuthToken<T>( Func<Task<T>> action )
     {
         var result = await Client.ActionAsync<JsonElement>( "auth:signIn", new { steamId = Rpc.Caller.SteamId.Value.ToString(), token = await Sandbox.Services.Auth.GetToken( "Convex" ) } );
-        var token = result.Value.GetProperty( "token" );
-        var tokenString = token.GetString();
-        if ( tokenString is not null )
+        if ( result.IsSuccess )
         {
-            Client.SetAuthToken( tokenString );
+            var token = result.Value.TryGetProperty( "token", out var tokenProperty ) ? tokenProperty.GetString() : null;
+            if ( token is not null )
+            {
+                Client.SetAuthToken( token );
+            }
         }
 
         return await action();

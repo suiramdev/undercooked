@@ -11,5 +11,11 @@ public static class ConvexTestMenu
 	{
 		Convex.GetMyProfile();
 	}
+
+	[Menu( "Editor", "convex/Add Money" )]
+	public static void AddMoney()
+	{
+		Convex.AddMoney( 1 );
+	}
 }
 
