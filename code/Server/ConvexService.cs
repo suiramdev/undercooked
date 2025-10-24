@@ -8,7 +8,7 @@ using Undercooked.Libraries.Convex;
 
 namespace Undercooked.Server;
 
-public static partial class Convex
+public static partial class ConvexService
 {
     public static readonly ConvexClient Client = new( "http://localhost:8080" );
 

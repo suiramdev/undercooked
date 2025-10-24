@@ -1,12 +1,11 @@
 #nullable enable
 
 using System;
-using System.Numerics;
 using System.Text.Json;
 
 namespace Undercooked.Server;
 
-public static partial class Convex
+public static partial class ConvexService
 {
     [Rpc.Host]
     public static async void GetMyProfile()

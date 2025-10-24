@@ -9,13 +9,13 @@ public static class ConvexTestMenu
 	[Menu( "Editor", "convex/Get My Profile" )]
 	public static void GetMyProfile()
 	{
-		Convex.GetMyProfile();
+		ConvexService.GetMyProfile();
 	}
 
 	[Menu( "Editor", "convex/Add Money" )]
 	public static void AddMoney()
 	{
-		Convex.AddMoney( 1 );
+		ConvexService.AddMoney( 1 );
 	}
 }
 
