@@ -187,9 +187,9 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Undercooked.Components.LevelConfig",
-          "__guid": "709e83a6-a579-4396-99b5-561142e104b5",
-          "__enabled": true,
+          "__type": "Undercooked.LevelConfig",
+          "__guid": "36ee6a37-1786-4e65-8993-47ff67289d89",
+          "__enabled": false,
           "CookableRecipes": [
             "resources/bun.recipe",
             "resources/cheeseburger.recipe",
@@ -197,7 +197,7 @@
             "resources/hamburger.recipe",
             "resources/patty_cooked.recipe"
           ],
-          "MaxOrders": 3,
+          "MaxOrders": 5,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -215,7 +215,7 @@
             }
           ],
           "OrdersPerMinute": 6,
-          "OrderTimeout": 10
+          "OrderTimeout": 45
         }
       ],
       "Children": []
