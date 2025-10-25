@@ -128,8 +128,8 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Undercooked.Components.RecipeManager",
-          "__guid": "ca969183-a4b5-4828-a0f7-9eee00639dca",
+          "__type": "Undercooked.RecipeManager",
+          "__guid": "02ac7297-48c2-40fd-8637-d3024725adb6",
           "__enabled": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -157,9 +157,9 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Undercooked.Components.OrderManager",
-          "__guid": "7bc24715-8f89-414e-8f80-ae8681ef076c",
-          "__enabled": true,
+          "__type": "Undercooked.OrderManager",
+          "__guid": "2d5c014c-fc0e-4114-849f-e18acf19f804",
+          "__enabled": false,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
