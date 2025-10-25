@@ -4,9 +4,9 @@
 @namespace Undercooked.UI
 
 <root>
-    <div class="glyph">
-        <Image Texture="@GetInputGlyph()" class="glyph-image" />
-    </div>
+    <span class="kbd">
+        @Input.GetButtonOrigin(InputAction).ToUpper()
+    </span>
     <span class="text">
         @Text
     </span>
@@ -18,14 +18,4 @@
 
     [Parameter]
     public string InputAction { get; set; }
-
-    [Parameter]
-    public InputGlyphSize GlyphSize { get; set; } = InputGlyphSize.Medium;
-
-    private Texture GetInputGlyph()
-    {
-        // Use S&box's official Input.GetGlyph() method to get the proper input glyph
-        // This automatically handles keyboard, gamepad, and other input devices
-        return Input.GetGlyph(InputAction, GlyphSize, false);
-    }
 }
