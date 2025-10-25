@@ -159,7 +159,7 @@
         {
           "__type": "Undercooked.OrderManager",
           "__guid": "2d5c014c-fc0e-4114-849f-e18acf19f804",
-          "__enabled": false,
+          "__enabled": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -189,7 +189,7 @@
         {
           "__type": "Undercooked.LevelConfig",
           "__guid": "36ee6a37-1786-4e65-8993-47ff67289d89",
-          "__enabled": false,
+          "__enabled": true,
           "CookableRecipes": [
             "resources/bun.recipe",
             "resources/cheeseburger.recipe",

@@ -1,0 +1,35 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits Panel
+@namespace Undercooked.UI
+
+<root>
+    <span class="recipe-name">
+        @RecipeName
+    </span>
+    <span class="time-remaining">
+        @TimeRemaining
+    </span>
+</root>
+
+@code {
+    [Parameter]
+    public string RecipeName { get; set; }
+
+    [Parameter]
+    public float PlacedAt { get; set; }
+
+    private string TimeRemaining
+    {
+        get
+        {
+            float timeout = LevelConfig.Instance.OrderTimeout;
+            float remaining = timeout - (Time.Now - PlacedAt);
+            remaining = Math.Max(remaining, 0);
+            return remaining.ToString("F0") + "s";
+        }
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine(RecipeName, TimeRemaining);
+}

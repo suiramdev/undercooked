@@ -1,0 +1,16 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Undercooked.UI
+
+<root>
+    @foreach (var order in OrderManager.Instance.Orders)
+    {
+        <Order RecipeName="@order.Recipe.Name" PlacedAt="@order.PlacedAt" />
+    }
+</root>
+
+@code {
+    protected override int BuildHash() => System.HashCode.Combine(OrderManager.Instance.Orders.Select(order =>
+    order.PlacedAt));
+}
