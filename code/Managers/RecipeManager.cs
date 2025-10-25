@@ -1,8 +1,6 @@
 #nullable enable
 
-using Undercooked.Resources;
-
-namespace Undercooked.Components;
+namespace Undercooked;
 
 public class RecipeManager : Component
 {

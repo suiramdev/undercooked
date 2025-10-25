@@ -1,26 +1,17 @@
 #nullable enable
 
-namespace Undercooked.Components;
+namespace Undercooked;
 
 [Icon( "person" )]
-public class Player : Component
+public partial class Player : Component
 {
 	public static Player? Local { get; private set; }
 
-	[Property]
-	[Group( "Components" )]
-	[RequireComponent]
-	public required PlayerController PlayerController { get; set; }
-
-	[Property]
-	[Group( "Components" )]
-	[RequireComponent]
-	public required PlayerInteraction PlayerInteraction { get; set; }
-
-	[Property]
-	[Group( "Components" )]
-	[RequireComponent]
-	public required PlayerSlot PlayerSlot { get; set; }
+	protected override void OnAwake()
+	{
+		base.OnAwake();
+		SetupCameraController();
+	}
 
 	protected override void OnStart()
 	{
@@ -37,5 +28,13 @@ public class Player : Component
 		{
 			Local = null;
 		}
+	}
+
+	protected override void OnFixedUpdate()
+	{
+		base.OnFixedUpdate();
+		HandleInteractionInput();
+		HandleMovementInput();
+		HandleAnimation();
 	}
 }

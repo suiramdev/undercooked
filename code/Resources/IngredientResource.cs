@@ -1,9 +1,7 @@
 
 #nullable enable
 
-using Undercooked.Components.Enums;
-
-namespace Undercooked.Resources;
+namespace Undercooked;
 
 [AssetType( Name = "Ingredient", Extension = "ingr", Category = "undercooked" )]
 public class IngredientResource : GameResource

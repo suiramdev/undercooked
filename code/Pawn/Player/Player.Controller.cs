@@ -1,14 +1,10 @@
 #nullable enable
 
-using System;
-using Sandbox;
 using Sandbox.Citizen;
-using Sandbox.Movement;
 
-namespace Undercooked.Components;
+namespace Undercooked;
 
-[Icon( "directions_walk" )]
-public class PlayerController : Component
+public partial class Player
 {
 	[Property]
 	[Header( "Movement Settings" )]
@@ -43,22 +39,13 @@ public class PlayerController : Component
 	[Description( "Optional camera controller for camera-relative movement" )]
 	public PlayerCameraController? CameraController { get; set; }
 
-	protected override void OnAwake()
+	private void SetupCameraController()
 	{
-		base.OnAwake();
-
 		if ( !IsProxy )
 		{
 			// Assign the first available PlayerCameraController from the scene to this player
 			CameraController = Scene.Components.GetAll<PlayerCameraController>().FirstOrDefault();
 		}
-	}
-
-	protected override void OnFixedUpdate()
-	{
-		base.OnFixedUpdate();
-		Move();
-		Animate();
 	}
 
 	private float GetMovementSpeed()
@@ -69,7 +56,7 @@ public class PlayerController : Component
 		return DefaultSpeed;
 	}
 
-	private void Move()
+	private void HandleMovementInput()
 	{
 		if ( IsProxy )
 			return;
@@ -126,7 +113,7 @@ public class PlayerController : Component
 		WorldRotation = Rotation.Lerp( WorldRotation, targetRotation, Time.Delta * RotationSpeed );
 	}
 
-	private void Animate()
+	private void HandleAnimation()
 	{
 		CitizenAnimationHelper.WithVelocity( CharacterController.Velocity );
 	}

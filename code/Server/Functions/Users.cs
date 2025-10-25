@@ -3,7 +3,7 @@
 using System;
 using System.Text.Json;
 
-namespace Undercooked.Server;
+namespace Undercooked;
 
 public static partial class ConvexService
 {

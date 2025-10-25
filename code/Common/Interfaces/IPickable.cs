@@ -1,6 +1,6 @@
 using Sandbox.Citizen;
 
-namespace Undercooked.Components.Interfaces;
+namespace Undercooked;
 
 /// <summary>
 /// Interface for any object that can be picked up

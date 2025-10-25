@@ -3,7 +3,7 @@
     "__guid": "32539581-0a5e-4129-9ae8-f15f2e37b65c",
     "__version": 1,
     "Flags": 0,
-    "Name": "Camera Rig",
+    "Name": "camera rig",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -15,8 +15,8 @@
     "OwnerTransfer": 1,
     "Components": [
       {
-        "__type": "Undercooked.Components.PlayerCameraController",
-        "__guid": "fd9f4823-2169-4071-b06c-2aad1e580a8d",
+        "__type": "Undercooked.PlayerCameraController",
+        "__guid": "7ee2a949-6fa4-4bb1-8888-d5f34064b256",
         "__enabled": true,
         "Camera": {
           "_type": "component",
@@ -70,6 +70,7 @@
             "__enabled": true,
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "All",
+            "EnablePostProcessing": true,
             "FieldOfView": 60,
             "FovAxis": "Horizontal",
             "IsMainCamera": true,
@@ -81,9 +82,11 @@
             "OnComponentUpdate": null,
             "Orthographic": false,
             "OrthographicHeight": 1204,
+            "PostProcessAnchor": null,
             "Priority": 1,
             "RenderExcludeTags": "",
             "RenderTags": "",
+            "RenderTexture": null,
             "TargetEye": "None",
             "Viewport": "0,0,1,1",
             "ZFar": 10000,
@@ -92,7 +95,26 @@
         ],
         "Children": []
       }
-    ]
+    ],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,

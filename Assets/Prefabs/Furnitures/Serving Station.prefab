@@ -65,8 +65,8 @@
         "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "Undercooked.Components.ServingStation",
-        "__guid": "d1ee47b9-2a9e-40e5-a7f5-3b07a0e5db5e",
+        "__type": "Undercooked.ServingStation",
+        "__guid": "41b9bbcb-1150-4744-ade1-16925ff60da9",
         "__enabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,

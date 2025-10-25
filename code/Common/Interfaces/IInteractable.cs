@@ -1,9 +1,7 @@
 
 #nullable enable
 
-using Undercooked.Components.Enums;
-
-namespace Undercooked.Components.Interfaces;
+namespace Undercooked;
 
 /// <summary>
 /// Interface for any object that can be interacted with
@@ -16,7 +14,21 @@ public interface IInteractable
 
 	InteractionType AlternateInteractionType { get; }
 
+	/// <summary>
+	/// The text to display for the primary interaction (e.g., "Pickup", "Chop", "Use")
+	/// </summary>
+	string? InteractionText { get; }
+
+	/// <summary>
+	/// The text to display for the alternate interaction (e.g., "Drop", "Throw")
+	/// </summary>
+	string? AlternateInteractionText { get; }
+
+	bool CanInteract( Player by );
+
 	void TryInteract( Player by );
+
+	bool CanAlternateInteract( Player by );
 
 	void TryAlternateInteract( Player by );
 }

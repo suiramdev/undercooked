@@ -1,9 +1,6 @@
 #nullable enable
 
-using Undercooked.Components.Interfaces;
-using Undercooked.Components.Enums;
-
-namespace Undercooked.Components;
+namespace Undercooked;
 
 [Icon( "inventory" )]
 public abstract class StationBase : Component, IDepositable, IInteractable
@@ -26,19 +23,30 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 	[Sync( SyncFlags.FromHost )]
 	public IPickable? StoredPickable { get; protected set; }
 
+	public virtual string InteractionText => "Interact";
+
+	public virtual string? AlternateInteractionText => null;
+
+
+	public virtual bool CanInteract( Player by )
+	{
+		var held = by.StoredPickable;
+		return (held is null && StoredPickable is not null) || held is not null;
+	}
+
 	[Rpc.Host]
 	public virtual void TryInteract( Player by )
 	{
-		var held = by.PlayerSlot.StoredPickable;
+		var held = by.StoredPickable;
 
 		// Attempt to retrieve the stored item from the station
 		if ( held is null && StoredPickable is not null )
 		{
-			if ( by.PlayerSlot.CanAccept( StoredPickable ) )
+			if ( by.CanAccept( StoredPickable ) )
 			{
 				var pickable = StoredPickable;
 				StoredPickable = null;
-				by.PlayerSlot.TryDeposit( pickable );
+				by.TryDeposit( pickable );
 			}
 			return;
 		}
@@ -56,13 +64,18 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 			// If holding a direct item (like an ingredient), try depositing into the nested item
 			if ( nestedDepositable.CanAccept( held ) )
 			{
-				by.PlayerSlot.TryTransfer( nestedDepositable );
+				by.TryTransfer( nestedDepositable );
 				return;
 			}
 		}
 
 		// Default: try depositing the held item into the station itself
-		by.PlayerSlot.TryTransfer( this );
+		by.TryTransfer( this );
+	}
+
+	public virtual bool CanAlternateInteract( Player by )
+	{
+		return false;
 	}
 
 	[Rpc.Host]

@@ -1,34 +1,19 @@
 #nullable enable
 
-using Undercooked.Components.Interfaces;
-using Undercooked.Components.Enums;
+namespace Undercooked;
 
-namespace Undercooked.Components;
-
-[Icon( "front_hand" )]
-public class PlayerInteraction : Component
+public partial class Player
 {
 	[Property]
+	[Header( "Interaction Settings" )]
 	public float InteractRadius { get; set; } = 50f;
-
-	[Property]
-	[Group( "Components" )]
-	[RequireComponent]
-	public required Player Player { get; set; }
-
-	[Property]
-	[Group( "Components" )]
-	[RequireComponent]
-	public required PlayerSlot PlayerSlot { get; set; }
 
 	[Property]
 	[ReadOnly]
 	public IInteractable? InteractableTarget { get; set; }
 
-	protected override void OnFixedUpdate()
+	private void HandleInteractionInput()
 	{
-		base.OnFixedUpdate();
-
 		if ( IsProxy )
 			return;
 
@@ -92,7 +77,7 @@ public class PlayerInteraction : Component
 			.Where( x =>
 				x.Interactable is not null &&
 				// We don't want to interact with the object we are holding
-				x.GameObject != PlayerSlot.StoredPickable?.GameObject
+				x.GameObject != StoredPickable?.GameObject
 			)
 			.OrderByDescending( x =>
 			{
@@ -112,15 +97,15 @@ public class PlayerInteraction : Component
 	{
 		if ( InteractableTarget is not null )
 		{
-			InteractableTarget.TryInteract( Player );
+			InteractableTarget.TryInteract( this );
 			return;
 		}
 
-		PlayerSlot.Drop();
+		Drop();
 	}
 
 	protected void InteractAlternate()
 	{
-		InteractableTarget?.TryAlternateInteract( Player );
+		InteractableTarget?.TryAlternateInteract( this );
 	}
 }

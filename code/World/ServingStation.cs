@@ -1,9 +1,6 @@
 #nullable enable
 
-using Undercooked.Components.Interfaces;
-using Undercooked.Components.Enums;
-
-namespace Undercooked.Components;
+namespace Undercooked;
 
 [Icon( "room_service" )]
 [Title( "Serving Station" )]
@@ -14,10 +11,21 @@ public class ServingStation : Component, IInteractable
 
     public InteractionType AlternateInteractionType => InteractionType.Press;
 
+    public string InteractionText => "Submit";
+
+    public string? AlternateInteractionText => null;
+
+    public bool CanInteract( Player by )
+    {
+        return by.StoredPickable is PlateItem;
+    }
+
     [Rpc.Host]
     public void TryInteract( Player by )
     {
-        var held = by.PlayerSlot.StoredPickable;
+        if ( !CanInteract( by ) ) return;
+
+        var held = by.StoredPickable;
 
         // If player is holding a plate, try to submit it
         if ( held is PlateItem plate )
@@ -26,11 +34,15 @@ public class ServingStation : Component, IInteractable
         }
     }
 
+    public bool CanAlternateInteract( Player by )
+    {
+        return false;
+    }
+
     [Rpc.Host]
     public void TryAlternateInteract( Player by )
     {
-        // Alternate interaction is the same as primary interaction
-        TryInteract( by );
+        return;
     }
 
     [Rpc.Host]

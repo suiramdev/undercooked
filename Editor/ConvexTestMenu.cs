@@ -1,6 +1,6 @@
 #nullable enable
 
-using Undercooked.Server;
+using Undercooked;
 
 namespace Undercooked.Editor;
 

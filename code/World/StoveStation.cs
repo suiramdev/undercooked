@@ -1,9 +1,8 @@
 #nullable enable
 
 using System;
-using Undercooked.Components.Interfaces;
 
-namespace Undercooked.Components;
+namespace Undercooked;
 
 public class StoveStation : StationBase
 {

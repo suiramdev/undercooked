@@ -1,4 +1,4 @@
-namespace Undercooked.Components.Enums;
+namespace Undercooked;
 
 /// <summary>
 /// Represents the cooking state of an ingredient

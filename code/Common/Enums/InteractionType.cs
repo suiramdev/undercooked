@@ -1,4 +1,4 @@
-namespace Undercooked.Components.Enums;
+namespace Undercooked;
 
 /// <summary>
 /// Represents the type of interaction of an object

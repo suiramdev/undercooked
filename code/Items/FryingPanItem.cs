@@ -1,8 +1,6 @@
 #nullable enable
 
-using Undercooked.Components.Interfaces;
-
-namespace Undercooked.Components;
+namespace Undercooked;
 
 public class FryingPanItem : ItemBase, IDepositable, ITransferable
 {

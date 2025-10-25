@@ -2,7 +2,7 @@
 
 using System;
 
-namespace Undercooked.Components;
+namespace Undercooked;
 
 [Icon( "videocam" )]
 [Title( "Player Camera Controller" )]

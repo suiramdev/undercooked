@@ -2,11 +2,10 @@
 
 using System;
 using System.Text.Json;
-using System.Text.Json.Nodes;
 using System.Threading.Tasks;
-using Undercooked.Libraries.Convex;
+using Undercooked.Libraries;
 
-namespace Undercooked.Server;
+namespace Undercooked;
 
 public static partial class ConvexService
 {

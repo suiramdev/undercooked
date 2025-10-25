@@ -65,8 +65,8 @@
         "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "Undercooked.Components.StoveStation",
-        "__guid": "12e79558-d7cf-48c2-8503-5e47be544c90",
+        "__type": "Undercooked.StoveStation",
+        "__guid": "b0776612-829c-4d98-9899-cdf737ee6451",
         "__enabled": true,
         "AlternateInteractionType": "Press",
         "CookingTime": 5,
@@ -81,7 +81,8 @@
         "Socket": {
           "_type": "gameobject",
           "go": "8cac4bd3-a1c5-40d7-87be-9a065ea63065"
-        }
+        },
+        "StoredPickable": null
       }
     ],
     "Children": [

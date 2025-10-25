@@ -65,8 +65,8 @@
         "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "Undercooked.Components.CounterStation",
-        "__guid": "8a312fcb-984d-43a5-a7db-7eed24bc1f10",
+        "__type": "Undercooked.CounterStation",
+        "__guid": "0546a89a-a6dd-48c5-a75d-f79d81865fe0",
         "__enabled": true,
         "AlternateInteractionType": "Press",
         "InteractionType": "Press",
@@ -79,7 +79,8 @@
         "Socket": {
           "_type": "gameobject",
           "go": "8cac4bd3-a1c5-40d7-87be-9a065ea63065"
-        }
+        },
+        "StoredPickable": null
       }
     ],
     "Children": [

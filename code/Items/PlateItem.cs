@@ -1,9 +1,6 @@
 #nullable enable
 
-using Undercooked.Components.Interfaces;
-using Undercooked.Resources;
-
-namespace Undercooked.Components;
+namespace Undercooked;
 
 public sealed class PlateItem : ItemBase, IDepositable
 {

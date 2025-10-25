@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace Undercooked.Components;
+namespace Undercooked;
 
 public class CounterStation : StationBase
 {

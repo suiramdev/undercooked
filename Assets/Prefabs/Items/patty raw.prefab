@@ -15,47 +15,6 @@
     "OwnerTransfer": 1,
     "Components": [
       {
-        "__type": "Undercooked.Components.IngredientItem",
-        "__guid": "ab3bdc1d-2be3-477b-a7e3-c71685ba0cc9",
-        "__enabled": true,
-        "AlternateInteractionType": "Press",
-        "AttachmentBone": "hand_r",
-        "AttachmentOffset": "0,0,0",
-        "AttachmentRotation": "0,0,0,0",
-        "ChopFeatureEnabled": false,
-        "ChopProgress": 0,
-        "CookFeatureEnabled": true,
-        "CookProgress": 0,
-        "Depositable": null,
-        "HoldType": "HoldItem",
-        "InteractionType": "Press",
-        "ModelCollider": {
-          "_type": "component",
-          "component_id": "72c8746d-f9eb-414b-a0e1-4ec397adee66",
-          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
-          "component_type": "ModelCollider"
-        },
-        "ModelRenderer": {
-          "_type": "component",
-          "component_id": "e0781b68-f6ce-4a5c-8d15-c56d481628bb",
-          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
-          "component_type": "ModelRenderer"
-        },
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Resource": "resources/patty_raw.ingr",
-        "Rigidbody": {
-          "_type": "component",
-          "component_id": "e7c60352-2d67-488a-99c4-af819314a6a4",
-          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
-          "component_type": "Rigidbody"
-        }
-      },
-      {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "e0781b68-f6ce-4a5c-8d15-c56d481628bb",
         "__enabled": true,
@@ -131,6 +90,47 @@
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Undercooked.IngredientItem",
+        "__guid": "0ec59ced-ce04-4949-b14e-d0897979a71c",
+        "__enabled": true,
+        "AlternateInteractionType": "Press",
+        "AttachmentBone": "hand_r",
+        "AttachmentOffset": "0,0,0",
+        "AttachmentRotation": "0,0,0,0",
+        "ChopFeatureEnabled": false,
+        "ChopProgress": 0,
+        "CookFeatureEnabled": true,
+        "CookProgress": 0,
+        "Depositable": null,
+        "HoldType": "HoldItem",
+        "InteractionType": "Press",
+        "ModelCollider": {
+          "_type": "component",
+          "component_id": "72c8746d-f9eb-414b-a0e1-4ec397adee66",
+          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
+          "component_type": "ModelCollider"
+        },
+        "ModelRenderer": {
+          "_type": "component",
+          "component_id": "e0781b68-f6ce-4a5c-8d15-c56d481628bb",
+          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
+          "component_type": "ModelRenderer"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Resource": "resources/patty_raw.ingr",
+        "Rigidbody": {
+          "_type": "component",
+          "component_id": "e7c60352-2d67-488a-99c4-af819314a6a4",
+          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
+          "component_type": "Rigidbody"
+        }
       }
     ],
     "Children": [],

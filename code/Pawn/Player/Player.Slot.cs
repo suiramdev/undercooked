@@ -1,21 +1,15 @@
 #nullable enable
 
 using Sandbox.Citizen;
-using Undercooked.Components.Interfaces;
 
-namespace Undercooked.Components;
+namespace Undercooked;
 
-public class PlayerSlot : Component, IDepositable, ITransferable
+public partial class Player : IDepositable, ITransferable
 {
 	[Property]
 	[Group( "Components" )]
 	[RequireComponent]
 	public required SkinnedModelRenderer SkinnedModelRenderer { get; set; }
-
-	[Property]
-	[Group( "Components" )]
-	[RequireComponent]
-	public required CitizenAnimationHelper CitizenAnimationHelper { get; set; }
 
 	[Change( nameof( OnStoredPickableChanged ) )]
 	[Sync( SyncFlags.FromHost )]

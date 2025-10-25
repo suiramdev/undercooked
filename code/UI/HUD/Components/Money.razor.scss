@@ -1,0 +1,23 @@
+Money {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: #fffbe7;
+  border-radius: 9999px;
+  transform-origin: left bottom;
+  transform: rotate(-15deg);
+}
+
+Money .amount {
+  background-color: #bea745;
+  color: #fffbe7;
+  border-radius: 9999px;
+  font-family: "Inter", "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}

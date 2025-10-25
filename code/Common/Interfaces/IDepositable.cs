@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace Undercooked.Components.Interfaces;
+namespace Undercooked;
 
 /// <summary>
 /// Interface for any object that can be used to deposit a pickable

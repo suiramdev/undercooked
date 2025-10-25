@@ -92,8 +92,8 @@
         "StartAsleep": false
       },
       {
-        "__type": "Undercooked.Components.PlateItem",
-        "__guid": "d014b7e0-65d7-4de0-8c4e-5675e8a405e3",
+        "__type": "Undercooked.PlateItem",
+        "__guid": "d4fa84c1-5d83-4427-bdf0-68108212b067",
         "__enabled": true,
         "AlternateInteractionType": "Press",
         "AttachmentBone": "hand_r",

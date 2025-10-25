@@ -12,7 +12,7 @@ using System.Text;
 using Sandbox;
 using System.Net.Http.Json;
 
-namespace Undercooked.Libraries.Convex;
+namespace Undercooked.Libraries;
 
 /// <summary>
 /// Response from a successful Convex function call

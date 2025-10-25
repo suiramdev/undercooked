@@ -116,8 +116,8 @@
         "SurfaceVelocity": "0,0,0"
       },
       {
-        "__type": "Undercooked.Components.FryingPanItem",
-        "__guid": "c7f0880a-d37d-4866-8d82-de05612730c8",
+        "__type": "Undercooked.FryingPanItem",
+        "__guid": "5c37ab44-70f6-40e6-b3a0-906652d54dfe",
         "__enabled": true,
         "AlternateInteractionType": "Press",
         "AttachmentBone": "hand_r",

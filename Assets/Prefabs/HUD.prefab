@@ -30,6 +30,17 @@
         "ScaleStrategy": "ConsistentHeight",
         "TargetCamera": null,
         "ZIndex": 100
+      },
+      {
+        "__type": "Hud",
+        "__guid": "226ee566-0bbc-497b-ae7d-8bbfd023371d",
+        "__enabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null
       }
     ],
     "Children": [],

@@ -3,7 +3,7 @@
     "__guid": "f47053c7-4980-43ba-afd8-01dd71ceac76",
     "__version": 1,
     "Flags": 0,
-    "Name": "cheese",
+    "Name": "Cheese",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -14,47 +14,6 @@
     "NetworkOrphaned": 0,
     "OwnerTransfer": 1,
     "Components": [
-      {
-        "__type": "Undercooked.Components.IngredientItem",
-        "__guid": "40c5942b-42f0-485d-95f3-7680f4600f70",
-        "__enabled": true,
-        "AlternateInteractionType": "Press",
-        "AttachmentBone": "hand_r",
-        "AttachmentOffset": "0,0,0",
-        "AttachmentRotation": "0,0,0,0",
-        "ChopFeatureEnabled": true,
-        "ChopProgress": 0,
-        "CookFeatureEnabled": false,
-        "CookProgress": 0,
-        "Depositable": null,
-        "HoldType": "HoldItem",
-        "InteractionType": "Press",
-        "ModelCollider": {
-          "_type": "component",
-          "component_id": "8081ddda-a44d-416a-a490-b1c3d34dd798",
-          "go": "f47053c7-4980-43ba-afd8-01dd71ceac76",
-          "component_type": "ModelCollider"
-        },
-        "ModelRenderer": {
-          "_type": "component",
-          "component_id": "ebc239f4-77fa-4f18-9e23-9857bba5bf08",
-          "go": "f47053c7-4980-43ba-afd8-01dd71ceac76",
-          "component_type": "ModelRenderer"
-        },
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Resource": "resources/cheese.ingr",
-        "Rigidbody": {
-          "_type": "component",
-          "component_id": "944f6d97-9683-483d-b257-21f60f39fe4f",
-          "go": "f47053c7-4980-43ba-afd8-01dd71ceac76",
-          "component_type": "Rigidbody"
-        }
-      },
       {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "ebc239f4-77fa-4f18-9e23-9857bba5bf08",
@@ -131,6 +90,47 @@
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Undercooked.IngredientItem",
+        "__guid": "af70d822-3c5d-49f4-a3eb-f465be54017c",
+        "__enabled": true,
+        "AlternateInteractionType": "Press",
+        "AttachmentBone": "hand_r",
+        "AttachmentOffset": "0,0,0",
+        "AttachmentRotation": "0,0,0,0",
+        "ChopFeatureEnabled": true,
+        "ChopProgress": 0,
+        "CookFeatureEnabled": false,
+        "CookProgress": 0,
+        "Depositable": null,
+        "HoldType": "HoldItem",
+        "InteractionType": "Press",
+        "ModelCollider": {
+          "_type": "component",
+          "component_id": "8081ddda-a44d-416a-a490-b1c3d34dd798",
+          "go": "f47053c7-4980-43ba-afd8-01dd71ceac76",
+          "component_type": "ModelCollider"
+        },
+        "ModelRenderer": {
+          "_type": "component",
+          "component_id": "ebc239f4-77fa-4f18-9e23-9857bba5bf08",
+          "go": "f47053c7-4980-43ba-afd8-01dd71ceac76",
+          "component_type": "ModelRenderer"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Resource": "resources/cheese.ingr",
+        "Rigidbody": {
+          "_type": "component",
+          "component_id": "944f6d97-9683-483d-b257-21f60f39fe4f",
+          "go": "f47053c7-4980-43ba-afd8-01dd71ceac76",
+          "component_type": "Rigidbody"
+        }
       }
     ],
     "Children": [],

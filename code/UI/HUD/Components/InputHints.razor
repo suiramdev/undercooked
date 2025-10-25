@@ -1,0 +1,28 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Undercooked.UI
+
+<root>
+    @if (ShowInteraction)
+    {
+        <InputHint Text="@InteractionText" InputAction="Use" />
+    }
+
+    @if (ShowAlternateInteraction)
+    {
+        <InputHint Text="@AlternateInteractionText" InputAction="AltInteract" />
+    }
+</root>
+
+@code {
+    private bool ShowInteraction => Player.Local?.InteractableTarget?.CanInteract(Player.Local) ?? false;
+
+    private bool ShowAlternateInteraction => Player.Local?.InteractableTarget?.CanAlternateInteract(Player.Local) ?? false;
+
+    private string InteractionText => Player.Local?.InteractableTarget?.InteractionText ?? "Interact";
+
+    private string AlternateInteractionText => Player.Local?.InteractableTarget?.AlternateInteractionText ?? "Alt. Interact";
+
+    protected override int BuildHash() => System.HashCode.Combine(ShowInteraction, ShowAlternateInteraction, InteractionText, AlternateInteractionText);
+}

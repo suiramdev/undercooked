@@ -1,9 +1,8 @@
 #nullable enable
 
 using System;
-using Undercooked.Resources;
 
-namespace Undercooked.Components;
+namespace Undercooked;
 
 public class IngredientItem : ItemBase
 {

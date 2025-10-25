@@ -1,6 +1,6 @@
 #nullable enable
 
-namespace Undercooked.Resources;
+namespace Undercooked;
 
 [AssetType( Name = "Recipe", Extension = "recipe", Category = "undercooked" )]
 [Description( "A recipe for a dish" )]

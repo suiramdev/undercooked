@@ -3,7 +3,7 @@
     "__guid": "bb0b0810-7e91-46a3-b730-9288975ac44a",
     "__version": 1,
     "Flags": 0,
-    "Name": "bun",
+    "Name": "Bun",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -14,47 +14,6 @@
     "NetworkOrphaned": 0,
     "OwnerTransfer": 1,
     "Components": [
-      {
-        "__type": "Undercooked.Components.IngredientItem",
-        "__guid": "bfdb5bd1-ecd6-43f1-9fbb-725a5ffb74ba",
-        "__enabled": true,
-        "AlternateInteractionType": "Press",
-        "AttachmentBone": "hand_r",
-        "AttachmentOffset": "0,0,0",
-        "AttachmentRotation": "0,0,0,0",
-        "ChopFeatureEnabled": false,
-        "ChopProgress": 0,
-        "CookFeatureEnabled": false,
-        "CookProgress": 0,
-        "Depositable": null,
-        "HoldType": "HoldItem",
-        "InteractionType": "Press",
-        "ModelCollider": {
-          "_type": "component",
-          "component_id": "8d1729dc-a5cf-40e9-a156-0c5b7ef78d43",
-          "go": "bb0b0810-7e91-46a3-b730-9288975ac44a",
-          "component_type": "ModelCollider"
-        },
-        "ModelRenderer": {
-          "_type": "component",
-          "component_id": "d4e1897c-1836-4f1c-943a-f2e12526da55",
-          "go": "bb0b0810-7e91-46a3-b730-9288975ac44a",
-          "component_type": "ModelRenderer"
-        },
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Resource": "resources/bun.ingr",
-        "Rigidbody": {
-          "_type": "component",
-          "component_id": "3aa22846-0dea-44e4-ac79-10908fdb3ee9",
-          "go": "bb0b0810-7e91-46a3-b730-9288975ac44a",
-          "component_type": "Rigidbody"
-        }
-      },
       {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "d4e1897c-1836-4f1c-943a-f2e12526da55",
@@ -131,6 +90,47 @@
         "Static": false,
         "Surface": null,
         "SurfaceVelocity": "0,0,0"
+      },
+      {
+        "__type": "Undercooked.IngredientItem",
+        "__guid": "27a6b73b-6abd-45d5-801b-0246dd1b9c03",
+        "__enabled": true,
+        "AlternateInteractionType": "Press",
+        "AttachmentBone": "hand_r",
+        "AttachmentOffset": "0,0,0",
+        "AttachmentRotation": "0,0,0,0",
+        "ChopFeatureEnabled": false,
+        "ChopProgress": 0,
+        "CookFeatureEnabled": false,
+        "CookProgress": 0,
+        "Depositable": null,
+        "HoldType": "HoldItem",
+        "InteractionType": "Press",
+        "ModelCollider": {
+          "_type": "component",
+          "component_id": "8d1729dc-a5cf-40e9-a156-0c5b7ef78d43",
+          "go": "bb0b0810-7e91-46a3-b730-9288975ac44a",
+          "component_type": "ModelCollider"
+        },
+        "ModelRenderer": {
+          "_type": "component",
+          "component_id": "d4e1897c-1836-4f1c-943a-f2e12526da55",
+          "go": "bb0b0810-7e91-46a3-b730-9288975ac44a",
+          "component_type": "ModelRenderer"
+        },
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "Resource": "resources/bun.ingr",
+        "Rigidbody": {
+          "_type": "component",
+          "component_id": "3aa22846-0dea-44e4-ac79-10908fdb3ee9",
+          "go": "bb0b0810-7e91-46a3-b730-9288975ac44a",
+          "component_type": "Rigidbody"
+        }
       }
     ],
     "Children": [],
