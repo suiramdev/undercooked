@@ -65,35 +65,6 @@
         "__type": "Undercooked.Player",
         "__guid": "0ee3a82c-9159-446b-b222-6d928d363337",
         "__enabled": true,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "PlayerController": {
-          "_type": "component",
-          "component_id": "eb4a20ed-ea67-4ed6-ba1f-a386ce19072f",
-          "go": "22fc2a11-d36b-44e8-b056-6ebfb1f5d301",
-          "component_type": "PlayerController"
-        },
-        "PlayerInteraction": {
-          "_type": "component",
-          "component_id": "387df0b7-bc33-4dd0-94ae-bc77c4e70973",
-          "go": "22fc2a11-d36b-44e8-b056-6ebfb1f5d301",
-          "component_type": "PlayerInteraction"
-        },
-        "PlayerSlot": {
-          "_type": "component",
-          "component_id": "4b4529bd-d5f0-4bce-9b31-bd9d4c087298",
-          "go": "22fc2a11-d36b-44e8-b056-6ebfb1f5d301",
-          "component_type": "PlayerSlot"
-        }
-      },
-      {
-        "__type": "Undercooked.PlayerController",
-        "__guid": "eb4a20ed-ea67-4ed6-ba1f-a386ce19072f",
-        "__enabled": true,
         "AirSpeedMultiplier": 0.5,
         "CameraController": null,
         "CharacterController": {
@@ -110,6 +81,8 @@
         },
         "DefaultSpeed": 100,
         "Gravity": 980,
+        "InteractableTarget": null,
+        "InteractRadius": 50,
         "MovementThreshold": 0.1,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -117,49 +90,7 @@
         "OnComponentFixedUpdate": null,
         "OnComponentStart": null,
         "OnComponentUpdate": null,
-        "RotationSpeed": 10
-      },
-      {
-        "__type": "Undercooked.PlayerInteraction",
-        "__guid": "387df0b7-bc33-4dd0-94ae-bc77c4e70973",
-        "__enabled": true,
-        "InteractableTarget": null,
-        "InteractRadius": 50,
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
-        "Player": {
-          "_type": "component",
-          "component_id": "0ee3a82c-9159-446b-b222-6d928d363337",
-          "go": "22fc2a11-d36b-44e8-b056-6ebfb1f5d301",
-          "component_type": "Player"
-        },
-        "PlayerSlot": {
-          "_type": "component",
-          "component_id": "4b4529bd-d5f0-4bce-9b31-bd9d4c087298",
-          "go": "22fc2a11-d36b-44e8-b056-6ebfb1f5d301",
-          "component_type": "PlayerSlot"
-        }
-      },
-      {
-        "__type": "Undercooked.PlayerSlot",
-        "__guid": "4b4529bd-d5f0-4bce-9b31-bd9d4c087298",
-        "__enabled": true,
-        "CitizenAnimationHelper": {
-          "_type": "component",
-          "component_id": "a79dc321-2bc6-4e9d-9d63-26865382fa87",
-          "go": "22fc2a11-d36b-44e8-b056-6ebfb1f5d301",
-          "component_type": "CitizenAnimationHelper"
-        },
-        "OnComponentDestroy": null,
-        "OnComponentDisabled": null,
-        "OnComponentEnabled": null,
-        "OnComponentFixedUpdate": null,
-        "OnComponentStart": null,
-        "OnComponentUpdate": null,
+        "RotationSpeed": 10,
         "SkinnedModelRenderer": {
           "_type": "component",
           "component_id": "7917d778-8770-454a-b24f-66457bbd9aba",

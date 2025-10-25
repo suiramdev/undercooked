@@ -51,14 +51,7 @@ public abstract class ItemBase : Component, IPickable, IInteractable
 	[Sync( SyncFlags.FromHost )]
 	public IDepositable? Depositable { get; set; }
 
-	public virtual string InteractionText => "Pickup";
-
-	public virtual string? AlternateInteractionText => null;
-
-	public virtual bool CanInteract( Player player )
-	{
-		return true;
-	}
+	public virtual string? GetInteractionText( Player player ) => "Pickup";
 
 	[Rpc.Host]
 	public virtual void TryInteract( Player player )
@@ -66,10 +59,7 @@ public abstract class ItemBase : Component, IPickable, IInteractable
 		player.TryDeposit( this );
 	}
 
-	public virtual bool CanAlternateInteract( Player player )
-	{
-		return false;
-	}
+	public virtual string? GetAlternateInteractionText( Player player ) => null;
 
 	[Rpc.Host]
 	public virtual void TryAlternateInteract( Player player )

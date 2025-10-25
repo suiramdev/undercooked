@@ -4,25 +4,23 @@
 @namespace Undercooked.UI
 
 <root>
-    @if (ShowInteraction)
+    @if (InteractionText is not null)
     {
         <InputHint Text="@InteractionText" InputAction="Use" />
     }
 
-    @if (ShowAlternateInteraction)
+    @if (AlternateInteractionText is not null)
     {
         <InputHint Text="@AlternateInteractionText" InputAction="AltInteract" />
     }
 </root>
 
 @code {
-    private bool ShowInteraction => Player.Local?.InteractableTarget?.CanInteract(Player.Local) ?? false;
+#nullable enable
 
-    private bool ShowAlternateInteraction => Player.Local?.InteractableTarget?.CanAlternateInteract(Player.Local) ?? false;
+    private string? InteractionText => Player.Local?.InteractableTarget?.GetInteractionText(Player.Local);
 
-    private string InteractionText => Player.Local?.InteractableTarget?.InteractionText ?? "Interact";
+    private string? AlternateInteractionText => Player.Local?.InteractableTarget?.GetAlternateInteractionText(Player.Local);
 
-    private string AlternateInteractionText => Player.Local?.InteractableTarget?.AlternateInteractionText ?? "Alt. Interact";
-
-    protected override int BuildHash() => System.HashCode.Combine(ShowInteraction, ShowAlternateInteraction, InteractionText, AlternateInteractionText);
+    protected override int BuildHash() => System.HashCode.Combine(InteractionText, AlternateInteractionText);
 }

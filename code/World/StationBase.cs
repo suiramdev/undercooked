@@ -23,15 +23,21 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 	[Sync( SyncFlags.FromHost )]
 	public IPickable? StoredPickable { get; protected set; }
 
-	public virtual string InteractionText => "Interact";
-
-	public virtual string? AlternateInteractionText => null;
-
-
-	public virtual bool CanInteract( Player by )
+	public virtual string? GetInteractionText( Player by )
 	{
 		var held = by.StoredPickable;
-		return (held is null && StoredPickable is not null) || held is not null;
+
+		if ( held is null && StoredPickable is not null )
+		{
+			return "Pickup";
+		}
+
+		if ( held is not null )
+		{
+			return "Deposit";
+		}
+
+		return null;
 	}
 
 	[Rpc.Host]
@@ -73,9 +79,9 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 		by.TryTransfer( this );
 	}
 
-	public virtual bool CanAlternateInteract( Player by )
+	public virtual string? GetAlternateInteractionText( Player by )
 	{
-		return false;
+		return null;
 	}
 
 	[Rpc.Host]

@@ -14,21 +14,11 @@ public interface IInteractable
 
 	InteractionType AlternateInteractionType { get; }
 
-	/// <summary>
-	/// The text to display for the primary interaction (e.g., "Pickup", "Chop", "Use")
-	/// </summary>
-	string? InteractionText { get; }
-
-	/// <summary>
-	/// The text to display for the alternate interaction (e.g., "Drop", "Throw")
-	/// </summary>
-	string? AlternateInteractionText { get; }
-
-	bool CanInteract( Player by );
+	string? GetInteractionText( Player by );
 
 	void TryInteract( Player by );
 
-	bool CanAlternateInteract( Player by );
+	string? GetAlternateInteractionText( Player by );
 
 	void TryAlternateInteract( Player by );
 }

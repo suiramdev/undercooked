@@ -14,21 +14,26 @@ public class CuttingBoardStation : StationBase
 	[Description( "How fast the chopping progress increases per second" )]
 	public float ChopSpeed { get; set; } = 0.2f;
 
-	public override string? AlternateInteractionText => "Chop";
-
 	private TimeSince _lastChopTime = 0f;
 	private const float CHOP_COOLDOWN = 0.1f;
 
-	public override bool CanAlternateInteract( Player by )
+	public override string? GetAlternateInteractionText( Player by )
 	{
-		return StoredPickable is not null && StoredPickable is IngredientItem ingredient && ingredient.Choppable;
+		if ( StoredPickable is not IngredientItem ingredient || !ingredient.Choppable )
+		{
+			return null;
+		}
+
+		return ingredient.Choppable ? "Chop" : null;
 	}
 
 	[Rpc.Host]
 	public override void TryAlternateInteract( Player by )
 	{
-		if ( !CanAlternateInteract( by ) ) return;
-		if ( StoredPickable is not IngredientItem ingredient ) return;
+		if ( StoredPickable is not IngredientItem ingredient )
+		{
+			return;
+		}
 
 		if ( !ingredient.Choppable || _lastChopTime < CHOP_COOLDOWN )
 		{

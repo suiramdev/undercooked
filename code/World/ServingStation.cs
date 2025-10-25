@@ -11,33 +11,17 @@ public class ServingStation : Component, IInteractable
 
     public InteractionType AlternateInteractionType => InteractionType.Press;
 
-    public string InteractionText => "Submit";
-
-    public string? AlternateInteractionText => null;
-
-    public bool CanInteract( Player by )
-    {
-        return by.StoredPickable is PlateItem;
-    }
+    public string? GetInteractionText( Player by ) => "Submit";
 
     [Rpc.Host]
     public void TryInteract( Player by )
     {
-        if ( !CanInteract( by ) ) return;
+        if ( by.StoredPickable is not PlateItem plate ) return;
 
-        var held = by.StoredPickable;
-
-        // If player is holding a plate, try to submit it
-        if ( held is PlateItem plate )
-        {
-            SubmitPlate( plate, by );
-        }
+        SubmitPlate( plate, by );
     }
 
-    public bool CanAlternateInteract( Player by )
-    {
-        return false;
-    }
+    public string? GetAlternateInteractionText( Player by ) => null;
 
     [Rpc.Host]
     public void TryAlternateInteract( Player by )
