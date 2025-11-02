@@ -1,20 +1,61 @@
+@import "/UI/Theme.scss";
+
 Money {
   position: absolute;
-  bottom: 24px;
+  bottom: 16px;
   left: 48px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  background-color: #fffbe7;
+  overflow: visible;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: $background;
   border-radius: 9999px;
   transform-origin: left bottom;
-  transform: rotate(-15deg);
+  transform: rotate(-7deg);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    z-index: -1;
+    overflow: visible;
+    background-image: url("/UI/Icons/money.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: border-wrap(8px, $background);
+  }
+}
+
+Money .icon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  z-index: 10;
+}
+
+Money .icon-shadow {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  overflow: visible;
+  z-index: -1;
 }
 
 Money .amount {
-  background-color: #bea745;
-  color: #fffbe7;
+  background-color: $tertiary;
+  color: $tertiary-foreground;
   border-radius: 9999px;
   font-family: "Inter", "Roboto", sans-serif;
   font-weight: 700;

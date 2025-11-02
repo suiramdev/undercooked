@@ -1,0 +1,64 @@
+@import "/UI/Theme.scss";
+
+PlayerMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background: #fffbb4;
+  pointer-events: none;
+
+  mask-image: radial-gradient(white 0%, white 50%, black 50%, black 100%);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 0%;
+  transition: all 0.5s ease-in;
+
+  &.open {
+    pointer-events: all;
+    mask-size: 200%;
+  }
+
+  .l-header {
+    width: 100%;
+    height: 200px;
+    background: #f2e269;
+    mask-image: url("/UI/PlayerMenu/heading.svg");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out 0.5s;
+  }
+
+  &.open .l-header {
+    transform: translateY(0%);
+  }
+
+  .l-footer {
+    width: 100%;
+    height: 200px;
+    background: #f2e269;
+    mask-image: url("/UI/PlayerMenu/heading.svg");
+    mask-size: 100% -100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out 0.5s;
+  }
+
+  &.open .l-footer {
+    transform: translateY(0%);
+  }
+
+  .l-page-container {
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+  }
+}

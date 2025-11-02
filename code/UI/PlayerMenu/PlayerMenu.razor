@@ -1,0 +1,43 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Undercooked.UI
+
+<root class="@(_isOpen ? "open" : "closed")">
+    <div class="l-header">
+        <Navbar OnPageChanged="@HandlePageChange" CurrentPage="@_currentPage" />
+    </div>
+    <div class="l-page-container">
+        @if (_currentPage == PlayerMenuPage.RecipeBrowser)
+        {
+            <RecipeBrowserPage />
+        }
+        @* Add more pages here as needed *@
+    </div>
+    <div class="l-footer">
+
+    </div>
+</root>
+
+@code {
+    private bool _isOpen = false;
+    private PlayerMenuPage _currentPage = PlayerMenuPage.RecipeBrowser;
+
+    protected override void OnUpdate()
+    {
+        // For this example, open the menu with Tab
+        if (Input.Pressed("Menu"))
+        {
+            _isOpen = !_isOpen;
+            Mouse.CursorType = _isOpen ? "pointer" : "none";
+            Mouse.Visibility = _isOpen ? MouseVisibility.Visible : MouseVisibility.Hidden;
+        }
+    }
+
+    private void HandlePageChange(PlayerMenuPage page)
+    {
+        _currentPage = page;
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine(_isOpen, _currentPage);
+}

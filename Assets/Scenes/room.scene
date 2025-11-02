@@ -38,6 +38,142 @@
       "Children": []
     },
     {
+      "__guid": "1edc0f33-e7dc-4b27-b6fb-db565e226589",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "UI",
+      "Position": "89.28123,206.3271,-124.1187",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [],
+      "Children": [
+        {
+          "__guid": "422ab9e7-1451-4ddf-ae75-7b6b3035e235",
+          "__version": 1,
+          "__Prefab": "prefabs/ui/hud.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [
+              {
+                "Id": {
+                  "Type": "Component",
+                  "IdValue": "82fc8d73-1aa8-4c4d-8af4-d81416136aea"
+                },
+                "Parent": {
+                  "Type": "GameObject",
+                  "IdValue": "88dde320-5192-425d-b145-b1159dc0b356"
+                },
+                "PreviousElement": {
+                  "Type": "Component",
+                  "IdValue": "2d687e0f-8e90-4074-a18e-2a7208288ae1"
+                },
+                "ContainerProperty": "Components",
+                "IsContainerArray": true,
+                "Data": {
+                  "__type": "Undercooked.UI.Hud",
+                  "__guid": "82fc8d73-1aa8-4c4d-8af4-d81416136aea",
+                  "__enabled": true,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null
+                }
+              }
+            ],
+            "RemovedObjects": [
+              {
+                "Id": {
+                  "Type": "Component",
+                  "IdValue": "226ee566-0bbc-497b-ae7d-8bbfd023371d"
+                }
+              }
+            ],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "88dde320-5192-425d-b145-b1159dc0b356"
+                },
+                "Property": "Position",
+                "Value": "-89.28123,-206.3271,124.1187"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "88dde320-5192-425d-b145-b1159dc0b356": "422ab9e7-1451-4ddf-ae75-7b6b3035e235",
+            "2d687e0f-8e90-4074-a18e-2a7208288ae1": "d191a61f-3bcd-4b08-b401-24d2fb16126d"
+          }
+        },
+        {
+          "__guid": "7a153b10-5360-44cb-8842-0c9c0a6699ae",
+          "__version": 1,
+          "__Prefab": "prefabs/ui/player menu.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [
+              {
+                "Id": {
+                  "Type": "Component",
+                  "IdValue": "765cb67b-b433-4c27-8fe2-cb3cde697164"
+                },
+                "Parent": {
+                  "Type": "GameObject",
+                  "IdValue": "427d9256-722c-4e22-8a64-3e656c21c30e"
+                },
+                "PreviousElement": {
+                  "Type": "Component",
+                  "IdValue": "fa120fde-faa7-4025-868a-8492a595d389"
+                },
+                "ContainerProperty": "Components",
+                "IsContainerArray": true,
+                "Data": {
+                  "__type": "Undercooked.UI.PlayerMenu",
+                  "__guid": "765cb67b-b433-4c27-8fe2-cb3cde697164",
+                  "__enabled": true,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null
+                }
+              }
+            ],
+            "RemovedObjects": [
+              {
+                "Id": {
+                  "Type": "Component",
+                  "IdValue": "a43227b6-3195-4be1-b124-be30aa48b631"
+                }
+              }
+            ],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "427d9256-722c-4e22-8a64-3e656c21c30e"
+                },
+                "Property": "Position",
+                "Value": "-89.28123,-206.3271,124.1187"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "427d9256-722c-4e22-8a64-3e656c21c30e": "7a153b10-5360-44cb-8842-0c9c0a6699ae",
+            "fa120fde-faa7-4025-868a-8492a595d389": "f5f98a08-5022-45da-beb5-d5391c1b3dea"
+          }
+        }
+      ]
+    },
+    {
       "__guid": "d714bc87-c3a7-4cc1-8036-9845ae26dd7e",
       "__version": 1,
       "Flags": 0,
@@ -783,6 +919,22 @@
             },
             "Property": "Position",
             "Value": "7.575806,-148.6962,0.7812414"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0ec59ced-ce04-4949-b14e-d0897979a71c"
+            },
+            "Property": "CookFeatureEnabled",
+            "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0ec59ced-ce04-4949-b14e-d0897979a71c"
+            },
+            "Property": "Resource",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -810,6 +962,22 @@
             },
             "Property": "Position",
             "Value": "-188.7392,6.09787,0.5043449"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "af70d822-3c5d-49f4-a3eb-f465be54017c"
+            },
+            "Property": "ChopFeatureEnabled",
+            "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "af70d822-3c5d-49f4-a3eb-f465be54017c"
+            },
+            "Property": "Resource",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -837,6 +1005,14 @@
             },
             "Property": "Position",
             "Value": "-159.0864,164.4364,4.503474"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "27a6b73b-6abd-45d5-801b-0246dd1b9c03"
+            },
+            "Property": "Resource",
+            "Value": null
           }
         ],
         "MovedObjects": []
@@ -847,22 +1023,6 @@
         "d4e1897c-1836-4f1c-943a-f2e12526da55": "b4784e07-1f0f-4d8f-92af-d3ab3c0cc016",
         "3aa22846-0dea-44e4-ac79-10908fdb3ee9": "4b73fbc5-93b5-4297-b49d-c5bf8c8228b1",
         "8d1729dc-a5cf-40e9-a156-0c5b7ef78d43": "731486be-e057-403a-baf4-3d74b60b472c"
-      }
-    },
-    {
-      "__guid": "9b034f03-bf64-466a-a8aa-d56303f62ffd",
-      "__version": 1,
-      "__Prefab": "prefabs/hud.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "88dde320-5192-425d-b145-b1159dc0b356": "9b034f03-bf64-466a-a8aa-d56303f62ffd",
-        "2d687e0f-8e90-4074-a18e-2a7208288ae1": "71137cb2-8c2b-4efa-ab15-2f5c86b4490d",
-        "226ee566-0bbc-497b-ae7d-8bbfd023371d": "f0db969c-08eb-4365-bb31-a7b8f64692c7"
       }
     }
   ],

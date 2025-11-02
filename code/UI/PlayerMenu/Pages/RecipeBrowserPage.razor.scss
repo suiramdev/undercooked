@@ -1,0 +1,17 @@
+RecipeBrowserPage {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 32px;
+  padding: 32px 64px;
+}
+
+@keyframes horizontal-stripes {
+  0% {
+    mask-position: 0% 0%;
+  }
+
+  100% {
+    mask-position: 100% 0%;
+  }
+}

@@ -1,0 +1,21 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Undercooked.UI
+
+<root>
+    <div class="o-recipe-details">
+        @if (SelectedRecipe != null)
+        {
+            <div class="recipe-details-content">
+                <h2>@SelectedRecipe.Name</h2>
+                <!-- Add recipe details here -->
+            </div>
+        }
+    </div>
+</root>
+
+@code {
+    [Parameter]
+    public RecipeBrowserPage.RecipeItem? SelectedRecipe { get; set; }
+}

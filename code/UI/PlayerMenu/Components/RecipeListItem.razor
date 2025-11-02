@@ -1,0 +1,34 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Undercooked.UI
+
+<root>
+    <button class="@GetRecipeClass()" onclick="@OnClick">
+        <span>
+            @Recipe.Name
+        </span>
+        @if (!Recipe.IsUnlocked)
+        {
+            <img src="/UI/Icons/lock.svg" />
+        }
+    </button>
+</root>
+
+@code {
+    [Parameter]
+    public bool IsSelected { get; set; }
+
+    [Parameter]
+    public RecipeBrowserPage.RecipeItem Recipe { get; set; }
+    
+    private string GetRecipeClass()
+    {
+        var classes = new List<string>();
+        if (IsSelected) classes.Add("selected");
+        if (!Recipe.IsUnlocked) classes.Add("locked");
+        return string.Join(" ", classes);
+    }
+    
+    protected override int BuildHash() => System.HashCode.Combine(IsSelected, Recipe.Id);
+}

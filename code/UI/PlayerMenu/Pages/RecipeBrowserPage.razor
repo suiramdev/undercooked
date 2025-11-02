@@ -1,0 +1,44 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Undercooked.UI
+
+<root>
+    <RecipeList Recipes="@Recipes" SelectedRecipe="@SelectedRecipe" OnSelectRecipe="@HandleSelectRecipe" />
+    <RecipeDetails SelectedRecipe="@SelectedRecipe" />
+</root>
+
+@code {
+#nullable enable
+    private RecipeItem? SelectedRecipe { get; set; }
+
+    private List<RecipeItem> Recipes { get; set; } = new()
+    {
+        new RecipeItem { Id = 1, Name = "Recipe 1", IsUnlocked = true },
+        new RecipeItem { Id = 2, Name = "Recipe 2", IsUnlocked = true },
+        new RecipeItem { Id = 3, Name = "Recipe 3", IsUnlocked = false }
+    };
+
+    private void HandleSelectRecipe(RecipeItem recipe)
+    {
+        if (!recipe.IsUnlocked) return;
+        SelectedRecipe = recipe;
+    }
+
+    private string GetRecipeClass(RecipeItem recipe)
+    {
+        var classes = new List<string>();
+        if (SelectedRecipe?.Id == recipe.Id) classes.Add("active");
+        return string.Join(" ", classes);
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine(SelectedRecipe?.Id, Recipes.Count);
+
+    public class RecipeItem
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = "";
+        public bool IsUnlocked { get; set; }
+    }
+}
+

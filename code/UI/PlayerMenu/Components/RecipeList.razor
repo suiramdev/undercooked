@@ -1,0 +1,27 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits Panel
+@namespace Undercooked.UI
+
+<root>
+    @foreach (var recipe in Recipes)
+    {
+        <RecipeListItem IsSelected="@(SelectedRecipe == recipe)" Recipe="@recipe" onclick="@(() => OnSelectRecipe?.Invoke(recipe))" />
+    }
+</root>
+
+@code {
+#nullable enable
+
+    [Parameter]
+    public List<RecipeBrowserPage.RecipeItem> Recipes { get; set; } = new();
+    
+    [Parameter]
+    public RecipeBrowserPage.RecipeItem? SelectedRecipe { get; set; }
+    
+    [Parameter]
+    public Action<RecipeBrowserPage.RecipeItem>? OnSelectRecipe { get; set; }
+    
+    protected override int BuildHash() => System.HashCode.Combine(Recipes.Count, SelectedRecipe?.Id);
+}
