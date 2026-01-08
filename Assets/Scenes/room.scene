@@ -607,7 +607,10 @@
         "f5e63b53-f719-4eac-af41-719dda1d022a": "59ee36fd-a1cc-4e91-87a2-88315fbe2ed4",
         "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "cf3c3e38-a980-4cae-b647-d48b677d2903",
         "7a2d3b6e-6941-46a0-8e01-7f39a0034257": "504dfe95-9757-488d-80fe-a6f6512656bd",
-        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "26e68e73-1ccc-4da6-a3c7-ae3effcac2db"
+        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "26e68e73-1ccc-4da6-a3c7-ae3effcac2db",
+        "0e4acdce-472f-4cc2-8c02-9b7b569e3c56": "66a80d36-1acf-4df9-bf0c-885a5519f932",
+        "a0aa0aca-112f-4668-ba42-00f21eacbc3c": "2d771046-327b-45f3-abfc-bf04fede7e05",
+        "5acd6a8b-23e5-4e5a-a70a-f5e8cd017854": "19b11023-c07d-4d09-9c9c-cefdd489be50"
       }
     },
     {
@@ -642,7 +645,10 @@
         "f5e63b53-f719-4eac-af41-719dda1d022a": "626ac1c9-fd59-4292-bc2a-c4274880becc",
         "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "e0f85b7d-4f84-4e78-9f8e-88e8efa2dadb",
         "7a2d3b6e-6941-46a0-8e01-7f39a0034257": "bf87b4af-fa65-4c8d-90e7-413d931fe309",
-        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "3e36c19f-2bcd-4236-9f24-c4139fba71de"
+        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "3e36c19f-2bcd-4236-9f24-c4139fba71de",
+        "0e4acdce-472f-4cc2-8c02-9b7b569e3c56": "48986a74-c97d-4b04-bb09-7e1dce9fa303",
+        "a0aa0aca-112f-4668-ba42-00f21eacbc3c": "881f3139-5d61-420c-85c2-e568f6102b1d",
+        "5acd6a8b-23e5-4e5a-a70a-f5e8cd017854": "bdf8d796-1237-4bce-a5c1-d4ecaef6177f"
       }
     },
     {
@@ -963,7 +969,7 @@
               "IdValue": "f47053c7-4980-43ba-afd8-01dd71ceac76"
             },
             "Property": "Position",
-            "Value": "-188.7392,6.09787,0.5043449"
+            "Value": "-188.0903,6.09787,0.5043449"
           }
         ],
         "MovedObjects": []

@@ -1,0 +1,31 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Undercooked.UI
+
+<root>
+    @if (HasChoppableIngredient)
+    {
+        <ProgressBar Progress="@Progress" />
+    }
+</root>
+
+@code {
+    [Property]
+    public CuttingBoardStation station;
+
+    private bool HasChoppableIngredient => station.StoredPickable is IngredientItem { Choppable: true };
+
+    private float Progress
+    {
+        get
+        {
+            if (station.StoredPickable is not IngredientItem ingredient)
+                return 0f;
+
+            return ingredient.ChopProgress;
+        }
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine(Progress, HasChoppableIngredient);
+}

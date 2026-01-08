@@ -1,7 +1,7 @@
 {
   "RootObject": {
     "__guid": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
-    "__version": 1,
+    "__version": 2,
     "Flags": 0,
     "Name": "cutting board station",
     "Position": "-200.1538,-75,0",
@@ -10,14 +10,16 @@
     "Tags": "playerclip",
     "Enabled": true,
     "NetworkMode": 1,
-    "NetworkInterpolation": true,
+    "NetworkFlags": 0,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "f5e63b53-f719-4eac-af41-719dda1d022a",
         "__enabled": true,
+        "Flags": 0,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
         "LodOverride": null,
@@ -44,7 +46,9 @@
         "__type": "Sandbox.BoxCollider",
         "__guid": "e524bfd4-2f19-4d10-899d-3f9a13ae13b5",
         "__enabled": true,
+        "Flags": 0,
         "Center": "0,0.02148438,60.447",
+        "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
@@ -68,6 +72,7 @@
         "__type": "Undercooked.CuttingBoardStation",
         "__guid": "7a2d3b6e-6941-46a0-8e01-7f39a0034257",
         "__enabled": true,
+        "Flags": 0,
         "AlternateInteractionType": "Hold",
         "ChopSpeed": 0.2,
         "InteractionType": "Press",
@@ -86,8 +91,69 @@
     ],
     "Children": [
       {
+        "__guid": "0e4acdce-472f-4cc2-8c02-9b7b569e3c56",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "World",
+        "Position": "0,-0.0265274,64.28571",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1.428571",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "a0aa0aca-112f-4668-ba42-00f21eacbc3c",
+            "__enabled": true,
+            "Flags": 0,
+            "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
+            "LookAtCamera": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "PanelSize": "1024,512",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": true,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderScale": 1,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "Undercooked.UI.CuttingBoardPanel",
+            "__guid": "5acd6a8b-23e5-4e5a-a70a-f5e8cd017854",
+            "__enabled": true,
+            "Flags": 0,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "station": {
+              "_type": "component",
+              "component_id": "7a2d3b6e-6941-46a0-8e01-7f39a0034257",
+              "go": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
+              "component_type": "CuttingBoardStation"
+            }
+          }
+        ],
+        "Children": []
+      },
+      {
         "__guid": "8cac4bd3-a1c5-40d7-87be-9a065ea63065",
-        "__version": 1,
+        "__version": 2,
         "Flags": 0,
         "Name": "Socket",
         "Position": "0,0,21.5795",
@@ -96,8 +162,9 @@
         "Tags": "",
         "Enabled": true,
         "NetworkMode": 2,
-        "NetworkInterpolation": true,
+        "NetworkFlags": 0,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [],
         "Children": []

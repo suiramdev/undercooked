@@ -1,0 +1,13 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Undercooked.UI
+
+<root>
+    <div class="fill" style="width: @(Progress * 100)%"></div>
+</root>
+
+@code {
+    [Parameter]
+    public float Progress { get; set; }
+}
