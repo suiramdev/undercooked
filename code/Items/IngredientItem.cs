@@ -6,6 +6,8 @@ namespace Undercooked;
 
 public class IngredientItem : ItemBase
 {
+	private bool? _cachedCookableFallback = null;
+
 	[Property]
 	[Description( "The resource of the ingredient" )]
 	[Change]
@@ -37,11 +39,53 @@ public class IngredientItem : ItemBase
 
 	public bool Choppable => Resource?.ChopFeatureEnabled ?? false && ChopProgress < 1f;
 
-	public bool Cookable => Resource?.CookFeatureEnabled ?? false && CookProgress < 1f;
+	public bool Cookable
+	{
+		get
+		{
+			if ( Resource is not null )
+			{
+				_cachedCookableFallback = null; // Clear cache when Resource is available
+				return Resource.CookFeatureEnabled && CookProgress < 1f;
+			}
+
+			// Fallback: if Resource is null, try to infer from GameObject name
+			// This is a workaround for when Resource doesn't sync properly
+			if ( _cachedCookableFallback.HasValue )
+			{
+				return _cachedCookableFallback.Value && CookProgress < 1f;
+			}
+
+			var name = GameObject.Name.ToLower();
+			bool isCookable = name.Contains( "patty" ) && !name.Contains( "cooked" ) && !name.Contains( "burned" );
+			_cachedCookableFallback = isCookable;
+
+			return isCookable && CookProgress < 1f;
+		}
+	}
 
 	protected override void OnAwake()
 	{
 		base.OnAwake();
+	}
+
+	protected override void OnStart()
+	{
+		base.OnStart();
+
+		// Try to load Resource if it's null (workaround for sync issues)
+		if ( Resource is null && !IsProxy )
+		{
+			// Try to infer resource path from GameObject name
+			var name = GameObject.Name.ToLower().Replace( " ", "_" );
+			var resourcePath = $"resources/{name}.ingr";
+
+			var resource = ResourceLibrary.Get<IngredientResource>( resourcePath );
+			if ( resource is not null )
+			{
+				Resource = resource;
+			}
+		}
 	}
 
 	public void OnChopped()

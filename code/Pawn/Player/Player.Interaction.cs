@@ -4,6 +4,7 @@ namespace Undercooked;
 
 public partial class Player
 {
+
 	[Property]
 	[Header( "Interaction Settings" )]
 	public float InteractRadius { get; set; } = 50f;

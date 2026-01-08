@@ -937,22 +937,6 @@
             },
             "Property": "Position",
             "Value": "7.575806,-148.6962,0.7812414"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "0ec59ced-ce04-4949-b14e-d0897979a71c"
-            },
-            "Property": "CookFeatureEnabled",
-            "Value": false
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "0ec59ced-ce04-4949-b14e-d0897979a71c"
-            },
-            "Property": "Resource",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -980,22 +964,6 @@
             },
             "Property": "Position",
             "Value": "-188.7392,6.09787,0.5043449"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "af70d822-3c5d-49f4-a3eb-f465be54017c"
-            },
-            "Property": "ChopFeatureEnabled",
-            "Value": false
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "af70d822-3c5d-49f4-a3eb-f465be54017c"
-            },
-            "Property": "Resource",
-            "Value": null
           }
         ],
         "MovedObjects": []

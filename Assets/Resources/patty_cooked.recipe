@@ -3,7 +3,7 @@
   "RequiredIngredients": [
     "resources/patty_cooked.ingr"
   ],
-  "Result": "prefabs/recipes/bun.prefab",
+  "Result": "prefabs/recipes/patty cooked.prefab",
   "__references": [],
   "__version": 0
 }

@@ -4,6 +4,7 @@ namespace Undercooked;
 
 public class FryingPanItem : ItemBase, IDepositable, ITransferable
 {
+
 	[Property]
 	[Description( "The attachment object of the utensil" )]
 	public required GameObject Socket { get; set; }
@@ -16,7 +17,13 @@ public class FryingPanItem : ItemBase, IDepositable, ITransferable
 
 	public bool CanAccept( IPickable pickable )
 	{
-		return pickable is IngredientItem ingredient && ingredient.Cookable;
+		if ( Ingredient is not null )
+			return false;
+
+		if ( pickable is not IngredientItem ingredient )
+			return false;
+
+		return ingredient.Cookable;
 	}
 
 	[Rpc.Host]
@@ -43,7 +50,6 @@ public class FryingPanItem : ItemBase, IDepositable, ITransferable
 	[Rpc.Host]
 	public void TryTransfer( IDepositable depositable )
 	{
-		Log.Info( "Trying to transfer ingredient to depositable" );
 		if ( Ingredient is not null )
 		{
 			depositable.TryDeposit( Ingredient );
