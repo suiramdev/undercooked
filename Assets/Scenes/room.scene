@@ -598,6 +598,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,39.3967,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "a0aa0aca-112f-4668-ba42-00f21eacbc3c"
+            },
+            "Property": "PanelSize",
+            "Value": "640,512"
           }
         ],
         "MovedObjects": []
@@ -636,6 +644,14 @@
             },
             "Property": "Position",
             "Value": "73.47443,39.3967,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "a0aa0aca-112f-4668-ba42-00f21eacbc3c"
+            },
+            "Property": "PanelSize",
+            "Value": "640,512"
           }
         ],
         "MovedObjects": []
