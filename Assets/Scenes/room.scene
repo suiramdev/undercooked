@@ -3,7 +3,7 @@
   "GameObjects": [
     {
       "__guid": "dbcbc247-9112-4504-bbec-f45c9a6987bf",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "Scene Information",
       "Position": "0,0,0",
@@ -12,14 +12,16 @@
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Sandbox.SceneInformation",
           "__guid": "77e92909-b9e5-40fd-8e40-c6753ade8b74",
           "__enabled": true,
+          "Flags": 0,
           "Author": null,
           "Changes": "",
           "Description": "",
@@ -39,7 +41,7 @@
     },
     {
       "__guid": "1edc0f33-e7dc-4b27-b6fb-db565e226589",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "UI",
       "Position": "89.28123,206.3271,-124.1187",
@@ -48,14 +50,15 @@
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [],
       "Children": [
         {
           "__guid": "422ab9e7-1451-4ddf-ae75-7b6b3035e235",
-          "__version": 1,
+          "__version": 2,
           "__Prefab": "prefabs/ui/hud.prefab",
           "__PrefabInstancePatch": {
             "AddedObjects": [
@@ -78,6 +81,7 @@
                   "__type": "Undercooked.UI.Hud",
                   "__guid": "82fc8d73-1aa8-4c4d-8af4-d81416136aea",
                   "__enabled": true,
+                  "Flags": 0,
                   "OnComponentDestroy": null,
                   "OnComponentDisabled": null,
                   "OnComponentEnabled": null,
@@ -109,12 +113,13 @@
           },
           "__PrefabIdToInstanceId": {
             "88dde320-5192-425d-b145-b1159dc0b356": "422ab9e7-1451-4ddf-ae75-7b6b3035e235",
-            "2d687e0f-8e90-4074-a18e-2a7208288ae1": "d191a61f-3bcd-4b08-b401-24d2fb16126d"
+            "2d687e0f-8e90-4074-a18e-2a7208288ae1": "d191a61f-3bcd-4b08-b401-24d2fb16126d",
+            "226ee566-0bbc-497b-ae7d-8bbfd023371d": "e9c1503d-9c7c-4ac3-8acc-f497a30b6329"
           }
         },
         {
           "__guid": "7a153b10-5360-44cb-8842-0c9c0a6699ae",
-          "__version": 1,
+          "__version": 2,
           "__Prefab": "prefabs/ui/player menu.prefab",
           "__PrefabInstancePatch": {
             "AddedObjects": [
@@ -137,6 +142,7 @@
                   "__type": "Undercooked.UI.PlayerMenu",
                   "__guid": "765cb67b-b433-4c27-8fe2-cb3cde697164",
                   "__enabled": true,
+                  "Flags": 0,
                   "OnComponentDestroy": null,
                   "OnComponentDisabled": null,
                   "OnComponentEnabled": null,
@@ -168,14 +174,15 @@
           },
           "__PrefabIdToInstanceId": {
             "427d9256-722c-4e22-8a64-3e656c21c30e": "7a153b10-5360-44cb-8842-0c9c0a6699ae",
-            "fa120fde-faa7-4025-868a-8492a595d389": "f5f98a08-5022-45da-beb5-d5391c1b3dea"
+            "fa120fde-faa7-4025-868a-8492a595d389": "f5f98a08-5022-45da-beb5-d5391c1b3dea",
+            "a43227b6-3195-4be1-b124-be30aa48b631": "a838d9de-8797-40de-ab83-c460619c946e"
           }
         }
       ]
     },
     {
       "__guid": "d714bc87-c3a7-4cc1-8036-9845ae26dd7e",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "Spawn Points",
       "Position": "0,0,0",
@@ -184,14 +191,15 @@
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [],
       "Children": [
         {
           "__guid": "dc7bbd7f-4c11-4f6b-b02c-ebde74e0158c",
-          "__version": 1,
+          "__version": 2,
           "Flags": 0,
           "Name": "Spawn Point (1)",
           "Position": "0,0,0",
@@ -200,8 +208,9 @@
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
-          "NetworkInterpolation": true,
+          "NetworkFlags": 0,
           "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
           "OwnerTransfer": 1,
           "Components": [],
           "Children": []
@@ -210,7 +219,7 @@
     },
     {
       "__guid": "50f9c034-c390-42fa-95ff-8eb9a280771f",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "Network Manager",
       "Position": "114.0189,-165.7776,64.44945",
@@ -219,14 +228,16 @@
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Sandbox.NetworkHelper",
           "__guid": "d2a9cb1c-5d21-45ff-b1a9-0edaab43b313",
           "__enabled": true,
+          "Flags": 0,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -250,7 +261,7 @@
     },
     {
       "__guid": "c79f1c3a-9ab6-45e4-9f93-57f3704ba581",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "Recipe Manager",
       "Position": "-74.01857,-21.32283,85.73978",
@@ -259,14 +270,16 @@
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Undercooked.RecipeManager",
           "__guid": "02ac7297-48c2-40fd-8637-d3024725adb6",
           "__enabled": true,
+          "Flags": 0,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -279,7 +292,7 @@
     },
     {
       "__guid": "a037e487-4273-48dc-99aa-062867dd4566",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "Order Manager",
       "Position": "-64.39375,-41.47334,71.69287",
@@ -288,14 +301,16 @@
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Undercooked.OrderManager",
           "__guid": "2d5c014c-fc0e-4114-849f-e18acf19f804",
           "__enabled": true,
+          "Flags": 0,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -309,7 +324,7 @@
     },
     {
       "__guid": "4afc8238-922e-4ba0-8b0b-198175ac4335",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "Level Config",
       "Position": "-64.39375,-41.47334,71.69287",
@@ -318,14 +333,16 @@
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Undercooked.LevelConfig",
           "__guid": "36ee6a37-1786-4e65-8993-47ff67289d89",
           "__enabled": true,
+          "Flags": 0,
           "CookableRecipes": [
             "resources/bun.recipe",
             "resources/cheeseburger.recipe",
@@ -358,7 +375,7 @@
     },
     {
       "__guid": "51b5b252-dc7d-462e-85d5-46e9174b3058",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "2D Skybox",
       "Position": "0,0,0",
@@ -367,14 +384,16 @@
       "Tags": "skybox",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "1247fe07-972b-4f97-a9dd-b9487c0a15db",
           "__enabled": true,
+          "Flags": 0,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -389,6 +408,7 @@
           "__type": "Sandbox.EnvmapProbe",
           "__guid": "9ae72752-24dd-40e2-afdd-2778ad4b1b46",
           "__enabled": true,
+          "Flags": 0,
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -418,7 +438,7 @@
     },
     {
       "__guid": "201d0219-a150-4447-adaa-fa692836f5ee",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "Spot Light",
       "Position": "0,0,153.7596",
@@ -427,14 +447,16 @@
       "Tags": "light_spot,light",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Sandbox.SpotLight",
           "__guid": "deeaac36-c16b-4258-bbf0-7bc2dc9d73db",
           "__enabled": true,
+          "Flags": 0,
           "Attenuation": 1,
           "ConeInner": 15,
           "ConeOuter": 45,
@@ -456,7 +478,7 @@
     },
     {
       "__guid": "55c1073c-79fa-4c2c-ad77-4b23b51bd3d9",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "Cube",
       "Position": "0,0,-2",
@@ -465,14 +487,16 @@
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
           "__guid": "21992fcc-17f1-4d94-8799-f0c70ad67445",
           "__enabled": true,
+          "Flags": 0,
           "BodyGroups": 18446744073709551615,
           "CreateAttachments": false,
           "LodOverride": null,
@@ -499,7 +523,9 @@
           "__type": "Sandbox.BoxCollider",
           "__guid": "bc2abc24-d443-412c-91d6-96b9413bac89",
           "__enabled": true,
+          "Flags": 0,
           "Center": "0,0,0",
+          "ColliderFlags": 0,
           "Elasticity": null,
           "Friction": null,
           "IsTrigger": false,
@@ -524,7 +550,7 @@
     },
     {
       "__guid": "7b8bd387-e26b-4b6e-9e71-9e142209b1a9",
-      "__version": 1,
+      "__version": 2,
       "Flags": 0,
       "Name": "Room Center",
       "Position": "0,0,0",
@@ -533,29 +559,21 @@
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
-      "NetworkInterpolation": true,
+      "NetworkFlags": 0,
       "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [],
       "Children": []
     },
     {
       "__guid": "9f3d8c27-c7d2-4309-9cae-dbee0c15f257",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/camera rig.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
         "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "32539581-0a5e-4129-9ae8-f15f2e37b65c"
-            },
-            "Property": "Name",
-            "Value": "Camera Rig"
-          }
-        ],
+        "PropertyOverrides": [],
         "MovedObjects": []
       },
       "__PrefabIdToInstanceId": {
@@ -567,7 +585,7 @@
     },
     {
       "__guid": "2401eb79-c60b-4ed5-866f-eefaf579bca7",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/furnitures/cutting board station.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -594,7 +612,7 @@
     },
     {
       "__guid": "2ade03c1-53ff-4646-ad56-cc41b538a94b",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/furnitures/cutting board station.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -629,7 +647,7 @@
     },
     {
       "__guid": "c24f1b0b-febe-4ef5-9879-2937892048f8",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -656,7 +674,7 @@
     },
     {
       "__guid": "a164a585-5564-4b86-a20e-e8d8ad32f8a8",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -691,7 +709,7 @@
     },
     {
       "__guid": "0e879939-9e8f-454d-b1c7-ffc452c7b409",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -726,7 +744,7 @@
     },
     {
       "__guid": "c4a16a22-43d2-4f0d-8f2d-7f9173e30313",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -761,7 +779,7 @@
     },
     {
       "__guid": "4e5e0cf6-332c-4835-8ad8-1ff3f9f2b17b",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -796,7 +814,7 @@
     },
     {
       "__guid": "648f74c7-5cb6-4ba7-a3d3-b34e3b6dc3eb",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/furnitures/stove station.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -823,7 +841,7 @@
     },
     {
       "__guid": "568005f0-8bec-42c6-a64f-8d4305dd9c0c",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/furnitures/serving station.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -849,7 +867,7 @@
     },
     {
       "__guid": "4595e2d0-21a4-48d5-a845-4d91bba88628",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/items/frying pan.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -878,7 +896,7 @@
     },
     {
       "__guid": "012e6b6f-5633-4d81-a264-49851106615e",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/items/plate.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -906,7 +924,7 @@
     },
     {
       "__guid": "fc24e7f9-3dbe-4c3f-bce8-928bfd5e156a",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/items/patty raw.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -949,7 +967,7 @@
     },
     {
       "__guid": "3fd1b07e-3488-4a7b-96c4-c09a3cddd32a",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/items/cheese.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
@@ -992,7 +1010,7 @@
     },
     {
       "__guid": "d33414b0-0799-495a-aca1-34483ac698cc",
-      "__version": 1,
+      "__version": 2,
       "__Prefab": "prefabs/items/bun.prefab",
       "__PrefabInstancePatch": {
         "AddedObjects": [],
