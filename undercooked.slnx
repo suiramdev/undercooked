@@ -2,10 +2,10 @@
   <Configurations>
     <Platform Name="Any CPU" />
   </Configurations>
-  <Project Path="Code/undercooked.csproj" />
+  <Project Path="code/undercooked.csproj" />
   <Project Path="Editor/undercooked.editor.csproj" />
   <Folder Name="/Addons/">
-    <Project Path="D:/Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj" />
+    <Project Path="../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/code/Base Library.csproj" />
   </Folder>
   <Folder Name="/Libraries/">
     <Project Path="Libraries/alex.sailwind/Code/sailwind.csproj" />
@@ -15,10 +15,10 @@
     <Project Path="Libraries/kolpak.cursoreditor/Editor/cursoreditor.editor.csproj" />
   </Folder>
   <Folder Name="/Tools/">
-    <Project Path="D:/Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj" />
-    <Project Path="D:/Program Files (x86)/Steam/steamapps/common/sbox/editor/ActionGraph/Code/actiongraph.csproj" />
-    <Project Path="D:/Program Files (x86)/Steam/steamapps/common/sbox/editor/Hammer/Code/hammer.csproj" />
-    <Project Path="D:/Program Files (x86)/Steam/steamapps/common/sbox/editor/MovieMaker/Code/moviemaker.csproj" />
-    <Project Path="D:/Program Files (x86)/Steam/steamapps/common/sbox/editor/ShaderGraph/Code/shadergraph.csproj" />
+    <Project Path="../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj" />
+    <Project Path="../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ActionGraph/Code/actiongraph.csproj" />
+    <Project Path="../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/Hammer/Code/hammer.csproj" />
+    <Project Path="../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/MovieMaker/Code/moviemaker.csproj" />
+    <Project Path="../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ShaderGraph/Code/shadergraph.csproj" />
   </Folder>
 </Solution>
