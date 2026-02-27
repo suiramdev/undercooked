@@ -61,44 +61,8 @@
           "__version": 2,
           "__Prefab": "prefabs/ui/hud.prefab",
           "__PrefabInstancePatch": {
-            "AddedObjects": [
-              {
-                "Id": {
-                  "Type": "Component",
-                  "IdValue": "82fc8d73-1aa8-4c4d-8af4-d81416136aea"
-                },
-                "Parent": {
-                  "Type": "GameObject",
-                  "IdValue": "88dde320-5192-425d-b145-b1159dc0b356"
-                },
-                "PreviousElement": {
-                  "Type": "Component",
-                  "IdValue": "2d687e0f-8e90-4074-a18e-2a7208288ae1"
-                },
-                "ContainerProperty": "Components",
-                "IsContainerArray": true,
-                "Data": {
-                  "__type": "Undercooked.UI.Hud",
-                  "__guid": "82fc8d73-1aa8-4c4d-8af4-d81416136aea",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null
-                }
-              }
-            ],
-            "RemovedObjects": [
-              {
-                "Id": {
-                  "Type": "Component",
-                  "IdValue": "226ee566-0bbc-497b-ae7d-8bbfd023371d"
-                }
-              }
-            ],
+            "AddedObjects": [],
+            "RemovedObjects": [],
             "PropertyOverrides": [
               {
                 "Target": {
@@ -114,7 +78,7 @@
           "__PrefabIdToInstanceId": {
             "88dde320-5192-425d-b145-b1159dc0b356": "422ab9e7-1451-4ddf-ae75-7b6b3035e235",
             "2d687e0f-8e90-4074-a18e-2a7208288ae1": "d191a61f-3bcd-4b08-b401-24d2fb16126d",
-            "226ee566-0bbc-497b-ae7d-8bbfd023371d": "e9c1503d-9c7c-4ac3-8acc-f497a30b6329"
+            "226ee566-0bbc-497b-ae7d-8bbfd023371d": "ceba50ba-bc28-40ab-8954-7b6f697d8251"
           }
         },
         {
@@ -122,44 +86,8 @@
           "__version": 2,
           "__Prefab": "prefabs/ui/player menu.prefab",
           "__PrefabInstancePatch": {
-            "AddedObjects": [
-              {
-                "Id": {
-                  "Type": "Component",
-                  "IdValue": "765cb67b-b433-4c27-8fe2-cb3cde697164"
-                },
-                "Parent": {
-                  "Type": "GameObject",
-                  "IdValue": "427d9256-722c-4e22-8a64-3e656c21c30e"
-                },
-                "PreviousElement": {
-                  "Type": "Component",
-                  "IdValue": "fa120fde-faa7-4025-868a-8492a595d389"
-                },
-                "ContainerProperty": "Components",
-                "IsContainerArray": true,
-                "Data": {
-                  "__type": "Undercooked.UI.PlayerMenu",
-                  "__guid": "765cb67b-b433-4c27-8fe2-cb3cde697164",
-                  "__enabled": true,
-                  "Flags": 0,
-                  "OnComponentDestroy": null,
-                  "OnComponentDisabled": null,
-                  "OnComponentEnabled": null,
-                  "OnComponentFixedUpdate": null,
-                  "OnComponentStart": null,
-                  "OnComponentUpdate": null
-                }
-              }
-            ],
-            "RemovedObjects": [
-              {
-                "Id": {
-                  "Type": "Component",
-                  "IdValue": "a43227b6-3195-4be1-b124-be30aa48b631"
-                }
-              }
-            ],
+            "AddedObjects": [],
+            "RemovedObjects": [],
             "PropertyOverrides": [
               {
                 "Target": {
@@ -175,7 +103,7 @@
           "__PrefabIdToInstanceId": {
             "427d9256-722c-4e22-8a64-3e656c21c30e": "7a153b10-5360-44cb-8842-0c9c0a6699ae",
             "fa120fde-faa7-4025-868a-8492a595d389": "f5f98a08-5022-45da-beb5-d5391c1b3dea",
-            "a43227b6-3195-4be1-b124-be30aa48b631": "a838d9de-8797-40de-ab83-c460619c946e"
+            "a43227b6-3195-4be1-b124-be30aa48b631": "6752b6c5-e382-42c7-a23d-2d5bb7b9c753"
           }
         }
       ]
@@ -598,14 +526,6 @@
             },
             "Property": "Position",
             "Value": "73.47443,39.3967,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "a0aa0aca-112f-4668-ba42-00f21eacbc3c"
-            },
-            "Property": "PanelSize",
-            "Value": "640,512"
           }
         ],
         "MovedObjects": []
@@ -618,53 +538,7 @@
         "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "26e68e73-1ccc-4da6-a3c7-ae3effcac2db",
         "0e4acdce-472f-4cc2-8c02-9b7b569e3c56": "66a80d36-1acf-4df9-bf0c-885a5519f932",
         "a0aa0aca-112f-4668-ba42-00f21eacbc3c": "2d771046-327b-45f3-abfc-bf04fede7e05",
-        "5acd6a8b-23e5-4e5a-a70a-f5e8cd017854": "19b11023-c07d-4d09-9c9c-cefdd489be50"
-      }
-    },
-    {
-      "__guid": "2ade03c1-53ff-4646-ad56-cc41b538a94b",
-      "__version": 2,
-      "__Prefab": "prefabs/furnitures/cutting board station.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Name",
-            "Value": "cutting board station (1)"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Position",
-            "Value": "73.47443,39.3967,0"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "a0aa0aca-112f-4668-ba42-00f21eacbc3c"
-            },
-            "Property": "PanelSize",
-            "Value": "640,512"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "2ade03c1-53ff-4646-ad56-cc41b538a94b",
-        "f5e63b53-f719-4eac-af41-719dda1d022a": "626ac1c9-fd59-4292-bc2a-c4274880becc",
-        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "e0f85b7d-4f84-4e78-9f8e-88e8efa2dadb",
-        "7a2d3b6e-6941-46a0-8e01-7f39a0034257": "bf87b4af-fa65-4c8d-90e7-413d931fe309",
-        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "3e36c19f-2bcd-4236-9f24-c4139fba71de",
-        "0e4acdce-472f-4cc2-8c02-9b7b569e3c56": "48986a74-c97d-4b04-bb09-7e1dce9fa303",
-        "a0aa0aca-112f-4668-ba42-00f21eacbc3c": "881f3139-5d61-420c-85c2-e568f6102b1d",
-        "5acd6a8b-23e5-4e5a-a70a-f5e8cd017854": "bdf8d796-1237-4bce-a5c1-d4ecaef6177f"
+        "cf8bbc69-9447-423c-b0d5-188aea1e4a58": "adfd134f-3d2b-4f93-b332-fce9e01c2a7a"
       }
     },
     {
@@ -835,33 +709,6 @@
       }
     },
     {
-      "__guid": "648f74c7-5cb6-4ba7-a3d3-b34e3b6dc3eb",
-      "__version": 2,
-      "__Prefab": "prefabs/furnitures/stove station.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
-            },
-            "Property": "Position",
-            "Value": "73.47443,-119.886,0"
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "648f74c7-5cb6-4ba7-a3d3-b34e3b6dc3eb",
-        "f5e63b53-f719-4eac-af41-719dda1d022a": "9037f20a-9358-43ea-874f-4c3ac00e90c5",
-        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "53fd20ad-b24b-4d1c-93ef-db2aa2628477",
-        "b0776612-829c-4d98-9899-cdf737ee6451": "c2ebb35c-e615-440a-822b-f005ddb4c458",
-        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "4eed9b7f-4f8d-4183-a61d-7766eb33d7b8"
-      }
-    },
-    {
       "__guid": "568005f0-8bec-42c6-a64f-8d4305dd9c0c",
       "__version": 2,
       "__Prefab": "prefabs/furnitures/serving station.prefab",
@@ -941,7 +788,10 @@
         "15dec150-e11d-4340-9be4-6239fe76c00a": "783cc616-3583-45c2-8c4f-3605a82d37fe",
         "a15bc636-03b6-4767-a1cf-3bb2e52fba7d": "204fa849-1fc4-4d51-878a-1c8593cd5802",
         "d4fa84c1-5d83-4427-bdf0-68108212b067": "e7707ecd-2d38-4777-8eb1-a968e90a19f3",
-        "7e5782d7-3e46-4f1a-8ed3-c6675b31d259": "f681231b-7e8c-4523-a7c5-1b493d710440"
+        "7e5782d7-3e46-4f1a-8ed3-c6675b31d259": "f681231b-7e8c-4523-a7c5-1b493d710440",
+        "b088fd47-28f9-4f21-8571-3cadb1b811e7": "b743bd43-ebd5-4d8b-a557-fa31668de3cf",
+        "ba1fa36a-59d3-4411-b63f-5d7234d085d9": "0c75a2c2-98eb-41cf-9cfa-af5eb467cc5d",
+        "fbefac33-7038-41a1-8bb2-599fe0392bdb": "190f242f-7388-4596-9eb7-e933725d7cfc"
       }
     },
     {
@@ -985,7 +835,7 @@
               "IdValue": "f47053c7-4980-43ba-afd8-01dd71ceac76"
             },
             "Property": "Position",
-            "Value": "-188.0903,6.09787,0.5043449"
+            "Value": "-29.94472,6.09787,0.5043449"
           }
         ],
         "MovedObjects": []
@@ -1012,7 +862,7 @@
               "IdValue": "bb0b0810-7e91-46a3-b730-9288975ac44a"
             },
             "Property": "Position",
-            "Value": "-159.0864,164.4364,4.503474"
+            "Value": "-50.17178,-57.1862,4.5035"
           },
           {
             "Target": {
@@ -1031,6 +881,36 @@
         "d4e1897c-1836-4f1c-943a-f2e12526da55": "b4784e07-1f0f-4d8f-92af-d3ab3c0cc016",
         "3aa22846-0dea-44e4-ac79-10908fdb3ee9": "4b73fbc5-93b5-4297-b49d-c5bf8c8228b1",
         "8d1729dc-a5cf-40e9-a156-0c5b7ef78d43": "731486be-e057-403a-baf4-3d74b60b472c"
+      }
+    },
+    {
+      "__guid": "7bbba02b-30ae-4c02-ae13-350afa56d162",
+      "__version": 2,
+      "__Prefab": "prefabs/furnitures/stove station.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Position",
+            "Value": "73.474,-118.2724,0"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "7bbba02b-30ae-4c02-ae13-350afa56d162",
+        "f5e63b53-f719-4eac-af41-719dda1d022a": "70c65b95-0462-4984-9860-6a3e8ba22757",
+        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "e1b07310-ee1d-4524-83e0-b601af290e04",
+        "b0776612-829c-4d98-9899-cdf737ee6451": "03e15f35-7729-4a7b-ad94-9b3bcceb6a74",
+        "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "609800ff-ef10-4357-bc0e-b3d1ede381c9",
+        "f9c0f6a2-0d15-4e4c-8fdb-6c7e53ee89b8": "76a1e0d4-289c-4d20-b5b1-669fd6399dff",
+        "58ebccb4-10c3-4c8e-bb29-b2e7c5385598": "24fed1e5-e9f7-4726-ac35-eecfd764d123",
+        "849f0aa4-41a2-4876-bbcd-3d1768dc0b4d": "e1a541c6-b287-41af-8c35-7f4e89379377"
       }
     }
   ],

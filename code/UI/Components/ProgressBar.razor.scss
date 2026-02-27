@@ -5,18 +5,18 @@ ProgressBar {
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
-  height: 75px;
+  height: 72px;
+  padding: 8px;
   background: $background;
-  border-radius: 9999px;
-  border: 8px solid $primary;
+  border-radius: 24px;
 }
 
 ProgressBar .fill {
   position: relative;
   width: 100%;
   height: 100%;
-  background: $primary-light;
-  border-radius: 9999px;
+  background: $secondary;
+  border-radius: 24px;
 
   &::before {
     content: "";
@@ -25,12 +25,12 @@ ProgressBar .fill {
     left: 0;
     width: 100%;
     height: 100%;
-    background: $primary;
-    border-radius: 9999px;
+    background: $secondary-light;
+    border-radius: 24px;
     mask-image: url("/UI/stripes.svg");
     mask-size: 40px 40px;
     mask-repeat: repeat;
-    animation: horizontal-stripes 20s linear infinite;
+    animation: horizontal-stripes 10s linear infinite;
   }
 }
 

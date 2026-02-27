@@ -1,4 +1,4 @@
-namespace Undercooked.UI;
+namespace Undercooked.UI.PlayerMenu;
 
 public enum PlayerMenuPage
 {

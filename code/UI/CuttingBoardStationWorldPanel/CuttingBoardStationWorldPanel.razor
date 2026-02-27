@@ -1,12 +1,12 @@
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
-@namespace Undercooked.UI
+@namespace Undercooked.UI.CuttingBoardWorldPanel
 
 <root>
     @if (HasChoppableIngredient)
     {
-        <ProgressBar Progress="@Progress" />
+        <ProgressBar Progress="@ChopProgress" />
     }
 </root>
 
@@ -16,7 +16,7 @@
 
     private bool HasChoppableIngredient => station.StoredPickable is IngredientItem { Choppable: true };
 
-    private float Progress
+    private float ChopProgress
     {
         get
         {
@@ -27,5 +27,5 @@
         }
     }
 
-    protected override int BuildHash() => System.HashCode.Combine(Progress, HasChoppableIngredient);
+    protected override int BuildHash() => System.HashCode.Combine(ChopProgress, HasChoppableIngredient);
 }

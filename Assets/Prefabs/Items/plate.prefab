@@ -1,7 +1,7 @@
 {
   "RootObject": {
     "__guid": "40104537-eecd-40a7-91cc-b51ba8d977ee",
-    "__version": 1,
+    "__version": 2,
     "Flags": 0,
     "Name": "plate",
     "Position": "0,0,0",
@@ -10,14 +10,16 @@
     "Tags": "",
     "Enabled": true,
     "NetworkMode": 1,
-    "NetworkInterpolation": true,
+    "NetworkFlags": 0,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "72825219-71f1-4ba1-a907-d81bf4f7f416",
         "__enabled": true,
+        "Flags": 0,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
         "LodOverride": null,
@@ -44,6 +46,8 @@
         "__type": "Sandbox.ModelCollider",
         "__guid": "15dec150-e11d-4340-9be4-6239fe76c00a",
         "__enabled": true,
+        "Flags": 0,
+        "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
@@ -67,8 +71,13 @@
         "__type": "Sandbox.Rigidbody",
         "__guid": "a15bc636-03b6-4767-a1cf-3bb2e52fba7d",
         "__enabled": true,
+        "Flags": 0,
         "AngularDamping": 0,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
         "Gravity": true,
+        "GravityScale": 1,
+        "ImpactDamage": 0,
         "LinearDamping": 0,
         "Locking": {
           "X": false,
@@ -80,6 +89,7 @@
         },
         "MassCenterOverride": "0,0,0",
         "MassOverride": 0,
+        "MinImpactDamageSpeed": 500,
         "MotionEnabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -95,6 +105,7 @@
         "__type": "Undercooked.PlateItem",
         "__guid": "d4fa84c1-5d83-4427-bdf0-68108212b067",
         "__enabled": true,
+        "Flags": 0,
         "AlternateInteractionType": "Press",
         "AttachmentBone": "hand_r",
         "AttachmentOffset": "0,0,0",
@@ -137,7 +148,7 @@
     "Children": [
       {
         "__guid": "7e5782d7-3e46-4f1a-8ed3-c6675b31d259",
-        "__version": 1,
+        "__version": 2,
         "Flags": 0,
         "Name": "Socket",
         "Position": "0,0,0",
@@ -146,10 +157,72 @@
         "Tags": "",
         "Enabled": true,
         "NetworkMode": 2,
-        "NetworkInterpolation": true,
+        "NetworkFlags": 0,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [],
+        "Children": []
+      },
+      {
+        "__guid": "b088fd47-28f9-4f21-8571-3cadb1b811e7",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "World",
+        "Position": "0,0,25",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "ba1fa36a-59d3-4411-b63f-5d7234d085d9",
+            "__enabled": true,
+            "Flags": 0,
+            "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
+            "LookAtCamera": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "PanelSize": "1024,512",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": true,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderScale": 1,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "Undercooked.UI.PlateWorldPanel.PlateWorldPanel",
+            "__guid": "fbefac33-7038-41a1-8bb2-599fe0392bdb",
+            "__enabled": true,
+            "Flags": 0,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "plate": {
+              "_type": "component",
+              "component_id": "d4fa84c1-5d83-4427-bdf0-68108212b067",
+              "go": "40104537-eecd-40a7-91cc-b51ba8d977ee",
+              "component_type": "PlateItem"
+            }
+          }
+        ],
         "Children": []
       }
     ],

@@ -1,7 +1,7 @@
 {
   "RootObject": {
     "__guid": "88dde320-5192-425d-b145-b1159dc0b356",
-    "__version": 1,
+    "__version": 2,
     "Flags": 0,
     "Name": "hud",
     "Position": "0,0,0",
@@ -10,14 +10,16 @@
     "Tags": "",
     "Enabled": true,
     "NetworkMode": 2,
-    "NetworkInterpolation": true,
+    "NetworkFlags": 0,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Sandbox.ScreenPanel",
         "__guid": "2d687e0f-8e90-4074-a18e-2a7208288ae1",
         "__enabled": true,
+        "Flags": 0,
         "AutoScreenScale": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -32,9 +34,10 @@
         "ZIndex": 100
       },
       {
-        "__type": "Hud",
+        "__type": "Undercooked.UI.HUD.Hud",
         "__guid": "226ee566-0bbc-497b-ae7d-8bbfd023371d",
         "__enabled": true,
+        "Flags": 0,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
         "OnComponentEnabled": null,

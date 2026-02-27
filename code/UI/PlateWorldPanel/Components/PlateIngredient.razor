@@ -1,0 +1,30 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Undercooked.UI.PlateWorldPanel
+
+<root />
+
+@code {
+#nullable enable
+
+    [Property]
+    public IngredientResource? Ingredient { get; set; } = null;
+
+    public PlateIngredient()
+    {
+        var scenePanel = new ScenePanel("scenes/thumbnail.scene");
+
+        scenePanel.Style.Width = Length.Percent(100);
+        scenePanel.Style.Height = Length.Percent(100);
+
+        Log.Info(Ingredient);
+        Log.Info(Ingredient?.Model);
+
+        _ = new SceneModel(scenePanel.RenderScene.SceneWorld, Ingredient?.Model, Transform.Zero);
+
+        AddChild(scenePanel);
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine(Ingredient);
+}

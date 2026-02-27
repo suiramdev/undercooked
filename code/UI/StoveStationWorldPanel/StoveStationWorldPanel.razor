@@ -1,0 +1,43 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Undercooked.UI.StoveStationWorldPanel
+
+<root>
+    @if (HasCookableIngredient)
+    {
+        <ProgressBar Progress="@CookProgress" />
+    }
+</root>
+
+@code {
+    [Property]
+    public StoveStation station;
+
+    private bool HasCookableIngredient
+    {
+        get
+        {
+            if (station.StoredPickable is not FryingPanItem fryingPan || fryingPan.Ingredient is null)
+                return false;
+
+            return fryingPan.Ingredient.Cookable;
+        }
+    }
+
+    private float CookProgress
+    {
+        get
+        {
+            if (station.StoredPickable is not FryingPanItem fryingPan)
+                return 0f;
+
+            if (fryingPan.Ingredient is not IngredientItem ingredient)
+                return 0f;
+
+            return ingredient.CookProgress;
+        }
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine(CookProgress, HasCookableIngredient);
+}

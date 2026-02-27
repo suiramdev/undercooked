@@ -11,9 +11,6 @@
     <Project Path="Libraries/alex.sailwind/Code/sailwind.csproj" />
     <Project Path="Libraries/alex.sailwind/Editor/sailwind.editor.csproj" />
     <Project Path="Libraries/alex.sailwind/UnitTests/sailwind.unittest.csproj" />
-    <Project Path="Libraries/Convex/Code/convex.csproj" />
-    <Project Path="Libraries/Convex/Editor/convex.editor.csproj" />
-    <Project Path="Libraries/Convex/UnitTests/convex.unittest.csproj" />
     <Project Path="Libraries/kolpak.cursoreditor/Code/cursoreditor.csproj" />
     <Project Path="Libraries/kolpak.cursoreditor/Editor/cursoreditor.editor.csproj" />
   </Folder>

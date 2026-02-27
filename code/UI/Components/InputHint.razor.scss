@@ -4,13 +4,16 @@ InputHint {
   display: flex;
   align-items: center;
   gap: 8px;
-  height: 48px;
-  padding-left: 12px;
-  padding-right: 12px;
+  height: 64px;
+  padding-left: 16px;
+  padding-right: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
   background-color: $background;
   border-radius: 9999px;
+  font-weight: 700;
+  font-size: 24px;
+  color: $foreground;
 }
 
 InputHint .kbd {
@@ -22,20 +25,13 @@ InputHint .kbd {
   justify-content: center;
   height: 100%;
   aspect-ratio: 1 / 1;
-  font-family: "Inter", "Roboto", sans-serif;
-  font-weight: 500;
+  font-weight: 800;
   font-size: 24px;
+  line-height: 100%;
 }
 
 InputHint .glyph-image {
   width: 24px;
   height: 24px;
   object-fit: contain;
-}
-
-InputHint .text {
-  font-family: "Inter", "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  color: $foreground;
 }

@@ -1,0 +1,20 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Undercooked.UI.PlateWorldPanel
+
+<root>
+    @if (HasRecipe)
+    {
+        <PlateIngredients Ingredients="@plate.Ingredients" />
+    }
+</root>
+
+@code {
+    [Property]
+    public PlateItem plate;
+
+    private bool HasRecipe => plate.Recipe is not null;
+
+    protected override int BuildHash() => System.HashCode.Combine(HasRecipe);
+}

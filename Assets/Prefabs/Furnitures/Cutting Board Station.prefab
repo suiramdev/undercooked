@@ -4,7 +4,7 @@
     "__version": 2,
     "Flags": 0,
     "Name": "cutting board station",
-    "Position": "-200.1538,-75,0",
+    "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,0.7",
     "Tags": "playerclip",
@@ -95,7 +95,7 @@
         "__version": 2,
         "Flags": 0,
         "Name": "World",
-        "Position": "0,-0.0265274,64.28571",
+        "Position": "0,0,64.28571",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1.428571",
         "Tags": "",
@@ -120,7 +120,7 @@
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
             "OnComponentUpdate": null,
-            "PanelSize": "1024,512",
+            "PanelSize": "768,512",
             "RenderOptions": {
               "GameLayer": true,
               "OverlayLayer": true,
@@ -131,8 +131,8 @@
             "VerticalAlign": "Center"
           },
           {
-            "__type": "Undercooked.UI.CuttingBoardPanel",
-            "__guid": "5acd6a8b-23e5-4e5a-a70a-f5e8cd017854",
+            "__type": "Undercooked.UI.CuttingBoardWorldPanel.CuttingBoardStationWorldPanel",
+            "__guid": "cf8bbc69-9447-423c-b0d5-188aea1e4a58",
             "__enabled": true,
             "Flags": 0,
             "OnComponentDestroy": null,

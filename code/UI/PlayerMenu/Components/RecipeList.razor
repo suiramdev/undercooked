@@ -2,12 +2,13 @@
 @using Sandbox.UI;
 @using System;
 @inherits Panel
-@namespace Undercooked.UI
+@namespace Undercooked.UI.PlayerMenu
 
 <root>
     @foreach (var recipe in Recipes)
     {
-        <RecipeListItem IsSelected="@(SelectedRecipe == recipe)" Recipe="@recipe" onclick="@(() => OnSelectRecipe?.Invoke(recipe))" />
+        <RecipeListItem IsSelected="@(SelectedRecipe == recipe)" Recipe="@recipe"
+            onclick="@(() => OnSelectRecipe?.Invoke(recipe))" />
     }
 </root>
 
@@ -16,12 +17,12 @@
 
     [Parameter]
     public List<RecipeBrowserPage.RecipeItem> Recipes { get; set; } = new();
-    
+
     [Parameter]
     public RecipeBrowserPage.RecipeItem? SelectedRecipe { get; set; }
-    
+
     [Parameter]
     public Action<RecipeBrowserPage.RecipeItem>? OnSelectRecipe { get; set; }
-    
+
     protected override int BuildHash() => System.HashCode.Combine(Recipes.Count, SelectedRecipe?.Id);
 }

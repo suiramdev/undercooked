@@ -7,15 +7,15 @@
     <span class="kbd">
         @Input.GetButtonOrigin(InputAction).ToUpper()
     </span>
-    <span class="text">
+    <span>
         @Text
     </span>
 </root>
 
 @code {
-    [Parameter]
+    [Property]
     public string Text { get; set; }
 
-    [Parameter]
+    [Property]
     public string InputAction { get; set; }
 }

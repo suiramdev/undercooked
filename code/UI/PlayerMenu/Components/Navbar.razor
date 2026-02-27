@@ -2,11 +2,11 @@
 @using Sandbox.UI;
 @using System;
 @inherits Panel
-@namespace Undercooked.UI
+@namespace Undercooked.UI.PlayerMenu
 
 <root>
-    <button class="nav-item @(_currentPage == PlayerMenuPage.RecipeBrowser ? "active" : "")" 
-            onclick="@(() => OnPageChanged.Invoke(PlayerMenuPage.RecipeBrowser))">
+    <button class="nav-item @(_currentPage == PlayerMenuPage.RecipeBrowser ? "active" : "")"
+        onclick="@(() => OnPageChanged.Invoke(PlayerMenuPage.RecipeBrowser))">
         Recipes
     </button>
     @* Add more navigation items here as needed *@
@@ -23,4 +23,3 @@
 
     protected override int BuildHash() => System.HashCode.Combine(CurrentPage);
 }
-

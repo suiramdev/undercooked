@@ -1,7 +1,7 @@
 @using Sandbox;
 @using Sandbox.UI;
 @inherits Panel
-@namespace Undercooked.UI
+@namespace Undercooked.UI.PlayerMenu
 
 <root>
     <button class="@GetRecipeClass()" onclick="@OnClick">
@@ -21,7 +21,7 @@
 
     [Parameter]
     public RecipeBrowserPage.RecipeItem Recipe { get; set; }
-    
+
     private string GetRecipeClass()
     {
         var classes = new List<string>();
@@ -29,6 +29,6 @@
         if (!Recipe.IsUnlocked) classes.Add("locked");
         return string.Join(" ", classes);
     }
-    
+
     protected override int BuildHash() => System.HashCode.Combine(IsSelected, Recipe.Id);
 }

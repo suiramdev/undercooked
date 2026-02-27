@@ -1,0 +1,23 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Undercooked.UI.PlateWorldPanel
+
+<root>
+    @foreach (var ingredient in Ingredients)
+    {
+        <PlateIngredient Ingredient="@ingredient" />
+    }
+</root>
+
+@code {
+    [Property]
+    public List<IngredientResource> Ingredients { get; set; } = [];
+
+    public PlateIngredients()
+    {
+        Log.Info(Ingredients);
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine(Ingredients);
+}
