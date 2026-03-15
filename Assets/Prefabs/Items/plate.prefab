@@ -111,6 +111,12 @@
         "AttachmentOffset": "0,0,0",
         "AttachmentRotation": "0,0,0,0",
         "Depositable": null,
+        "HighlightOutline": {
+          "_type": "component",
+          "component_id": "8882c729-7d30-4247-9d3c-7e5c3bd8c919",
+          "go": "40104537-eecd-40a7-91cc-b51ba8d977ee",
+          "component_type": "HighlightOutline"
+        },
         "HoldType": "HoldItem",
         "Ingredients": [],
         "InteractionType": "Press",
@@ -143,6 +149,26 @@
           "_type": "gameobject",
           "go": "7e5782d7-3e46-4f1a-8ed3-c6675b31d259"
         }
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "8882c729-7d30-4247-9d3c-7e5c3bd8c919",
+        "__enabled": true,
+        "Flags": 0,
+        "Color": "1,1,1,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "Material": null,
+        "ObscuredColor": "0,0,0,0.4",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideTargets": false,
+        "Targets": null,
+        "Width": 0.25
       }
     ],
     "Children": [
@@ -169,7 +195,7 @@
         "__version": 2,
         "Flags": 0,
         "Name": "World",
-        "Position": "0,0,25",
+        "Position": "0,0,20",
         "Rotation": "0,0,0,1",
         "Scale": "1,1,1",
         "Tags": "",
@@ -194,14 +220,14 @@
             "OnComponentFixedUpdate": null,
             "OnComponentStart": null,
             "OnComponentUpdate": null,
-            "PanelSize": "1024,512",
+            "PanelSize": "512,512",
             "RenderOptions": {
               "GameLayer": true,
               "OverlayLayer": true,
               "BloomLayer": false,
               "AfterUILayer": false
             },
-            "RenderScale": 1,
+            "RenderScale": 0.75,
             "VerticalAlign": "Center"
           },
           {
@@ -235,13 +261,14 @@
         "Enabled": false,
         "IncludeStaticBodies": true,
         "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": true,
+        "EditorAutoUpdate": false,
         "AgentHeight": 64,
         "AgentRadius": 16,
         "AgentStepSize": 18,
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
-        "IncludedBodies": ""
+        "IncludedBodies": "",
+        "CustomBounds": false
       }
     },
     "__variables": []

@@ -271,13 +271,6 @@
           "__guid": "36ee6a37-1786-4e65-8993-47ff67289d89",
           "__enabled": true,
           "Flags": 0,
-          "CookableRecipes": [
-            "resources/bun.recipe",
-            "resources/cheeseburger.recipe",
-            "resources/cheese_slices.recipe",
-            "resources/hamburger.recipe",
-            "resources/patty_cooked.recipe"
-          ],
           "MaxOrders": 5,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -511,7 +504,8 @@
         "32539581-0a5e-4129-9ae8-f15f2e37b65c": "9f3d8c27-c7d2-4309-9cae-dbee0c15f257",
         "7ee2a949-6fa4-4bb1-8888-d5f34064b256": "8a60d152-53b4-4322-a4e2-6bd1675aa62f",
         "b182eb29-4623-45db-b2c9-500f607de76c": "227fa6d7-7376-4c3e-924d-a0d3c097269b",
-        "cd9cedcc-7352-43fc-902d-fef02d56c695": "1fc79bad-d89b-4b1b-9ae2-f0de4e04583b"
+        "cd9cedcc-7352-43fc-902d-fef02d56c695": "1fc79bad-d89b-4b1b-9ae2-f0de4e04583b",
+        "71d37b1c-aba3-455b-9a55-a7b4ba8af92b": "413e10d7-60c9-44a7-8c40-a26f35782015"
       }
     },
     {
@@ -541,7 +535,8 @@
         "8cac4bd3-a1c5-40d7-87be-9a065ea63065": "26e68e73-1ccc-4da6-a3c7-ae3effcac2db",
         "0e4acdce-472f-4cc2-8c02-9b7b569e3c56": "66a80d36-1acf-4df9-bf0c-885a5519f932",
         "a0aa0aca-112f-4668-ba42-00f21eacbc3c": "2d771046-327b-45f3-abfc-bf04fede7e05",
-        "cf8bbc69-9447-423c-b0d5-188aea1e4a58": "adfd134f-3d2b-4f93-b332-fce9e01c2a7a"
+        "cf8bbc69-9447-423c-b0d5-188aea1e4a58": "adfd134f-3d2b-4f93-b332-fce9e01c2a7a",
+        "1d99f58f-8022-47b9-ac44-45abca9f7820": "01b6e57a-af56-43de-8401-4021a336bf13"
       }
     },
     {
@@ -549,7 +544,44 @@
       "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "c641cc1a-02cc-4bfb-ba01-d1ca17804d7e"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "c641cc1a-02cc-4bfb-ba01-d1ca17804d7e",
+              "__enabled": true,
+              "Flags": 0,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideTargets": false,
+              "Targets": null,
+              "Width": 0.25
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -559,6 +591,19 @@
             },
             "Property": "Position",
             "Value": "73.47443,0,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "Property": "HighlightOutline",
+            "Value": {
+              "_type": "component",
+              "component_id": "c641cc1a-02cc-4bfb-ba01-d1ca17804d7e",
+              "go": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
+              "component_type": "HighlightOutline"
+            }
           }
         ],
         "MovedObjects": []
@@ -576,7 +621,44 @@
       "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "3bf11979-6c61-417b-8fb1-9947ff0680a4"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "3bf11979-6c61-417b-8fb1-9947ff0680a4",
+              "__enabled": true,
+              "Flags": 0,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideTargets": false,
+              "Targets": null,
+              "Width": 0.25
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -594,6 +676,19 @@
             },
             "Property": "Position",
             "Value": "73.47443,0,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "Property": "HighlightOutline",
+            "Value": {
+              "_type": "component",
+              "component_id": "3bf11979-6c61-417b-8fb1-9947ff0680a4",
+              "go": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
+              "component_type": "HighlightOutline"
+            }
           }
         ],
         "MovedObjects": []
@@ -611,7 +706,44 @@
       "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "8bc42ead-eb19-4f62-991e-be2621b41ca1"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "8bc42ead-eb19-4f62-991e-be2621b41ca1",
+              "__enabled": true,
+              "Flags": 0,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideTargets": false,
+              "Targets": null,
+              "Width": 0.25
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -629,6 +761,19 @@
             },
             "Property": "Position",
             "Value": "73.47443,-39.93866,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "Property": "HighlightOutline",
+            "Value": {
+              "_type": "component",
+              "component_id": "8bc42ead-eb19-4f62-991e-be2621b41ca1",
+              "go": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
+              "component_type": "HighlightOutline"
+            }
           }
         ],
         "MovedObjects": []
@@ -646,7 +791,44 @@
       "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "07b42174-e9be-4f80-8559-a2bd55d2d99e"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "07b42174-e9be-4f80-8559-a2bd55d2d99e",
+              "__enabled": true,
+              "Flags": 0,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideTargets": false,
+              "Targets": null,
+              "Width": 0.25
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -664,6 +846,19 @@
             },
             "Property": "Position",
             "Value": "73.47443,-39.93866,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "Property": "HighlightOutline",
+            "Value": {
+              "_type": "component",
+              "component_id": "07b42174-e9be-4f80-8559-a2bd55d2d99e",
+              "go": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
+              "component_type": "HighlightOutline"
+            }
           }
         ],
         "MovedObjects": []
@@ -681,7 +876,44 @@
       "__version": 2,
       "__Prefab": "prefabs/furnitures/counter station.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "9de746e3-3b8f-4d64-9341-c436f3b5624f"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "9de746e3-3b8f-4d64-9341-c436f3b5624f",
+              "__enabled": true,
+              "Flags": 0,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideTargets": false,
+              "Targets": null,
+              "Width": 0.25
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -699,6 +931,19 @@
             },
             "Property": "Position",
             "Value": "73.47443,-79.75552,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "0546a89a-a6dd-48c5-a75d-f79d81865fe0"
+            },
+            "Property": "HighlightOutline",
+            "Value": {
+              "_type": "component",
+              "component_id": "9de746e3-3b8f-4d64-9341-c436f3b5624f",
+              "go": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
+              "component_type": "HighlightOutline"
+            }
           }
         ],
         "MovedObjects": []
@@ -742,7 +987,44 @@
       "__version": 2,
       "__Prefab": "prefabs/items/frying pan.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "19bc4db8-c844-4788-8ce6-d901b4eae994"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "5c37ab44-70f6-40e6-b3a0-906652d54dfe"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "19bc4db8-c844-4788-8ce6-d901b4eae994",
+              "__enabled": true,
+              "Flags": 0,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideTargets": false,
+              "Targets": null,
+              "Width": 0.25
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -752,6 +1034,19 @@
             },
             "Property": "Position",
             "Value": "-109.1313,7.592468,0.8717504"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "5c37ab44-70f6-40e6-b3a0-906652d54dfe"
+            },
+            "Property": "HighlightOutline",
+            "Value": {
+              "_type": "component",
+              "component_id": "19bc4db8-c844-4788-8ce6-d901b4eae994",
+              "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
+              "component_type": "HighlightOutline"
+            }
           }
         ],
         "MovedObjects": []
@@ -794,7 +1089,8 @@
         "7e5782d7-3e46-4f1a-8ed3-c6675b31d259": "f681231b-7e8c-4523-a7c5-1b493d710440",
         "b088fd47-28f9-4f21-8571-3cadb1b811e7": "b743bd43-ebd5-4d8b-a557-fa31668de3cf",
         "ba1fa36a-59d3-4411-b63f-5d7234d085d9": "0c75a2c2-98eb-41cf-9cfa-af5eb467cc5d",
-        "fbefac33-7038-41a1-8bb2-599fe0392bdb": "190f242f-7388-4596-9eb7-e933725d7cfc"
+        "fbefac33-7038-41a1-8bb2-599fe0392bdb": "190f242f-7388-4596-9eb7-e933725d7cfc",
+        "8882c729-7d30-4247-9d3c-7e5c3bd8c919": "552c2247-8113-4e2e-aa23-b14235231f8b"
       }
     },
     {
@@ -821,7 +1117,11 @@
         "0ec59ced-ce04-4949-b14e-d0897979a71c": "a1cb02f1-f517-48f3-a327-972ceeefd15d",
         "e0781b68-f6ce-4a5c-8d15-c56d481628bb": "443ce1ec-3189-4ead-96ee-0db4c7094ed9",
         "e7c60352-2d67-488a-99c4-af819314a6a4": "3f85aa99-ccfc-4ede-aee0-b261d3a743df",
-        "72c8746d-f9eb-414b-a0e1-4ec397adee66": "f8e23a1c-7193-4508-9960-64fca37e7eeb"
+        "72c8746d-f9eb-414b-a0e1-4ec397adee66": "f8e23a1c-7193-4508-9960-64fca37e7eeb",
+        "062e2d49-6c2b-4b72-8548-a369aa14999c": "4a3161b5-7596-4d8b-b58e-ddd990884453",
+        "cf471e5e-ad9f-4378-b398-af884dedfaab": "070afc42-56af-4ad7-90a1-4609c4b9714a",
+        "7b37721d-817e-42cb-b185-0eb148be6722": "b093204c-46ae-4a4b-bce3-35f576520288",
+        "7e4bdaae-a61a-4f6a-8c9d-63a2ce6ac76f": "5b42c2d5-95fd-477b-9f5c-2f5d1df2e484"
       }
     },
     {
@@ -848,7 +1148,11 @@
         "af70d822-3c5d-49f4-a3eb-f465be54017c": "de7f0df4-6e3a-4a8b-9e93-4136895eba13",
         "ebc239f4-77fa-4f18-9e23-9857bba5bf08": "6452f3ca-62fa-4ad0-bd3a-9fc0ccd38cd6",
         "944f6d97-9683-483d-b257-21f60f39fe4f": "b73d903b-8044-4be1-9194-f462283334b6",
-        "8081ddda-a44d-416a-a490-b1c3d34dd798": "51b33374-631b-48b9-8541-cfe6a75c7198"
+        "8081ddda-a44d-416a-a490-b1c3d34dd798": "51b33374-631b-48b9-8541-cfe6a75c7198",
+        "64ecfee6-f69a-4366-b7cd-527948518877": "383927fb-8a98-49df-b4aa-4c14f52325f6",
+        "14035a38-9151-4b54-ac3b-daff334f6185": "da8c8826-7b78-4560-9e23-ba38d5b7cb99",
+        "f8df4eac-ab7b-4c4d-94c0-b16a0cdec2bd": "153b3eab-d4c5-4064-9517-14157ee03d02",
+        "922c2de5-5095-441b-8ca9-ca74eb97368b": "9cab13ca-3fc2-4890-8c25-3506a12a69ea"
       }
     },
     {
@@ -866,14 +1170,6 @@
             },
             "Property": "Position",
             "Value": "-50.17178,-57.1862,4.5035"
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "27a6b73b-6abd-45d5-801b-0246dd1b9c03"
-            },
-            "Property": "Resource",
-            "Value": null
           }
         ],
         "MovedObjects": []
@@ -883,7 +1179,11 @@
         "27a6b73b-6abd-45d5-801b-0246dd1b9c03": "0f4dbe10-6e01-4ec0-a87e-93ca3dd58f4d",
         "d4e1897c-1836-4f1c-943a-f2e12526da55": "b4784e07-1f0f-4d8f-92af-d3ab3c0cc016",
         "3aa22846-0dea-44e4-ac79-10908fdb3ee9": "4b73fbc5-93b5-4297-b49d-c5bf8c8228b1",
-        "8d1729dc-a5cf-40e9-a156-0c5b7ef78d43": "731486be-e057-403a-baf4-3d74b60b472c"
+        "8d1729dc-a5cf-40e9-a156-0c5b7ef78d43": "731486be-e057-403a-baf4-3d74b60b472c",
+        "e1e88485-a3d0-423c-b95c-9180f989e79e": "e86482c7-5321-4422-8994-ee2f4e835ea1",
+        "6a0d4ba3-c1e8-475d-b39e-4673e942f0cb": "6545e7fc-0768-4f3d-b057-7548224a0ca2",
+        "35f8fbe0-36a0-4903-b5d5-a2936cae361f": "f4e5d8c0-782a-49c0-9fda-28e4d0ad60bf",
+        "4fb6f29a-ee79-423c-9104-fe6510ee02b5": "e148e638-1b61-4436-a4eb-cd0dc5f420a1"
       }
     },
     {
@@ -891,7 +1191,44 @@
       "__version": 2,
       "__Prefab": "prefabs/furnitures/stove station.prefab",
       "__PrefabInstancePatch": {
-        "AddedObjects": [],
+        "AddedObjects": [
+          {
+            "Id": {
+              "Type": "Component",
+              "IdValue": "bae83420-5fe7-491c-9804-026f6fd273ec"
+            },
+            "Parent": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "PreviousElement": {
+              "Type": "Component",
+              "IdValue": "b0776612-829c-4d98-9899-cdf737ee6451"
+            },
+            "ContainerProperty": "Components",
+            "IsContainerArray": true,
+            "Data": {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "bae83420-5fe7-491c-9804-026f6fd273ec",
+              "__enabled": true,
+              "Flags": 0,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideTargets": false,
+              "Targets": null,
+              "Width": 0.25
+            }
+          }
+        ],
         "RemovedObjects": [],
         "PropertyOverrides": [
           {
@@ -901,6 +1238,19 @@
             },
             "Property": "Position",
             "Value": "73.474,-118.2724,0"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "b0776612-829c-4d98-9899-cdf737ee6451"
+            },
+            "Property": "HighlightOutline",
+            "Value": {
+              "_type": "component",
+              "component_id": "bae83420-5fe7-491c-9804-026f6fd273ec",
+              "go": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
+              "component_type": "HighlightOutline"
+            }
           }
         ],
         "MovedObjects": []
@@ -934,7 +1284,15 @@
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
       "ExcludedBodies": "",
-      "IncludedBodies": ""
+      "IncludedBodies": "",
+      "CustomBounds": false
+    },
+    "GameObjectSystems": {
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "4cdec5d5-925f-4b9b-8987-9a926663f5ca"
+        }
+      }
     }
   },
   "ResourceVersion": 3,

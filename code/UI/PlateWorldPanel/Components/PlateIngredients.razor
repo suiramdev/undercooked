@@ -19,5 +19,5 @@
         Log.Info(Ingredients);
     }
 
-    protected override int BuildHash() => System.HashCode.Combine(Ingredients);
+    protected override int BuildHash() => System.HashCode.Combine(Ingredients.Count);
 }

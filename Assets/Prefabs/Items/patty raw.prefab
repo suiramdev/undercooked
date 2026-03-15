@@ -115,6 +115,12 @@
         "CookFeatureEnabled": true,
         "CookProgress": 0,
         "Depositable": null,
+        "HighlightOutline": {
+          "_type": "component",
+          "component_id": "062e2d49-6c2b-4b72-8548-a369aa14999c",
+          "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
+          "component_type": "HighlightOutline"
+        },
         "HoldType": "HoldItem",
         "InteractionType": "Press",
         "ModelCollider": {
@@ -142,9 +148,91 @@
           "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
           "component_type": "Rigidbody"
         }
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "062e2d49-6c2b-4b72-8548-a369aa14999c",
+        "__enabled": true,
+        "Flags": 0,
+        "Color": "1,1,1,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "Material": null,
+        "ObscuredColor": "0,0,0,0.4",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideTargets": false,
+        "Targets": null,
+        "Width": 0.25
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "cf471e5e-ad9f-4378-b398-af884dedfaab",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "World",
+        "Position": "0,0,20",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "7b37721d-817e-42cb-b185-0eb148be6722",
+            "__enabled": true,
+            "Flags": 0,
+            "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
+            "LookAtCamera": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "PanelSize": "512,512",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderScale": 0.75,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "Undercooked.UI.IngredientWorldPanel.IngredientWorldPanel",
+            "__guid": "7e4bdaae-a61a-4f6a-8c9d-63a2ce6ac76f",
+            "__enabled": true,
+            "Flags": 0,
+            "ingredient": {
+              "_type": "component",
+              "component_id": "0ec59ced-ce04-4949-b14e-d0897979a71c",
+              "go": "50b5693f-15d4-438f-b625-7f8324775ebe",
+              "component_type": "IngredientItem"
+            },
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ],
+        "Children": []
+      }
+    ],
     "__properties": {
       "NetworkInterpolation": true,
       "TimeScale": 1,
@@ -154,13 +242,14 @@
         "Enabled": false,
         "IncludeStaticBodies": true,
         "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": true,
+        "EditorAutoUpdate": false,
         "AgentHeight": 64,
         "AgentRadius": 16,
         "AgentStepSize": 18,
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
-        "IncludedBodies": ""
+        "IncludedBodies": "",
+        "CustomBounds": false
       }
     },
     "__variables": []

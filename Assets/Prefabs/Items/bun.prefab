@@ -1,23 +1,25 @@
 {
   "RootObject": {
     "__guid": "bb0b0810-7e91-46a3-b730-9288975ac44a",
-    "__version": 1,
+    "__version": 2,
     "Flags": 0,
-    "Name": "Bun",
+    "Name": "bun",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
     "Tags": "",
     "Enabled": true,
     "NetworkMode": 1,
-    "NetworkInterpolation": true,
+    "NetworkFlags": 0,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "d4e1897c-1836-4f1c-943a-f2e12526da55",
         "__enabled": true,
+        "Flags": 0,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
         "LodOverride": null,
@@ -44,8 +46,13 @@
         "__type": "Sandbox.Rigidbody",
         "__guid": "3aa22846-0dea-44e4-ac79-10908fdb3ee9",
         "__enabled": true,
+        "Flags": 0,
         "AngularDamping": 0,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
         "Gravity": true,
+        "GravityScale": 1,
+        "ImpactDamage": 0,
         "LinearDamping": 0,
         "Locking": {
           "X": false,
@@ -57,6 +64,7 @@
         },
         "MassCenterOverride": "0,0,0",
         "MassOverride": 0,
+        "MinImpactDamageSpeed": 500,
         "MotionEnabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -72,6 +80,8 @@
         "__type": "Sandbox.ModelCollider",
         "__guid": "8d1729dc-a5cf-40e9-a156-0c5b7ef78d43",
         "__enabled": true,
+        "Flags": 0,
+        "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
@@ -95,6 +105,7 @@
         "__type": "Undercooked.IngredientItem",
         "__guid": "27a6b73b-6abd-45d5-801b-0246dd1b9c03",
         "__enabled": true,
+        "Flags": 0,
         "AlternateInteractionType": "Press",
         "AttachmentBone": "hand_r",
         "AttachmentOffset": "0,0,0",
@@ -104,6 +115,12 @@
         "CookFeatureEnabled": false,
         "CookProgress": 0,
         "Depositable": null,
+        "HighlightOutline": {
+          "_type": "component",
+          "component_id": "6a0d4ba3-c1e8-475d-b39e-4673e942f0cb",
+          "go": "bb0b0810-7e91-46a3-b730-9288975ac44a",
+          "component_type": "HighlightOutline"
+        },
         "HoldType": "HoldItem",
         "InteractionType": "Press",
         "ModelCollider": {
@@ -131,9 +148,91 @@
           "go": "bb0b0810-7e91-46a3-b730-9288975ac44a",
           "component_type": "Rigidbody"
         }
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "6a0d4ba3-c1e8-475d-b39e-4673e942f0cb",
+        "__enabled": true,
+        "Flags": 0,
+        "Color": "1,1,1,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "Material": null,
+        "ObscuredColor": "0,0,0,0.4",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideTargets": false,
+        "Targets": null,
+        "Width": 0.25
       }
     ],
-    "Children": [],
+    "Children": [
+      {
+        "__guid": "e1e88485-a3d0-423c-b95c-9180f989e79e",
+        "__version": 2,
+        "Flags": 0,
+        "Name": "World",
+        "Position": "0,0,20",
+        "Rotation": "0,0,0,1",
+        "Scale": "1,1,1",
+        "Tags": "",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkFlags": 0,
+        "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
+        "OwnerTransfer": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.WorldPanel",
+            "__guid": "35f8fbe0-36a0-4903-b5d5-a2936cae361f",
+            "__enabled": true,
+            "Flags": 0,
+            "HorizontalAlign": "Center",
+            "InteractionRange": 1000,
+            "LookAtCamera": true,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null,
+            "PanelSize": "512,512",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
+            "RenderScale": 0.75,
+            "VerticalAlign": "Center"
+          },
+          {
+            "__type": "Undercooked.UI.IngredientWorldPanel.IngredientWorldPanel",
+            "__guid": "4fb6f29a-ee79-423c-9104-fe6510ee02b5",
+            "__enabled": true,
+            "Flags": 0,
+            "ingredient": {
+              "_type": "component",
+              "component_id": "27a6b73b-6abd-45d5-801b-0246dd1b9c03",
+              "go": "bb0b0810-7e91-46a3-b730-9288975ac44a",
+              "component_type": "IngredientItem"
+            },
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
+          }
+        ],
+        "Children": []
+      }
+    ],
     "__properties": {
       "NetworkInterpolation": true,
       "TimeScale": 1,
@@ -143,13 +242,14 @@
         "Enabled": false,
         "IncludeStaticBodies": true,
         "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": true,
+        "EditorAutoUpdate": false,
         "AgentHeight": 64,
         "AgentRadius": 16,
         "AgentStepSize": 18,
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
-        "IncludedBodies": ""
+        "IncludedBodies": "",
+        "CustomBounds": false
       }
     },
     "__variables": []

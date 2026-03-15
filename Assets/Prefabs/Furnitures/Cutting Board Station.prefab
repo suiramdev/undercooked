@@ -73,8 +73,13 @@
         "__guid": "7a2d3b6e-6941-46a0-8e01-7f39a0034257",
         "__enabled": true,
         "Flags": 0,
-        "AlternateInteractionType": "Hold",
         "ChopSpeed": 0.2,
+        "HighlightOutline": {
+          "_type": "component",
+          "component_id": "1d99f58f-8022-47b9-ac44-45abca9f7820",
+          "go": "0ff80a09-a30f-4fb8-bff9-ba9380660054",
+          "component_type": "HighlightOutline"
+        },
         "InteractionType": "Press",
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -87,6 +92,26 @@
           "go": "8cac4bd3-a1c5-40d7-87be-9a065ea63065"
         },
         "StoredPickable": null
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "1d99f58f-8022-47b9-ac44-45abca9f7820",
+        "__enabled": true,
+        "Flags": 0,
+        "Color": "1,1,1,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "Material": null,
+        "ObscuredColor": "0,0,0,0.4",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideTargets": false,
+        "Targets": null,
+        "Width": 0.25
       }
     ],
     "Children": [
@@ -185,7 +210,8 @@
         "AgentStepSize": 18,
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
-        "IncludedBodies": ""
+        "IncludedBodies": "",
+        "CustomBounds": false
       }
     },
     "__variables": []

@@ -1,0 +1,13 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Undercooked.UI.IngredientWorldPanel
+
+<root>
+    <Image class="ingredient-icon" Texture="@ingredient.Resource.Icon" />
+</root>
+
+@code {
+    [Property]
+    public IngredientItem ingredient;
+}
