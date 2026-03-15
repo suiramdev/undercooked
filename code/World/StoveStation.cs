@@ -19,11 +19,6 @@ public class StoveStation : StationBase
 		TryCook();
 	}
 
-	public override bool CanAccept( IPickable pickable )
-	{
-		return base.CanAccept( pickable ) && pickable is FryingPanItem;
-	}
-
 	[Rpc.Host]
 	private void TryCook()
 	{
