@@ -6,8 +6,18 @@ namespace Undercooked;
 public abstract class StationBase : Component, IDepositable, IInteractable
 {
 	[Property]
+	[Group( "Components" )]
+	[RequireComponent]
+	public required HighlightOutline HighlightOutline { get; set; }
+
+	[Property]
 	[Description( "The type of interaction for the station" )]
 	public virtual InteractionType InteractionType { get; set; } = InteractionType.Press;
+
+	protected override void OnStart()
+	{
+		HighlightOutline.Enabled = false;
+	}
 
 	[Property]
 	[Description( "The type of interaction for the station" )]

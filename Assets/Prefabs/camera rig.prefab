@@ -1,7 +1,7 @@
 {
   "RootObject": {
     "__guid": "32539581-0a5e-4129-9ae8-f15f2e37b65c",
-    "__version": 1,
+    "__version": 2,
     "Flags": 0,
     "Name": "camera rig",
     "Position": "0,0,0",
@@ -10,14 +10,16 @@
     "Tags": "",
     "Enabled": true,
     "NetworkMode": 2,
-    "NetworkInterpolation": true,
+    "NetworkFlags": 0,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Undercooked.PlayerCameraController",
         "__guid": "7ee2a949-6fa4-4bb1-8888-d5f34064b256",
         "__enabled": true,
+        "Flags": 0,
         "Camera": {
           "_type": "component",
           "component_id": "cd9cedcc-7352-43fc-902d-fef02d56c695",
@@ -51,7 +53,7 @@
     "Children": [
       {
         "__guid": "b182eb29-4623-45db-b2c9-500f607de76c",
-        "__version": 1,
+        "__version": 2,
         "Flags": 0,
         "Name": "Camera",
         "Position": "0,0,0",
@@ -60,14 +62,16 @@
         "Tags": "maincamera",
         "Enabled": true,
         "NetworkMode": 2,
-        "NetworkInterpolation": true,
+        "NetworkFlags": 0,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
             "__guid": "cd9cedcc-7352-43fc-902d-fef02d56c695",
             "__enabled": true,
+            "Flags": 0,
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "All",
             "EnablePostProcessing": true,
@@ -91,6 +95,18 @@
             "Viewport": "0,0,1,1",
             "ZFar": 10000,
             "ZNear": 10
+          },
+          {
+            "__type": "Sandbox.Highlight",
+            "__guid": "71d37b1c-aba3-455b-9a55-a7b4ba8af92b",
+            "__enabled": true,
+            "Flags": 0,
+            "OnComponentDestroy": null,
+            "OnComponentDisabled": null,
+            "OnComponentEnabled": null,
+            "OnComponentFixedUpdate": null,
+            "OnComponentStart": null,
+            "OnComponentUpdate": null
           }
         ],
         "Children": []
@@ -105,13 +121,14 @@
         "Enabled": false,
         "IncludeStaticBodies": true,
         "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": true,
+        "EditorAutoUpdate": false,
         "AgentHeight": 64,
         "AgentRadius": 16,
         "AgentStepSize": 18,
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
-        "IncludedBodies": ""
+        "IncludedBodies": "",
+        "CustomBounds": false
       }
     },
     "__variables": []

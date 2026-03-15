@@ -24,6 +24,7 @@ public class IngredientItem : ItemBase
 	[Range( 0f, 1f )]
 	[Description( "The progress of the ingredient's chopping" )]
 	[ReadOnly]
+	[Sync( SyncFlags.FromHost )]
 	public float ChopProgress { get; set; } = 0f;
 
 	[Property]

@@ -38,7 +38,17 @@ public abstract class ItemBase : Component, IPickable, IInteractable
 	[Property]
 	[Group( "Components" )]
 	[RequireComponent]
+	public required HighlightOutline HighlightOutline { get; set; }
+
+	[Property]
+	[Group( "Components" )]
+	[RequireComponent]
 	public required ModelCollider ModelCollider { get; set; }
+
+	protected override void OnStart()
+	{
+		HighlightOutline.Enabled = false;
+	}
 
 	[Property]
 	[Group( "Components" )]
