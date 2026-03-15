@@ -18,7 +18,10 @@ public class RecipeManager : Component
 	/// <returns>A list of recipes that include the given ingredients</returns>
 	public List<RecipeResource> GetRecipesIncludingIngredients( List<IngredientResource> ingredients )
 	{
-		return LevelConfig.Instance.CookableRecipes.Where( recipe => ingredients.All( i => recipe.RequiredIngredients.Contains( i ) ) ).ToList();
+		return LevelConfig.Instance
+			.GetOrderableRecipes()
+			.Where( recipe => ingredients.All( i => recipe.RequiredIngredients.Contains( i ) ) )
+			.ToList();
 	}
 
 	/// <summary>
@@ -40,7 +43,7 @@ public class RecipeManager : Component
 	/// <returns>The recipe that matches the given ingredients, or null if no match is found</returns>
 	public RecipeResource? GetRecipeFromIngredients( List<IngredientResource> ingredients )
 	{
-		foreach ( var recipe in LevelConfig.Instance.CookableRecipes )
+		foreach ( var recipe in LevelConfig.Instance.GetOrderableRecipes() )
 		{
 			// Check if ingredients exactly match the recipe requirements (same count and all ingredients present)
 			if ( recipe.RequiredIngredients.Count == ingredients.Count && recipe.RequiredIngredients.All( ingredients.Contains ) )

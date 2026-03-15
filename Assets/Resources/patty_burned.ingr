@@ -1,6 +1,7 @@
 {
   "Name": "Patty burned",
   "Model": "models/patty_burned.vmdl",
+  "Icon": "ui/patty_cooked_64.vtex",
   "ChopFeatureEnabled": false,
   "ChoppedResource": null,
   "CookFeatureEnabled": false,

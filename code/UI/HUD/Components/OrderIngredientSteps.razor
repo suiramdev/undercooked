@@ -1,0 +1,26 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@using Undercooked;
+@inherits Panel
+@namespace Undercooked.UI.HUD
+
+<root>
+    <Image class="ingredient-icon" Texture="@Preparation.RawIngredient.Icon" />
+    @if (Preparation.Actions.Count > 0)
+    {
+        @foreach (var action in Preparation.Actions)
+        {
+            <Image class="action-icon" Texture="@IngredientSteps.GetActionIcon(action)" />
+        }
+    }
+</root>
+
+@code {
+    [Parameter]
+    public IngredientResource Ingredient { get; set; }
+
+    private IngredientPreparation Preparation => IngredientSteps.GetPreparationFor(Ingredient);
+
+    protected override int BuildHash() => System.HashCode.Combine(Ingredient);
+}

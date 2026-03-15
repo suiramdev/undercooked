@@ -3,35 +3,8 @@
 InputHint {
   display: flex;
   align-items: center;
-  gap: 8px;
-  height: 64px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  background-color: $background;
-  border-radius: 9999px;
-  font-weight: 700;
-  font-size: 24px;
-  color: $foreground;
-}
-
-InputHint .kbd {
-  background-color: $foreground;
-  color: $background;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 100%;
-}
-
-InputHint .glyph-image {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+  gap: 4px;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
 }

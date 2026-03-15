@@ -1,5 +1,6 @@
 {
   "Name": "Hamburger",
+  "Icon": "ui/burger_64.vtex",
   "RequiredIngredients": [
     "resources/bun.ingr",
     "resources/patty_cooked.ingr"

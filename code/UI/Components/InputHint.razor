@@ -4,9 +4,7 @@
 @namespace Undercooked.UI
 
 <root>
-    <span class="kbd">
-        @Input.GetButtonOrigin(InputAction).ToUpper()
-    </span>
+    <Image Texture="@Input.GetGlyph(InputAction, InputGlyphSize.Small, true)" />
     <span>
         @Text
     </span>

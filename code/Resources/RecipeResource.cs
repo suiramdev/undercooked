@@ -9,6 +9,9 @@ public class RecipeResource : GameResource
 	[Description( "The name of the recipe" )]
 	public string Name { get; set; } = string.Empty;
 
+	[Description( "The icon of the recipe" )]
+	public Texture Icon { get; set; } = null!;
+
 	[Description( "The ingredients that the recipe requires" )]
 	public List<IngredientResource> RequiredIngredients { get; set; } = [];
 

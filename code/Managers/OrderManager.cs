@@ -27,7 +27,7 @@ public class OrderManager : Component
 	[Sync( SyncFlags.FromHost )]
 	public List<Order> Orders { get; set; } = [];
 
-	private float _lastOrderTime = 0f;
+	private float _lastOrderTime = Time.Now;
 
 	public OrderManager() : base()
 	{
@@ -45,12 +45,23 @@ public class OrderManager : Component
 	{
 		base.OnUpdate();
 
+		RemoveExpiredOrders();
+
 		// Check if it's time to place a new order
 		if ( Time.Now - _lastOrderTime >= 60f / LevelConfig.Instance.OrdersPerMinute )
 		{
 			PlaceOrder();
 			_lastOrderTime = Time.Now;
 		}
+	}
+
+	/// <summary>
+	/// Remove orders whose time left has reached zero or below.
+	/// </summary>
+	private void RemoveExpiredOrders()
+	{
+		float timeout = LevelConfig.Instance.OrderTimeout;
+		Orders.RemoveAll( o => (timeout - (Time.Now - o.PlacedAt)) <= 0f );
 	}
 
 	[Rpc.Host]

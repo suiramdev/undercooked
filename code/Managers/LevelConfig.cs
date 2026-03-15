@@ -19,10 +19,6 @@ public class LevelConfig : Component
     public static LevelConfig Instance { get; private set; } = null!;
 
     [Property]
-    public List<RecipeResource> CookableRecipes { get; set; } = [];
-
-    [Property]
-    [Validate( nameof( IsCookable ), "At least one recipe is not in the cookable recipes", LogLevel.Error )]
     [InlineEditor]
     public List<WeightedRecipe> OrderableRecipes { get; set; } = [];
 
@@ -43,23 +39,9 @@ public class LevelConfig : Component
         Instance = this;
     }
 
-    private bool IsCookable( List<WeightedRecipe> recipes )
-    {
-        foreach ( var recipe in recipes )
-        {
-            if ( !CookableRecipes.Contains( recipe.Recipe ) )
-                return false;
-        }
-
-        return true;
-    }
-
     public IEnumerable<RecipeResource> GetOrderableRecipes()
     {
-        var cookable = new HashSet<RecipeResource>( CookableRecipes );
-        foreach ( var wr in OrderableRecipes )
-            if ( cookable.Contains( wr.Recipe ) )
-                yield return wr.Recipe;
+        return OrderableRecipes.Select( wr => wr.Recipe );
     }
 
     public RecipeResource GetRandomOrderableRecipe()

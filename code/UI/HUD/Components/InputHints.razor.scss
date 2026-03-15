@@ -3,7 +3,8 @@ InputHints {
   bottom: 16px;
   right: 48px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
 }

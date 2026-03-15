@@ -6,7 +6,7 @@
 <root>
     @foreach (var order in OrderManager.Instance.Orders)
     {
-        <Order RecipeName="@order.Recipe.Name" PlacedAt="@order.PlacedAt" />
+        <Order Recipe="@order.Recipe" PlacedAt="@order.PlacedAt" />
     }
 </root>
 

@@ -4,7 +4,8 @@ namespace Undercooked;
 
 public partial class Player
 {
-
+	private bool _isChopping;
+	private CuttingBoardStation? _choppingStation;
 	[Property]
 	[Header( "Interaction Settings" )]
 	public float InteractRadius { get; set; } = 50f;
@@ -20,6 +21,8 @@ public partial class Player
 
 		InteractableTarget = GetInteractableTarget();
 
+		UpdateChopping();
+
 		// Primary interaction ("Interact" input)
 		if (
 			(InteractableTarget is null && Input.Pressed( "Interact" )) ||
@@ -32,14 +35,22 @@ public partial class Player
 		}
 
 		// Alternate interaction ("AltInteract" input)
+		bool altPressed = Input.Pressed( "AltInteract" );
 		if (
-			(InteractableTarget is null && Input.Pressed( "AltInteract" )) ||
-			(InteractableTarget?.AlternateInteractionType == InteractionType.Press && Input.Pressed( "AltInteract" )) ||
+			(InteractableTarget is null && altPressed) ||
+			(InteractableTarget?.AlternateInteractionType == InteractionType.Press && altPressed) ||
 			(InteractableTarget?.AlternateInteractionType == InteractionType.Hold && Input.Down( "AltInteract" )) ||
 			(InteractableTarget?.AlternateInteractionType == InteractionType.Release && Input.Released( "AltInteract" ))
 		)
 		{
-			InteractAlternate();
+			if ( InteractableTarget is CuttingBoardStation cuttingBoard && altPressed )
+			{
+				StartChopping( cuttingBoard );
+			}
+			else
+			{
+				InteractAlternate();
+			}
 		}
 	}
 
@@ -108,5 +119,37 @@ public partial class Player
 	protected void InteractAlternate()
 	{
 		InteractableTarget?.TryAlternateInteract( this );
+	}
+
+	private void StartChopping( CuttingBoardStation station )
+	{
+		_choppingStation = station;
+		_isChopping = true;
+		station.TryAlternateInteract( this );
+	}
+
+	private void UpdateChopping()
+	{
+		if ( !_isChopping )
+			return;
+
+		if ( _choppingStation is null )
+		{
+			_isChopping = false;
+			return;
+		}
+
+		// Cancel chopping if the player starts moving or looks away from the cutting board
+		bool hasMovementInput = Input.AnalogMove.Length > 0.01f;
+		bool lostFocus = InteractableTarget?.GameObject != _choppingStation.GameObject;
+
+		if ( hasMovementInput || lostFocus )
+		{
+			_isChopping = false;
+			_choppingStation = null;
+			return;
+		}
+
+		_choppingStation.TryAlternateInteract( this );
 	}
 }

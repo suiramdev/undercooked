@@ -1,6 +1,7 @@
 {
   "Name": "Patty raw",
   "Model": "models/patty_raw.vmdl",
+  "Icon": "ui/patty_raw_64.vtex",
   "ChopFeatureEnabled": false,
   "ChoppedResource": null,
   "CookFeatureEnabled": true,

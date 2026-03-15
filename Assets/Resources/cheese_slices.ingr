@@ -1,6 +1,7 @@
 {
   "Name": "Cheese slices",
   "Model": "models/cheese_slices.vmdl",
+  "Icon": "ui/cheese_slice_64.vtex",
   "ChopFeatureEnabled": false,
   "ChoppedResource": null,
   "CookFeatureEnabled": false,

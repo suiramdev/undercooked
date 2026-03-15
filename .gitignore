@@ -26,3 +26,8 @@ code/Properties/*
 
 # Exported / standalone games
 Exports/
+
+# AnyEditor Config
+anyeditor.config.json
+
+Assets/Raw

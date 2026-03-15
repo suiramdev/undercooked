@@ -1,6 +1,7 @@
 {
   "Name": "Bun",
   "Model": "models/bun.vmdl",
+  "Icon": "ui/bun_top_64.vtex",
   "ChopFeatureEnabled": false,
   "ChoppedResource": null,
   "CookFeatureEnabled": false,

@@ -12,6 +12,9 @@ public class IngredientResource : GameResource
 	[Description( "The model of the ingredient" )]
 	public Model Model { get; set; } = null!;
 
+	[Description( "The icon of the ingredient" )]
+	public Texture Icon { get; set; } = null!;
+
 	[FeatureEnabled( "Chop" )]
 	[Description( "Whether the ingredient can be chopped" )]
 	public bool ChopFeatureEnabled { get; set; }

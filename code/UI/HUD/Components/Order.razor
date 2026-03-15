@@ -5,31 +5,49 @@
 @namespace Undercooked.UI.HUD
 
 <root>
-    <span class="recipe-name">
-        @RecipeName
-    </span>
-    <span class="time-remaining">
-        @TimeRemaining
-    </span>
+    <div class="order">
+        <div class="progress-bar">
+            <div class="progress-bar-fill" style="width: @(Progress * 100)%; background: @ProgressBarColor"></div>
+        </div>
+        <Image class="icon" src="@Recipe.Icon.ResourcePath" />
+    </div>
+    <div class="steps-ribbon">
+        @foreach (var ingredient in Recipe.RequiredIngredients)
+        {
+            <OrderIngredientSteps Ingredient="@ingredient" />
+        }
+    </div>
 </root>
 
 @code {
     [Parameter]
-    public string RecipeName { get; set; }
+    public RecipeResource Recipe { get; set; }
 
     [Parameter]
     public float PlacedAt { get; set; }
 
-    private string TimeRemaining
+    private float Progress
     {
         get
         {
             float timeout = LevelConfig.Instance.OrderTimeout;
             float remaining = timeout - (Time.Now - PlacedAt);
-            remaining = Math.Max(remaining, 0);
-            return remaining.ToString("F0") + "s";
+            return Math.Max(remaining, 0) / timeout;
         }
     }
 
-    protected override int BuildHash() => System.HashCode.Combine(RecipeName, TimeRemaining);
+    /// <summary>Green when time is plentiful, red when time is critical.</summary>
+    private string ProgressBarColor
+    {
+        get
+        {
+            float t = Math.Clamp(Progress, 0f, 1f);
+            int r = (int)(124 + (220 - 124) * (1f - t));
+            int g = (int)(207 + (38 - 207) * (1f - t));
+            int b = (int)(0 + (38 - 0) * (1f - t));
+            return $"rgb({r},{g},{b})";
+        }
+    }
+
+    protected override int BuildHash() => System.HashCode.Combine(Recipe, Progress);
 }
