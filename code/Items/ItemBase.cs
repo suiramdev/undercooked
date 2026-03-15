@@ -61,11 +61,34 @@ public abstract class ItemBase : Component, IPickable, IInteractable
 	[Sync( SyncFlags.FromHost )]
 	public IDepositable? Depositable { get; set; }
 
-	public virtual string? GetInteractionText( Player player ) => "Pickup";
+	public virtual string? GetInteractionText( Player player )
+	{
+		if ( player.StoredPickable is IDepositable heldContainer && heldContainer.CanAccept( this ) )
+			return "Add";
+
+		if ( this is IDepositable thisContainer && player.StoredPickable is not null && thisContainer.CanAccept( player.StoredPickable ) )
+			return "Add";
+
+		return "Pickup";
+	}
 
 	[Rpc.Host]
 	public virtual void TryInteract( Player player )
 	{
+		// If the player is holding a container that can accept this item, combine them directly
+		if ( player.StoredPickable is IDepositable heldContainer && heldContainer.CanAccept( this ) )
+		{
+			heldContainer.TryDeposit( this );
+			return;
+		}
+
+		// If this item is a container that can accept what the player is holding, deposit the held item into it
+		if ( this is IDepositable thisContainer && player.StoredPickable is not null && thisContainer.CanAccept( player.StoredPickable ) )
+		{
+			player.TryTransfer( thisContainer );
+			return;
+		}
+
 		player.TryDeposit( this );
 	}
 

@@ -77,12 +77,30 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 				return;
 			}
 
+			// If holding a container and the station's item is transferable (e.g. plate + stove with pan),
+			// pull the transferable's contents into the held container
+			if ( held is IDepositable heldContainer && nestedDepositable is ITransferable nestedTransferable )
+			{
+				nestedTransferable.TryTransfer( heldContainer );
+				return;
+			}
+
 			// If holding a direct item (like an ingredient), try depositing into the nested item
 			if ( nestedDepositable.CanAccept( held ) )
 			{
 				by.TryTransfer( nestedDepositable );
 				return;
 			}
+		}
+
+		// If holding a container (plate/pan) and the station has a loose item the container can accept,
+		// pull the station's item into the held container rather than trying to deposit the container itself
+		if ( held is IDepositable heldDepositable && StoredPickable is not null && heldDepositable.CanAccept( StoredPickable ) )
+		{
+			var stationPickable = StoredPickable;
+			StoredPickable = null;
+			heldDepositable.TryDeposit( stationPickable );
+			return;
 		}
 
 		// Default: try depositing the held item into the station itself
