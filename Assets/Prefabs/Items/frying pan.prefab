@@ -1,7 +1,7 @@
 {
   "RootObject": {
     "__guid": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
-    "__version": 1,
+    "__version": 2,
     "Flags": 0,
     "Name": "frying pan",
     "Position": "0,0,0",
@@ -10,14 +10,16 @@
     "Tags": "",
     "Enabled": true,
     "NetworkMode": 1,
-    "NetworkInterpolation": true,
+    "NetworkFlags": 0,
     "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
     "OwnerTransfer": 1,
     "Components": [
       {
         "__type": "Sandbox.ModelRenderer",
         "__guid": "df190c73-07ce-42f8-a5c3-2fe94b5b9aed",
         "__enabled": true,
+        "Flags": 0,
         "BodyGroups": 18446744073709551615,
         "CreateAttachments": false,
         "LodOverride": null,
@@ -44,7 +46,9 @@
         "__type": "Sandbox.BoxCollider",
         "__guid": "eb907826-1d2b-45c7-a949-95e6a84d8394",
         "__enabled": true,
+        "Flags": 0,
         "Center": "7.6,0,2.430665",
+        "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
@@ -68,8 +72,13 @@
         "__type": "Sandbox.Rigidbody",
         "__guid": "de6a50ed-93f5-4c10-951b-fffd5df017e3",
         "__enabled": true,
+        "Flags": 0,
         "AngularDamping": 0,
+        "EnableImpactDamage": true,
+        "EnhancedCcd": false,
         "Gravity": true,
+        "GravityScale": 1,
+        "ImpactDamage": 0,
         "LinearDamping": 0,
         "Locking": {
           "X": false,
@@ -81,6 +90,7 @@
         },
         "MassCenterOverride": "0,0,0",
         "MassOverride": 0,
+        "MinImpactDamageSpeed": 500,
         "MotionEnabled": true,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -96,6 +106,8 @@
         "__type": "Sandbox.ModelCollider",
         "__guid": "b04afbf8-ee63-4ccb-b89c-a4e07998ba8d",
         "__enabled": true,
+        "Flags": 0,
+        "ColliderFlags": 0,
         "Elasticity": null,
         "Friction": null,
         "IsTrigger": false,
@@ -119,11 +131,18 @@
         "__type": "Undercooked.FryingPanItem",
         "__guid": "5c37ab44-70f6-40e6-b3a0-906652d54dfe",
         "__enabled": true,
+        "Flags": 0,
         "AlternateInteractionType": "Press",
         "AttachmentBone": "hand_r",
         "AttachmentOffset": "0,0,0",
         "AttachmentRotation": "0,0,0,0",
         "Depositable": null,
+        "HighlightOutline": {
+          "_type": "component",
+          "component_id": "0e9462b2-5491-4318-9e2a-9a27a1f2b08d",
+          "go": "4c6ebc2f-8017-4f37-9a7d-ac95a38e0f26",
+          "component_type": "HighlightOutline"
+        },
         "HoldType": "HoldItem",
         "Ingredient": null,
         "InteractionType": "Press",
@@ -155,12 +174,32 @@
           "_type": "gameobject",
           "go": "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72"
         }
+      },
+      {
+        "__type": "Sandbox.HighlightOutline",
+        "__guid": "0e9462b2-5491-4318-9e2a-9a27a1f2b08d",
+        "__enabled": false,
+        "Flags": 0,
+        "Color": "1,1,1,1",
+        "InsideColor": "0,0,0,0",
+        "InsideObscuredColor": "0,0,0,0",
+        "Material": null,
+        "ObscuredColor": "0,0,0,0.4",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "OverrideTargets": false,
+        "Targets": null,
+        "Width": 0.25
       }
     ],
     "Children": [
       {
         "__guid": "6d7ad1c5-bb91-4d37-a48c-aabc5acc1f72",
-        "__version": 1,
+        "__version": 2,
         "Flags": 0,
         "Name": "Socket",
         "Position": "0,0,0.5",
@@ -169,8 +208,9 @@
         "Tags": "",
         "Enabled": true,
         "NetworkMode": 2,
-        "NetworkInterpolation": true,
+        "NetworkFlags": 0,
         "NetworkOrphaned": 0,
+        "NetworkTransmit": true,
         "OwnerTransfer": 1,
         "Components": [],
         "Children": []
@@ -185,13 +225,14 @@
         "Enabled": false,
         "IncludeStaticBodies": true,
         "IncludeKeyframedBodies": true,
-        "EditorAutoUpdate": true,
+        "EditorAutoUpdate": false,
         "AgentHeight": 64,
         "AgentRadius": 16,
         "AgentStepSize": 18,
         "AgentMaxSlope": 40,
         "ExcludedBodies": "",
-        "IncludedBodies": ""
+        "IncludedBodies": "",
+        "CustomBounds": false
       }
     },
     "__variables": []

@@ -152,7 +152,7 @@
       {
         "__type": "Sandbox.HighlightOutline",
         "__guid": "6a0d4ba3-c1e8-475d-b39e-4673e942f0cb",
-        "__enabled": true,
+        "__enabled": false,
         "Flags": 0,
         "Color": "1,1,1,1",
         "InsideColor": "0,0,0,0",

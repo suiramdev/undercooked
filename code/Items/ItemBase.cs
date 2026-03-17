@@ -45,7 +45,7 @@ public abstract class ItemBase : Component, IPickable, IInteractable
 	[RequireComponent]
 	public required ModelCollider ModelCollider { get; set; }
 
-	protected override void OnStart()
+	protected override void OnAwake()
 	{
 		HighlightOutline.Enabled = false;
 	}

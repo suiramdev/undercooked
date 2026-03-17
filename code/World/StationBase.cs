@@ -14,7 +14,7 @@ public abstract class StationBase : Component, IDepositable, IInteractable
 	[Description( "The type of interaction for the station" )]
 	public virtual InteractionType InteractionType { get; set; } = InteractionType.Press;
 
-	protected override void OnStart()
+	protected override void OnAwake()
 	{
 		HighlightOutline.Enabled = false;
 	}
