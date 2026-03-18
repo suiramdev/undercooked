@@ -35,6 +35,7 @@ public sealed class PlateItem : ItemBase, IDepositable
 		if ( pickable is not IngredientItem ingredient || ingredient.Resource is null ) return;
 
 		Ingredients.Add( ingredient.Resource );
+		ingredient.OnDrop();
 		ingredient.GameObject.Destroy();
 
 		// Get the recipe that the plate can make
@@ -51,6 +52,5 @@ public sealed class PlateItem : ItemBase, IDepositable
 			_recipeResultObject.NetworkSpawn();
 		}
 
-		pickable.OnDeposit( this );
 	}
 }
