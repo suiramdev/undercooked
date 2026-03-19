@@ -182,7 +182,7 @@ public partial class Player
 	{
 		if ( _sustainedPrimaryTarget is null )
 			return;
-		bool hasMovementInput = Input.AnalogMove.Length > 0.01f;
+		bool hasMovementInput = Input.AnalogMove.Length > 0.01f || IsDashing;
 		bool lostFocus = InteractableTarget is not null && InteractableTarget.GameObject != _sustainedPrimaryTarget.GameObject;
 		if ( hasMovementInput || lostFocus )
 		{
@@ -217,7 +217,7 @@ public partial class Player
 		}
 
 		// Stop when the player moves or looks at a different interactable (ignore momentary null target)
-		bool hasMovementInput = Input.AnalogMove.Length > 0.01f;
+		bool hasMovementInput = Input.AnalogMove.Length > 0.01f || IsDashing;
 		bool lostFocus = InteractableTarget is not null && InteractableTarget.GameObject != _sustainedAlternateTarget.GameObject;
 
 		if ( hasMovementInput || lostFocus )
