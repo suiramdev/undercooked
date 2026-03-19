@@ -80,6 +80,11 @@ public class OrderManager : Component
 	[Rpc.Host]
 	public void CompleteOrder( RecipeResource recipe )
 	{
+		TryCompleteOrder( recipe );
+	}
+
+	public bool TryCompleteOrder( RecipeResource recipe )
+	{
 		// Find the oldest order that matches the recipe
 		var order = Orders
 			.Where( o => o.Recipe == recipe )
@@ -89,7 +94,7 @@ public class OrderManager : Component
 		if ( order is null )
 		{
 			Log.Warning( $"No matching order found for recipe: {recipe}" );
-			return;
+			return false;
 		}
 
 		// Remove the order from the list
@@ -99,7 +104,7 @@ public class OrderManager : Component
 		// TODO: Add score/points logic here
 		// TODO: Add sound effects or visual feedback
 
-		return;
+		return true;
 	}
 
 	/// <summary>

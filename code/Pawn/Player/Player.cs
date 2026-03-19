@@ -10,6 +10,7 @@ public partial class Player : Component
 	protected override void OnAwake()
 	{
 		base.OnAwake();
+		InitializeBackendRuntime();
 		SetupCameraController();
 	}
 
@@ -20,6 +21,8 @@ public partial class Player : Component
 			// Assign this instance as the local player
 			Local = this;
 		}
+
+		InitializeBackendClient();
 	}
 
 	protected override void OnDestroy()

@@ -5,5 +5,13 @@
 
 <root>
     <Image class="icon" Texture="@Texture.Load("/ui/cashgreen2_nooutline.png")" />
-    <span class="amount">00,000</span>
+    <span class="amount">@FormattedMoney</span>
 </root>
+
+@code {
+    private string FormattedMoney => (Player.Local?.BackendMoney ?? 0).ToString("N0");
+
+    protected override int BuildHash() => System.HashCode.Combine(
+        Player.Local?.BackendMoney ?? 0,
+        Player.Local?.BackendDataRevision ?? 0L );
+}
