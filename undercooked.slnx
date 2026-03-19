@@ -8,10 +8,8 @@
     <Project Path="../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/code/Base Library.csproj" />
   </Folder>
   <Folder Name="/Libraries/">
-    <Project Path="Libraries/alex.sailwind/Code/sailwind.csproj" />
-    <Project Path="Libraries/alex.sailwind/Editor/sailwind.editor.csproj" />
-    <Project Path="Libraries/alex.sailwind/UnitTests/sailwind.unittest.csproj" />
     <Project Path="Libraries/exolua.anyeditor/Editor/anyeditor.editor.csproj" />
+    <Project Path="Libraries/ozmium.oz_mcp/Editor/oz_mcp.editor.csproj" />
   </Folder>
   <Folder Name="/Tools/">
     <Project Path="../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj" />
