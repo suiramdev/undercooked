@@ -1,5 +1,7 @@
 #nullable enable
 
+using System;
+
 namespace Undercooked;
 
 public class Order( RecipeResource recipe )
@@ -11,6 +13,24 @@ public class Order( RecipeResource recipe )
 	[Property]
 	[ReadOnly]
 	public readonly float PlacedAt = Time.Now;
+
+	public float GetRemainingTime( float timeout )
+	{
+		return Math.Max( 0f, timeout - (Time.Now - PlacedAt) );
+	}
+
+	public float GetRemainingFraction( float timeout )
+	{
+		if ( timeout <= 0f )
+			return 0f;
+
+		return GetRemainingTime( timeout ) / timeout;
+	}
+
+	public int CalculateReward( float timeout )
+	{
+		return Math.Max( 0, (int)MathF.Ceiling( Recipe.BaseReward * GetRemainingFraction( timeout ) ) );
+	}
 
 	public override string ToString()
 	{
@@ -80,11 +100,18 @@ public class OrderManager : Component
 	[Rpc.Host]
 	public void CompleteOrder( RecipeResource recipe )
 	{
-		TryCompleteOrder( recipe );
+		TryCompleteOrder( recipe, out _ );
 	}
 
 	public bool TryCompleteOrder( RecipeResource recipe )
 	{
+		return TryCompleteOrder( recipe, out _ );
+	}
+
+	public bool TryCompleteOrder( RecipeResource recipe, out int reward )
+	{
+		reward = 0;
+
 		// Find the oldest order that matches the recipe
 		var order = Orders
 			.Where( o => o.Recipe == recipe )
@@ -97,9 +124,11 @@ public class OrderManager : Component
 			return false;
 		}
 
+		reward = order.CalculateReward( LevelConfig.Instance.OrderTimeout );
+
 		// Remove the order from the list
 		Orders.Remove( order );
-		Log.Info( $"Order completed: {recipe}" );
+		Log.Info( $"Order completed: {recipe} for {reward}" );
 
 		// TODO: Add score/points logic here
 		// TODO: Add sound effects or visual feedback

@@ -18,6 +18,9 @@ public class RecipeResource : GameResource
 	[Description( "The result of the recipe" )]
 	public PrefabFile? Result { get; set; }
 
+	[Description( "The full reward paid when the order is delivered immediately." )]
+	public int BaseReward { get; set; } = 100;
+
 	protected override Bitmap CreateAssetTypeIcon( int width, int height )
 	{
 		return CreateSimpleAssetTypeIcon( "restaurant", width, height );

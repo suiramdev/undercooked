@@ -74,9 +74,9 @@ public sealed class BackendRuntime : Component
 		return runtimeObject.AddComponent<BackendRuntime>();
 	}
 
-	public void QueueOrderReward( Player player )
+	public void QueueOrderReward( Player player, int amount )
 	{
-		_ = RewardPlayerAsync( player, BackendConVars.OrderReward, "OrderCompletion" );
+		_ = RewardPlayerAsync( player, amount, "OrderCompletion" );
 	}
 
 	public async Task<UserDataSnapshot> RewardPlayerAsync( Player player, int amount, string reason )

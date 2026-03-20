@@ -81,6 +81,19 @@ public partial class Player : IDepositable, ITransferable
 		pickable.OnDrop();
 	}
 
+	[Rpc.Host]
+	public void DestroyStoredPickable()
+	{
+		if ( StoredPickable is null )
+			return;
+
+		var pickable = StoredPickable;
+		StoredPickable = null;
+
+		pickable.OnDrop();
+		pickable.GameObject.Destroy();
+	}
+
 	protected void OnStoredPickableChanged( IPickable? _, IPickable? newPickable )
 	{
 		CitizenAnimationHelper.HoldType = newPickable?.HoldType ?? CitizenAnimationHelper.HoldTypes.None;

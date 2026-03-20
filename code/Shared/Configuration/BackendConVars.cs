@@ -16,6 +16,4 @@ public static class BackendConVars
 	[ConVar( "undercooked_backend_default_money" )]
 	public static int DefaultMoney { get; set; } = 0;
 
-	[ConVar( "undercooked_backend_order_reward" )]
-	public static int OrderReward { get; set; } = 100;
 }

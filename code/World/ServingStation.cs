@@ -40,12 +40,14 @@ public class ServingStation : Component, IInteractable
 			return;
 		}
 
-        if ( !OrderManager.Instance.TryCompleteOrder( plate.Recipe ) )
-            return;
+		if ( !OrderManager.Instance.TryCompleteOrder( plate.Recipe, out var reward ) )
+			return;
 
 		if ( BackendRuntime.Instance is not null )
 		{
-			BackendRuntime.Instance.QueueOrderReward( player );
+			BackendRuntime.Instance.QueueOrderReward( player, reward );
 		}
+
+		player.DestroyStoredPickable();
 	}
 }
