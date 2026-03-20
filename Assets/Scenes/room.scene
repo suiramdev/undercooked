@@ -1392,6 +1392,76 @@
         "849f0aa4-41a2-4876-bbcd-3d1768dc0b4d": "e1a541c6-b287-41af-8c35-7f4e89379377",
         "411788a4-9f61-4c16-b6ba-d48d1f5c4199": "c0445f09-cda0-42c9-8114-3b25fab0caed"
       }
+    },
+    {
+      "__guid": "c7cb7560-7750-4661-8f08-e38d186ba081",
+      "__version": 2,
+      "__Prefab": "prefabs/furnitures/ingredient dispenser station.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Position",
+            "Value": "-24.10938,54.82153,0.5000018"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Rotation",
+            "Value": "0,0,0,0.9999999"
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "41b9bbcb-1150-4744-ade1-16925ff60da9"
+            },
+            "Property": "Ingredient",
+            "Value": "resources/patty_raw.ingr"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "c7cb7560-7750-4661-8f08-e38d186ba081",
+        "f5e63b53-f719-4eac-af41-719dda1d022a": "c7e53266-d455-41ca-af8f-c9dc82e50ff0",
+        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "dfbc917e-6bd6-455e-afd4-61649d0445a9",
+        "41b9bbcb-1150-4744-ade1-16925ff60da9": "636d307e-064e-492b-90db-115f6d7eba77",
+        "d6e75b73-f4ce-42e8-8706-bbad9699a9a9": "dbd3bdb3-1e46-478a-8e10-b335873c8379"
+      }
+    },
+    {
+      "__guid": "afc69989-9749-4888-8964-4f3612ce9e89",
+      "__version": 2,
+      "__Prefab": "prefabs/furnitures/plate dispenser station.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "0ff80a09-a30f-4fb8-bff9-ba9380660054"
+            },
+            "Property": "Position",
+            "Value": "-130.3457,-70.80383,0.5000018"
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "0ff80a09-a30f-4fb8-bff9-ba9380660054": "afc69989-9749-4888-8964-4f3612ce9e89",
+        "f5e63b53-f719-4eac-af41-719dda1d022a": "1f7427d8-e909-44d3-8e78-01376483823c",
+        "e524bfd4-2f19-4d10-899d-3f9a13ae13b5": "89063f00-9b27-4226-847b-71d0ce70a0db",
+        "41b9bbcb-1150-4744-ade1-16925ff60da9": "7202c29c-c9ff-455d-9322-6237c78888ff",
+        "d6e75b73-f4ce-42e8-8706-bbad9699a9a9": "942ffeaf-d6ff-416a-a7e7-e3794d4cfe0e"
+      }
     }
   ],
   "SceneProperties": {
@@ -1417,7 +1487,7 @@
     "GameObjectSystems": {
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
-          "$blob": "38f418e6-edb8-4259-8695-50dbc64b1013"
+          "$blob": "fe3aaa52-82eb-4f52-b1d5-143a25cc3dc7"
         }
       }
     }
